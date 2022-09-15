@@ -5,6 +5,7 @@
   font-weight: normal;
   font-style: normal;
 }
+
 .wrapper1 {
   padding: 20px;
 }
@@ -110,13 +111,13 @@ label {
 .active {
   visibility: visible;
   opacity: 1;
-  transition: all 0.3s ease;
+  transition: all .3s ease;
   z-index: 100;
   border: solid 1px #7D876E;
   display: inline-block;
   text-decoration: none;
   border-radius: 0;
-  transition: all 0.3s ease;
+  transition: all .3s ease;
   cursor: pointer;
   line-height: 1.2;
   overflow: hidden;
@@ -129,7 +130,7 @@ label {
 
 .product-modal-grid {
   display: grid;
-  grid-template-rows: 250px 0.5fr 3fr 1fr;
+  grid-template-rows: 250px .5fr 3fr 1fr;
   grid-template-columns: 1fr;
   gap: 10px;
   height: 100%;
@@ -140,13 +141,15 @@ label {
   flex-direction: column;
   padding-left: 2%;
   padding-right: 2%;
-  letter-spacing: 0.1em;
+  letter-spacing: .1em;
 }
+
 .product-title h2 {
   font-size: 1.2em;
   font-weight: 300;
   color: #1C2536;
 }
+
 .product-title h3 {
   font-size: 0.9em;
   font-weight: 200;
@@ -161,11 +164,11 @@ label {
 .product-image {
   grid-row: 1/2;
 }
+
 .product-image img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   background-color: #7D876E;
 }
 
@@ -188,7 +191,7 @@ label {
 
 #close-modal:hover {
   background: black;
-  transition: all 0.3s ease;
+  transition: all .3s ease;
 }
 
 .name-underline {
@@ -248,12 +251,13 @@ label {
 
 .modal-description H4 {
   padding: 2% 2%;
-  letter-spacing: 0.1em;
+  letter-spacing: .1em;
   font-weight: 300;
 }
+
 .modal-description p {
   padding: 2% 2%;
-  font-size: 0.8em;
+  font-size: .8em;
 }
 
 .description-flex {
@@ -268,9 +272,10 @@ label {
   justify-content: flex-end;
   padding: 2% 2%;
 }
+
 .inquire button {
   font-weight: 300;
-  letter-spacing: 0.1em;
+  letter-spacing: .1em;
   width: 135px;
   all: unset;
   color: #FDFBFC;
@@ -281,17 +286,19 @@ label {
 
 .comments-style h4 {
   padding: 2% 2%;
-  letter-spacing: 0.1em;
+  letter-spacing: .1em;
   font-weight: 300;
 }
+
 .comments-style p {
   padding: 2% 2%;
-  font-size: 0.8em;
+  font-size: .8em;
 }
 
 .product-comments {
   padding: 2%;
 }
+
 .product-comments h3 {
   padding: 0 0 2% 0;
   font-weight: 300;
@@ -302,12 +309,14 @@ label {
   justify-content: space-between;
   align-items: center;
 }
+
 .comment-input input {
   all: unset;
   border: 1px solid #1C2536;
   width: 70%;
   height: 30px;
 }
+
 .comment-input button {
   letter-spacing: 0.1em;
   width: 135px;
@@ -317,8 +326,9 @@ label {
   padding: 10px 20px 10px 20px;
   display: flex;
 }
+
 .comment-input button p {
-  font-size: 0.8em;
+  font-size: .8em;
 }
 
 .modal-message {
@@ -328,6 +338,7 @@ label {
   height: 100%;
   padding: 2% 2% 0 2%;
 }
+
 .modal-message h3 {
   padding-bottom: 2%;
   font-weight: 300;
@@ -339,6 +350,7 @@ label {
   flex-direction: column;
   justify-content: space-evenly;
 }
+
 .modal-message-inputs input {
   all: unset;
   border: 1px solid #1C2536;
@@ -350,12 +362,17 @@ label {
 
 .modal-message-large {
   height: 60% !important;
+  font-size: 17px;
+  padding-left: 5px;
+  padding-top: 10px;
+  color: grey;
 }
 
 .modal-message-buttons {
   display: flex;
   justify-content: space-between;
 }
+
 .modal-message-buttons button {
   font-weight: 300;
   width: 135px;
@@ -365,8 +382,9 @@ label {
   padding: 10px 20px 10px 20px;
   display: flex;
 }
+
 .modal-message-buttons button p {
-  font-size: 0.8em;
+  font-size: .8em;
 }
 
 .add-modal-content {
@@ -492,27 +510,40 @@ label {
     padding: 1%;
   }
 }
+
 .gallery .swiper {
   width: 100%;
   height: 100%;
   margin-left: auto;
   margin-right: auto;
 }
+
 .gallery .swiper #gallery-swiper .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
   /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
   align-items: center;
 }
+
 .gallery .swiper #gallery-swiper .swiper-slide .product-container {
   width: 100%;
   height: 100%;
   margin: 0;
   grid-row: span 1;
 }
+
 .gallery .swiper #gallery-swiper .swiper-slide .product-container .product-item {
   width: 100%;
   height: 400px;
@@ -520,33 +551,39 @@ label {
   padding-bottom: 0px;
   background: #FDFBFC;
 }
+
 .gallery .swiper #gallery-swiper .swiper-slide .product-container .product-item .product-image {
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
+
 .gallery .swiper #gallery-swiper .swiper-slide .product-container .product-item .product-image img {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
+
 .gallery .swiper .swiper-pagination-bullet {
   background-color: #1C2536;
 }
+
 .gallery .swiper .swiper-pagination-bullet.active {
   background-color: #1C2536;
 }
+
 .gallery .swiper .swiper-button {
   display: none;
 }
+
 .gallery .swiper .swiper-logo {
   position: absolute;
   top: 120px;
   left: 120px;
   z-index: 98;
 }
+
 .gallery .swiper .swiper-logo img {
   width: 150px;
   height: 150px;
@@ -579,7 +616,7 @@ nav {
   grid-template-columns: 5fr 1fr 2fr;
   grid-template-rows: 40px 160px;
   grid-template-areas: "nav-options nav-logo nav-tools";
-  transition: 0.4s;
+  transition: .4s;
 }
 
 .nav-options {
@@ -588,12 +625,14 @@ nav {
   align-items: center;
   justify-content: space-between;
 }
+
 .nav-options ul {
   all: unset;
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
+
 .nav-options li {
   color: #1C2536;
   font-family: "Plus Jakarta Sans", sans-serif;
@@ -610,6 +649,7 @@ nav {
   align-items: center;
   justify-content: space-between;
 }
+
 .nav-tools span {
   display: flex;
   font-size: 2em;
@@ -621,6 +661,7 @@ nav {
   display: flex;
   align-items: center;
 }
+
 .search-button p {
   margin: 0;
 }
@@ -628,7 +669,7 @@ nav {
 #search-type {
   display: none;
   font-size: 1em;
-  margin-right: 0.5em;
+  margin-right: .5em;
   font-family: "Plus Jakarta Sans", sans-serif;
   color: #7D876E;
 }
@@ -644,6 +685,7 @@ nav {
   align-items: center;
   z-index: 99;
 }
+
 .account-button #dp {
   width: 1.25em;
   height: 1.25em;
@@ -691,6 +733,7 @@ nav {
   justify-content: center;
   align-items: center;
 }
+
 .account-functions p {
   margin-bottom: 0;
   font-family: "Plus Jakarta Sans", sans-serif;
@@ -710,7 +753,7 @@ nav {
 }
 
 .search-row {
-  grid-column: 1/4;
+  grid-column: 1 / 4;
   text-align: center;
   padding: 33px;
   left: 0;
@@ -725,6 +768,7 @@ nav {
 .search-message {
   margin-bottom: 16px;
 }
+
 .search-message h2 {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 1.3em;
@@ -739,6 +783,7 @@ nav {
   position: relative;
   width: 800px;
 }
+
 .search-bar i {
   display: flex;
   gap: 20%;
@@ -769,12 +814,12 @@ nav {
   background-color: #7D876E;
   right: 100%;
   width: 0;
-  transition: width 0.4s ease-in-out;
+  transition: width .4s ease-in-out;
 }
 
 .search-bar:hover::after {
   width: 100%;
-  transition: width 0.4s ease-in-out;
+  transition: width .4s ease-in-out;
 }
 
 #search-bar-input {
@@ -794,7 +839,7 @@ nav {
 
 .nav-expand {
   max-height: 300px;
-  transition: 0.4s;
+  transition: .4s;
 }
 
 .nav-padding {
@@ -809,6 +854,7 @@ nav {
     display: block;
   }
 }
+
 @media only screen and (min-width: 1024px) {
   .nav-grid {
     grid-template-columns: 1fr 1fr 1fr;
@@ -834,6 +880,7 @@ nav {
     display: block;
   }
 }
+
 .landingpage {
   position: relative;
   width: 100%;
@@ -843,28 +890,34 @@ nav {
   flex-direction: column;
   align-items: center;
 }
+
 .landingpage .star1,
 .landingpage .star2,
 .landingpage .star3 {
   position: absolute;
 }
+
 .landingpage .star1 img,
 .landingpage .star2 img,
 .landingpage .star3 img {
   width: 40px;
 }
+
 .landingpage .star1 {
   top: 18%;
   left: 40%;
 }
+
 .landingpage .star2 {
   top: 64%;
   left: 8%;
 }
+
 .landingpage .star3 {
   top: 70%;
   left: 78%;
 }
+
 .landingpage .landingpage_title {
   padding-bottom: 40%;
   width: 100%;
@@ -875,11 +928,13 @@ nav {
   justify-content: center;
   flex-direction: column;
 }
+
 .landingpage .landingpage_title h1 {
   font-family: "mirra";
   font-size: 150px;
   color: #A7432B;
 }
+
 .landingpage .landingpage_title p {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 600;
@@ -889,17 +944,19 @@ nav {
   padding: 0px 5px 30px 5px;
   border-bottom: 2px #FDFBFC solid;
 }
+
 .landingpage .landingpage_logo {
   position: absolute;
   bottom: 60px;
   text-align: center;
 }
+
 .landingpage .landingpage_logo img {
   width: 50px;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
+
 .landingpage .landingpage_logo p {
   font-family: "Sen", sans-serif;
   text-transform: uppercase;
@@ -914,11 +971,13 @@ nav {
   display: flex;
   flex-direction: column;
 }
+
 .gallery-cont .gallery {
   display: flex;
   flex-direction: column;
   padding: 20px;
 }
+
 .gallery-cont .gallery h6 {
   font-family: "Sen", sans-serif;
   font-size: 25px;
@@ -929,18 +988,21 @@ nav {
   line-height: 50px;
   border-bottom: 2px solid #1C2536;
 }
+
 .gallery-cont .gallery #gallery0 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(1, 1fr);
   gap: 5px;
 }
+
 .gallery-cont .gallery #gallery0 .product-container {
   width: 100%;
   height: 100%;
   margin: 0;
   grid-row: span 1;
 }
+
 .gallery-cont .gallery #gallery0 .product-container .product-item {
   width: 100%;
   height: 400px;
@@ -948,11 +1010,13 @@ nav {
   padding-bottom: 50px;
   background: #FDFBFC;
 }
+
 .gallery-cont .gallery #gallery0 .product-container .product-item .product-image {
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
+
 .gallery-cont .gallery #gallery0 .product-container .product-description {
   height: 50px;
   width: 100%;
@@ -964,16 +1028,19 @@ nav {
   position: absolute;
   flex-direction: column;
 }
+
 .gallery-cont .gallery #gallery0 .product-container .product-description h4 {
-  font-size: calc(0.8em + 0.3vw);
+  font-size: calc(.8em + .3vw);
   font-weight: 200;
   color: #1C2536;
 }
+
 .gallery-cont .gallery #gallery0 .product-container .product-description p {
-  font-size: 0.7em;
+  font-size: .7em;
   font-weight: 100;
   color: #7D876E;
 }
+
 .gallery-cont .gallery #gallery0 .product-container #favourite {
   position: absolute;
   top: 11px;
@@ -984,17 +1051,20 @@ nav {
   right: 6px;
   justify-content: center;
 }
+
 .gallery-cont .gallery #gallery0 .product-container #favourite h3 {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 1em;
   font-weight: 300;
   color: #1C2536;
 }
+
 .gallery-cont .gallery #gallery1 {
   display: flex;
   flex-direction: column;
   gap: 50px;
 }
+
 .gallery-cont .gallery #gallery1 .product-container {
   position: relative;
   width: 100%;
@@ -1002,6 +1072,7 @@ nav {
   margin: 0;
   grid-row: span 1;
 }
+
 .gallery-cont .gallery #gallery1 .product-container .product-item {
   width: 100%;
   height: 400px;
@@ -1009,33 +1080,39 @@ nav {
   padding-bottom: 0;
   background: #FDFBFC;
 }
+
 .gallery-cont .gallery #gallery1 .product-container .product-item .product-image {
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
+
 .gallery-cont .gallery #gallery1 .product-container .product-logo {
   position: absolute;
   top: 120px;
   left: 120px;
   z-index: 98;
 }
+
 .gallery-cont .gallery #gallery1 .product-container .product-logo img {
   width: 150px;
   height: 150px;
 }
+
 .gallery-cont .gallery #gallery2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 5px;
 }
+
 .gallery-cont .gallery #gallery2 .product-container {
   width: 100%;
   height: 100%;
   margin: 0;
   grid-row: span 1;
 }
+
 .gallery-cont .gallery #gallery2 .product-container .product-item {
   width: 100%;
   height: 400px;
@@ -1043,11 +1120,13 @@ nav {
   padding-bottom: 50px;
   background: #FDFBFC;
 }
+
 .gallery-cont .gallery #gallery2 .product-container .product-item .product-image {
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
+
 .gallery-cont .gallery #gallery2 .product-container .product-description {
   height: 50px;
   width: 100%;
@@ -1059,16 +1138,19 @@ nav {
   position: absolute;
   flex-direction: column;
 }
+
 .gallery-cont .gallery #gallery2 .product-container .product-description h4 {
-  font-size: calc(0.8em + 0.3vw);
+  font-size: calc(.8em + .3vw);
   font-weight: 200;
   color: #1C2536;
 }
+
 .gallery-cont .gallery #gallery2 .product-container .product-description p {
-  font-size: 0.7em;
+  font-size: .7em;
   font-weight: 100;
   color: #7D876E;
 }
+
 .gallery-cont .gallery #gallery2 .product-container #favourite {
   position: absolute;
   top: 11px;
@@ -1079,16 +1161,19 @@ nav {
   right: 6px;
   justify-content: center;
 }
+
 .gallery-cont .gallery #gallery2 .product-container #favourite h3 {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 1em;
   font-weight: 300;
   color: #1C2536;
 }
+
 .gallery-cont .gallery #gallery2 .product-container:nth-child(1) {
   grid-column-start: 1;
   grid-column-end: 3;
 }
+
 .gallery-cont .gallery .gallery-button {
   padding: 10px 0;
   display: flex;
@@ -1096,6 +1181,7 @@ nav {
   align-items: center;
   justify-content: flex-end;
 }
+
 .gallery-cont .gallery .gallery-button button {
   border: none;
   background-color: #1C2536;
@@ -1109,10 +1195,8 @@ nav {
 }
 
 #result {
-  -moz-column-count: 2;
-       column-count: 2;
-  -moz-column-gap: 1em;
-       column-gap: 1em;
+  column-count: 2;
+  column-gap: 1em;
   position: relative;
   overflow: hidden;
   display: flow-root;
@@ -1131,7 +1215,7 @@ nav {
   z-index: 100;
   width: 100%;
   height: 400px;
-  background: linear-gradient(hsla(0deg, 0%, 94.1%, 0), #DAD1CA);
+  background: linear-gradient(rgba(240, 240, 240, 0), #DAD1CA);
   pointer-events: none;
   left: 0;
 }
@@ -1143,6 +1227,7 @@ nav {
   padding-bottom: 50px;
   background: #FDFBFC;
 }
+
 .product-item .product-image {
   width: 100%;
   height: 100%;
@@ -1160,13 +1245,15 @@ nav {
   position: absolute;
   flex-direction: column;
 }
+
 .product-description h4 {
-  font-size: calc(0.8em + 0.3vw);
+  font-size: calc(.8em + .3vw);
   font-weight: 200;
   color: #1C2536;
 }
+
 .product-description p {
-  font-size: 0.7em;
+  font-size: .7em;
   font-weight: 100;
   color: #7D876E;
 }
@@ -1181,6 +1268,7 @@ nav {
   right: 6px;
   justify-content: center;
 }
+
 #favourite h3 {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 1em;
@@ -1201,12 +1289,10 @@ nav {
 .product-image img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: 50% 50%;
-     object-position: 50% 50%;
+  object-fit: cover;
+  object-position: 50% 50%;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all .3s ease;
 }
 
 .browse-button {
@@ -1214,6 +1300,7 @@ nav {
   text-align: center;
   padding-top: 88px;
 }
+
 .browse-button button {
   all: unset;
   color: white;
@@ -1246,16 +1333,16 @@ nav {
 
 @media only screen and (min-width: 768px) {
   #result {
-    -moz-column-count: 3;
-         column-count: 3;
+    column-count: 3;
   }
 }
+
 @media only screen and (min-width: 1024px) {
   #result {
-    -moz-column-count: 4;
-         column-count: 4;
+    column-count: 4;
   }
 }
+
 .edit-account-header {
   height: 60px;
   border-bottom: 2px solid #1C2536;
@@ -1291,8 +1378,7 @@ nav {
   margin-right: auto;
   border-radius: 100px;
   padding: 20px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 #edit-account-form {
@@ -1326,6 +1412,8 @@ nav {
 
 .edit-description-input {
   height: 140px;
+  box-sizing: border-box;
+  padding-bottom: 95px;
 }
 
 .button-container {
@@ -1387,7 +1475,6 @@ nav {
 
 .account-header {
   height: 60px;
-  border-top: 2px solid #1C2536;
   border-bottom: 2px solid #1C2536;
   display: flex;
   flex-wrap: wrap;
@@ -1460,15 +1547,14 @@ nav {
 }
 
 #account-result {
-  -moz-column-count: 2;
-       column-count: 2;
+  column-count: 2;
   padding: 20px;
 }
 
 #bio-account {
   display: flex;
   justify-content: center;
-  padding: 5% 20%;
+  padding: 5% 10%;
   text-align: center;
   font-weight: 300;
   font-family: "Plus Jakarta Sans", sans-serif;
@@ -1580,9 +1666,11 @@ footer {
   background-color: #1C2536;
   color: #FDFBFC;
 }
+
 footer p {
   margin: 0;
 }
+
 footer .footer-top {
   width: 100%;
   display: flex;
@@ -1590,6 +1678,7 @@ footer .footer-top {
   align-items: center;
   justify-content: center;
 }
+
 footer .footer-top .footer-top-info1 {
   width: 100%;
   display: flex;
@@ -1599,6 +1688,7 @@ footer .footer-top .footer-top-info1 {
   text-align: center;
   border-bottom: 2px solid #FDFBFC;
 }
+
 footer .footer-top .footer-top-info1 .title {
   width: 100%;
   font-size: 19px;
@@ -1607,6 +1697,7 @@ footer .footer-top .footer-top-info1 .title {
   padding: 10px 0;
   font-family: "Plus Jakarta Sans", sans-serif;
 }
+
 footer .footer-top .footer-top-info1 .info {
   position: relative;
   width: 100%;
@@ -1619,23 +1710,28 @@ footer .footer-top .footer-top-info1 .info {
   overflow-x: hidden;
   transition: all ease 0.3s;
 }
+
 footer .footer-top .footer-top-info1 .info a {
   font-family: "Plus Jakarta Sans", sans-serif;
-  letter-spacing: 0.5px;
+  letter-spacing: .5px;
   font-size: 16px;
   padding: 5px;
 }
+
 footer .footer-top .footer-top-info1.active .info {
   height: 120px;
 }
+
 footer .footer-top .footer-top-header {
   display: none;
 }
+
 footer .footer-top .footer-top-header p {
   color: #A7432B;
   font-family: "mirra";
   font-size: 80px;
 }
+
 footer .footer-middle {
   width: 100%;
   display: flex;
@@ -1645,6 +1741,7 @@ footer .footer-middle {
   border-bottom: 2px solid #FDFBFC;
   padding: 10px 0;
 }
+
 footer .footer-middle .socials {
   width: 100%;
   display: flex;
@@ -1652,24 +1749,28 @@ footer .footer-middle .socials {
   align-items: center;
   justify-content: space-between;
 }
+
 footer .footer-middle .socials p {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 14px;
-  letter-spacing: 0.5px;
+  letter-spacing: .5px;
   text-transform: capitalize;
 }
+
 footer .footer-middle .newsletter {
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
+
 footer .footer-middle .newsletter input {
   width: 75%;
   height: 50px;
   padding: 5px;
   font-family: "Plus Jakarta Sans", sans-serif;
 }
+
 footer .footer-middle .newsletter button {
   all: unset;
   height: 50px;
@@ -1679,6 +1780,7 @@ footer .footer-middle .newsletter button {
   font-weight: 600;
   padding-left: 5px;
 }
+
 footer .footer-bottom {
   width: 100%;
   display: flex;
@@ -1688,22 +1790,26 @@ footer .footer-bottom {
   font-family: "Plus Jakarta Sans", sans-serif;
   padding: 10px 0;
 }
+
 footer .footer-bottom .copyright p {
   font-size: 14px;
-  letter-spacing: 0.5px;
+  letter-spacing: .5px;
 }
+
 footer .footer-bottom .footer-logo img {
   width: 80px;
 }
+
 footer .footer-bottom .conditions {
   width: 90%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+
 footer .footer-bottom .conditions a {
   font-size: 14px;
-  letter-spacing: 0.5px;
+  letter-spacing: .5px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -1742,7 +1848,7 @@ footer .footer-bottom .conditions a {
     width: 100%;
     display: inline-block;
     font-family: "Plus Jakarta Sans", sans-serif;
-    letter-spacing: 0.5px;
+    letter-spacing: .5px;
     font-size: 16px;
     padding: 5px;
     text-align: left;
@@ -1783,7 +1889,7 @@ footer .footer-bottom .conditions a {
   footer .footer-middle .socials p {
     font-family: "Plus Jakarta Sans", sans-serif;
     font-size: 14px;
-    letter-spacing: 0.5px;
+    letter-spacing: .5px;
     text-transform: capitalize;
   }
   footer .footer-middle .newsletter {
@@ -1818,7 +1924,7 @@ footer .footer-bottom .conditions a {
   }
   footer .footer-bottom .copyright p {
     font-size: 14px;
-    letter-spacing: 0.5px;
+    letter-spacing: .5px;
   }
   footer .footer-bottom .footer-logo img {
     width: 80px;
@@ -1831,9 +1937,10 @@ footer .footer-bottom .conditions a {
   }
   footer .footer-bottom .conditions a {
     font-size: 14px;
-    letter-spacing: 0.5px;
+    letter-spacing: .5px;
   }
 }
+
 * {
   box-sizing: border-box;
   text-decoration: none;
@@ -1890,9 +1997,11 @@ header {
   margin-right: 5%;
   position: relative;
 }
+
 .filer span {
   margin-left: 5px;
 }
+
 .filer button {
   width: 135px;
   all: unset;
@@ -1910,11 +2019,13 @@ header {
   width: 135px;
   max-height: 0px;
   overflow: hidden;
-  transition: 0.2s ease;
+  transition: .2s ease;
 }
+
 .filter-dropdown ul {
   padding: 0 10px;
 }
+
 .filter-dropdown li {
   list-style: none;
   border-bottom: solid 1px #FDFBFC;
@@ -1924,5 +2035,5 @@ header {
 
 .filter-expand {
   max-height: 91px !important;
-  transition: 0.2s ease;
+  transition: .2s ease;
 }

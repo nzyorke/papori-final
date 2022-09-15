@@ -210,7 +210,8 @@
                         <h3>INQUIRE</h3>
                         <div class="modal-message-inputs">
                             <input placeholder="Write title here . . ." type="text">
-                            <input class="modal-message-large" placeholder="Write message here . . ." type="text">
+                            <textarea rows="3" cols="25" class="modal-message-large" name="messageinput">Write message here...
+                            </textarea><br>
                         </div>
                         <div class="modal-message-buttons">
                             <button>
@@ -268,10 +269,11 @@
 
                     </div>
                     <div class="edit-modal-buttons">
-                        <button type="button" class="btn btn-secondary edit-modal-button1" data-bs-dismiss="modal">CANCEL</button>
-                        <button id="updateProduct" name="projectButton" type="submit" class="btn btn-primary edit-modal-button2"
-                          data-bs-dismiss="modal">CONFIRM</button>
-                        </div>
+                        <button type="button" class="btn btn-secondary edit-modal-button1"
+                            data-bs-dismiss="modal">CANCEL</button>
+                        <button id="updateProduct" name="projectButton" type="submit"
+                            class="btn btn-primary edit-modal-button2" data-bs-dismiss="modal">CONFIRM</button>
+                    </div>
                 </div>
 
             </div>
@@ -280,39 +282,39 @@
 
     <!-- End of edit Modal  -->
 
- <!-- Add Product Modal -->
- <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModal" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="add-modal-body">
-                <h5 class="add-modal-title" id="exampleModalLabel">Edit Listing</h5>
-                <div id="projectForm">
-
-                    <label for="name-input">Product Name: </label>
-                    <input class="add-modal-input" id="name-input" name="name-input" type="text">
-                    <label for="price-input">Product Price: </label>
-                    <input class="add-modal-input" id="price-input" name="price-input" type="text">
-                    <label for="description-input">Product Description: </label>
-                    <input class="add-modal-input" id="description-input" name="description-input" type="text">
-                    <label for="image-url-input">Product Image URL:</label>
-                    <input class="add-modal-input" id="image-url-input" name="image-url-input" type="text">
-
+    <!-- Add Product Modal -->
+    <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="add-product-buttons">
-                    <button type="button" class="btn btn-secondary add-modal-button1"
-                        data-bs-dismiss="modal">CANCEL</button>
-                    <button id="addProduct" name="projectButton" type="submit"
-                        class="btn btn-primary add-modal-button2" data-bs-dismiss="modal">POST</button>
-                </div>
-            </div>
+                <div class="add-modal-body">
+                    <h5 class="add-modal-title" id="exampleModalLabel">Add Listing</h5>
+                    <div id="projectForm">
 
+                        <label for="name-input">Product Name: </label>
+                        <input class="add-modal-input" id="name-input" name="name-input" type="text">
+                        <label for="price-input">Product Price: </label>
+                        <input class="add-modal-input" id="price-input" name="price-input" type="text">
+                        <label for="description-input">Product Description: </label>
+                        <input class="add-modal-input" id="description-input" name="description-input" type="text">
+                        <label for="image-url-input">Product Image URL:</label>
+                        <input class="add-modal-input" id="image-url-input" name="image-url-input" type="text">
+
+                    </div>
+                    <div class="add-product-buttons">
+                        <button type="button" class="btn btn-secondary add-modal-button1"
+                            data-bs-dismiss="modal">CANCEL</button>
+                        <button id="addProduct" name="projectButton" type="submit"
+                            class="btn btn-primary add-modal-button2" data-bs-dismiss="modal">POST</button>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
-</div>
-<!-- End of  Add Product Modal  -->
+    <!-- End of  Add Product Modal  -->
 
 
     <!-- Post Comment Modal -->
