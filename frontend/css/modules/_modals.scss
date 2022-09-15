@@ -99,18 +99,18 @@ label {
 
 
 .active {
-  visibility: visible;
-  opacity: 1;
-  transition: all .3s ease;
-  z-index: 100;
-  border: solid 1px $green;
-  display: inline-block;
-  text-decoration: none;
-  border-radius: 0;
-  transition: all .3s ease;
-  cursor: pointer;
-  line-height: 1.2;
-  overflow: hidden;
+    visibility: visible;
+    opacity: 1;
+    transition: all .3s ease;
+    z-index: 100;
+    border: solid 1px $green;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 0;
+    transition: all .3s ease;
+    cursor: pointer;
+    line-height: 1.2;
+    overflow: hidden;
 }
 
 // button:hover {
@@ -122,16 +122,16 @@ label {
 // modal grid
 
 .product-modal-container {
-  height: 100%;
-  background: $white;
+    height: 100%;
+    background: $white;
 }
 
 .product-modal-grid {
-  display: grid;
-  grid-template-rows: 250px .5fr 3fr 1fr;
-  grid-template-columns: 1fr;
-  gap: 10px;
-  height: 100%;
+    display: grid;
+    grid-template-rows: 250px .5fr 3fr 1fr;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    height: 100%;
 }
 
 .product-title {
@@ -140,11 +140,13 @@ label {
     padding-left: 2%;
     padding-right: 2%;
     letter-spacing: .1em;
+
     h2 {
         font-size: 1.2em;
         font-weight: 300;
         color: $blue;
     }
+
     h3 {
         font-size: 0.9em;
         font-weight: 200;
@@ -152,28 +154,25 @@ label {
     }
 }
 
-.product-owner {
-
-}
+.product-owner {}
 
 .product-name {
-        display: flex;
-        justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
-  .modal-description{
-
-  }
+.modal-description {}
 
 .product-image {
-//   grid-column: 2/3;
-  grid-row: 1/2;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    background-color: $green;
-  }
+    //   grid-column: 2/3;
+    grid-row: 1/2;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        background-color: $green;
+    }
 }
 
 // #image-preview{
@@ -203,15 +202,15 @@ label {
 }
 
 #close-modal:hover {
-  background: black;
-  transition: all .3s ease;
+    background: black;
+    transition: all .3s ease;
 
 }
 
 .name-underline {
-  width: 100%;
-  height: 1px;
-  background: $blue;
+    width: 100%;
+    height: 1px;
+    background: $blue;
 }
 
 // .edit-tools {
@@ -280,19 +279,20 @@ label {
     margin-left: 20px;
 }
 
-.modal-description{
-    H4{
+.modal-description {
+    H4 {
         padding: 2% 2%;
         letter-spacing: .1em;
         font-weight: 300;
     }
-    p{
-    padding: 2% 2%;
-    font-size: .8em;
-}
+
+    p {
+        padding: 2% 2%;
+        font-size: .8em;
+    }
 }
 
-.description-flex{
+.description-flex {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -300,118 +300,130 @@ label {
 }
 
 
-.inquire{
+.inquire {
     display: flex;
     justify-content: flex-end;
     padding: 2% 2%;
-    button{
+
+    button {
         font-weight: 300;
         letter-spacing: .1em;
         width: 135px;
-    all: unset;
-    color: #FDFBFC;
-    background: #1C2536;
-    padding: 10px 20px 10px 20px;
-    display: flex;
+        all: unset;
+        color: #FDFBFC;
+        background: #1C2536;
+        padding: 10px 20px 10px 20px;
+        display: flex;
     }
 }
 
-.comments-style{
-    h4{
+.comments-style {
+    h4 {
         padding: 2% 2%;
         letter-spacing: .1em;
         font-weight: 300;
     }
-    p{
+
+    p {
         padding: 2% 2%;
-        font-size: .8em; 
+        font-size: .8em;
     }
 }
 
 .product-comments {
     padding: 2%;
-    h3{
+
+    h3 {
         padding: 0 0 2% 0;
         font-weight: 300;
     }
 }
 
-.comment-input{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    
-    input{
+.comment-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    input {
         all: unset;
         border: 1px solid $blue;
-width: 70%;
-height: 30px;
-    }
-    button{
-        letter-spacing: 0.1em;
-    width: 135px;
-    all: unset;
-    color: #FDFBFC;
-    background: #1C2536;
-    padding: 10px 20px 10px 20px;
-    display: flex;
-    p{
-        font-size: .8em;
-    }
-}
+        width: 70%;
+        height: 30px;
     }
 
-    .modal-message{
+    button {
+        letter-spacing: 0.1em;
+        width: 135px;
+        all: unset;
+        color: #FDFBFC;
+        background: #1C2536;
+        padding: 10px 20px 10px 20px;
         display: flex;
+
+        p {
+            font-size: .8em;
+        }
+    }
+}
+
+.modal-message {
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
     padding: 2% 2% 0 2%;
-    h3{
+
+    h3 {
         padding-bottom: 2%;
         font-weight: 300;
     }
 }
 
-.modal-message-inputs{
+.modal-message-inputs {
     height: 96%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-    input{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    input {
         all: unset;
         border: 1px solid $blue;
         width: 96%;
         margin-bottom: 2%;
         font-size: 0.7em;
-    padding: 2%;
+        padding: 2%;
     }
 }
 
-.modal-message-large{
-    height: 60%!important;
+.modal-message-large {
+    height: 60% !important;
+    font-size: 17px;
+    padding-left: 5px;
+    padding-top: 10px;
+    color: grey;
 }
 
-.modal-message-buttons{
+.modal-message-buttons {
     display: flex;
     justify-content: space-between;
-    button{
+
+    button {
         font-weight: 300;
-    width: 135px;
-    all: unset;
-    color: #FDFBFC;
-    background: #1C2536;
-    padding: 10px 20px 10px 20px;
-    display: flex;
-    p{
-        font-size: .8em;
+        width: 135px;
+        all: unset;
+        color: #FDFBFC;
+        background: #1C2536;
+        padding: 10px 20px 10px 20px;
+        display: flex;
+
+        p {
+            font-size: .8em;
+        }
     }
-}
 }
 
 // ADD PRODUCT MODAL 
-#addProductModal {
-}
+#addProductModal {}
 
 .add-modal-content {
     border-radius: 0px;
@@ -496,12 +508,12 @@ label {
     margin-left: 41px;
 }
 
-.edit-modal-buttons{
+.edit-modal-buttons {
     display: flex;
     justify-content: space-between;
 }
 
-.add-product-buttons{
+.add-product-buttons {
     display: flex;
     justify-content: space-between;
     margin-top: 15px;
@@ -513,12 +525,12 @@ label {
 @media only screen and (min-width: 1024px) {
 
     .product-modal-grid {
-        
-    grid-template-rows: 1fr 2fr 2fr 2fr;
+
+        grid-template-rows: 1fr 2fr 2fr 2fr;
         grid-template-columns: 1fr 1fr;
     }
 
-    .product-image{
+    .product-image {
         grid-row: 1/4;
     }
 
@@ -527,7 +539,7 @@ label {
         justify-content: center;
     }
 
-    .modal-description{
+    .modal-description {
         grid-row: 2/4;
     }
 
@@ -541,11 +553,11 @@ label {
         padding: 2% 2% 0 2%;
     }
 
-    .modal-message-container{
+    .modal-message-container {
         grid-row: 2/4;
     }
 
-    .padding-comments{
+    .padding-comments {
         padding: 1%;
     }
 
