@@ -524,7 +524,7 @@ function accountExpand() {
 let renderProductModal = (projectData) => {
   let productOwner = document.getElementById("product-owner");
   let productName = document.getElementById("product-name");
-  let productDescription = document.getElementById("modal-description");
+  let productDescription = document.getElementById("description-type");
   let productImage = document.getElementById("product-image");
   let productComments = document.getElementById("product-comments");
   let currentId = projectData._id;
@@ -538,29 +538,40 @@ let renderProductModal = (projectData) => {
 `;
 
   productDescription.innerHTML = `
-  <div class="name-underline"></div>
-  <div class="description-flex">
-  <div class="description-type">
   <h4>DESCRIPTION</H4>
-  <p>This is where the description will go</p>
-  </div>
-  <div class="inquire">
-<button>INQUIRE</button>
-</div>
-
+  <p>${projectData.description}</p>
   `;
 
   productImage.innerHTML = `
 <img src="${projectData.img_url}" alt="${projectData.name}">
 `;
 
-  // productComments.innerHTML = `
-  // <div class="name-underline"></div>
-  // <div class="comments-style">
-  //   <h4>COMMENTS</H4>
-  //   <p>No comments yet!</p>
-  //   </div>
-  // `;
+  productComments.innerHTML = `
+    <p>No comments yet!</p>
+  `;
 };
+
+// =================================
+//        FOOTER FUNCTIONS
+// =================================
+
+
+let footerTopInfo1 = document.getElementsByClassName(`footer-top-info1`);
+
+
+
+for (let i = 0; i < footerTopInfo1.length; i++) {
+
+  const element = footerTopInfo1[i];
+
+  element.addEventListener("click", function () {
+
+    this.classList.toggle("active");
+
+    console.log("clicked");
+
+  });
+
+}
 
 

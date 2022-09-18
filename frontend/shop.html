@@ -256,51 +256,59 @@
   </div>
   <!-- End of Post Delete Modal  -->
 
-  <!-- product Modal -->
-  <div id="productModal" class="productModal">
-    <div class="product-modal-container">
-      <div class="product-modal-grid">
-        <i id="close-modal" class="fa-solid fa-x"></i>
-        <div id="product-image" class="product-image">
-        </div>
-        <div class="product-title">
-          <div id="product-name" class="product-name"></div>
-          <div id="product-owner" class="product-owner">
+     <!-- product Modal -->
+     <div id="productModal" class="productModal">
+      <div class="product-modal-container">
+          <div class="product-modal-grid">
+              <i id="close-modal" class="fa-solid fa-x"></i>
+              <div id="product-image" class="product-image">
+              </div>
+              <div class="product-title">
+                  <div id="product-name" class="product-name"></div>
+                  <div id="product-owner" class="product-owner">
+                  </div>
+              </div>
+              <div id="modal-description" class="modal-description display">
+                  <div class="name-underline"></div>
+                  <div class="description-flex">
+                  <div id="description-type" class="description-type">
+                  
+                  </div>
+                  <div id="inquire" class="modal-message-buttons">
+                <button id="inquire-button"><p>INQUIRE</p></button>
+                </div>
+              </div>
           </div>
-        </div>
-        <div id="modal-description" style="display: none;" class="modal-description">
-        </div>
-        <div class="modal-message-container">
-          <div class="name-underline"></div>
-          <div class="modal-message">
-            <h3>INQUIRE</h3>
-            <div class="modal-message-inputs">
-              <input placeholder="Write title here . . ." type="text">
-              <textarea rows="3" cols="25" class="modal-message-large" name="messageinput">Write message here...
-              </textarea><br>
-            </div>
-            <div class="modal-message-buttons">
-              <button>
-                <p>BACK</p>
-              </button><button>
-                <p>SEND</p>
-              </button>
-            </div>
+              <div id="modal-message" class="modal-message-container">
+                  <div class="name-underline"></div>
+                  <div class="modal-message">
+                      <h3>INQUIRE</h3>
+                      <div class="modal-message-inputs">
+                          <input placeholder="Write title here . . ." type="text">
+                          <textarea rows="3" placeholder="Write message here . . ." cols="25" class="modal-message-large" name="messageinput"></textarea>
+                      </div>
+                      <div class="modal-message-buttons">
+                          <button id="back-button">
+                              <p>BACK</p>
+                          </button><button>
+                              <p>SEND</p>
+                          </button>
+                      </div>
+                  </div>
+              </div>
+              <div class="product-comments-container" id="product-comments-container">
+                  <h3>COMMENTS</h3>
+                  <div class="comment-input">
+                      <input type="text"> <button>
+                          <p>POST
+                          <p>
+                      </button>
+                  </div>
+                  <div class="product-comments" id="product-comments"></div>
+              </div>
           </div>
-        </div>
-        <div class="product-comments" id="product-comments">
-          <h3>COMMENTS</h3>
-          <div class="comment-input">
-            <input type="text"> <button>
-              <p>POST
-              <p>
-            </button>
-          </div>
-        </div>
       </div>
-    </div>
-
-    <!-- end of product modal -->
+      <!-- end of product modal -->
 
     <!-- Confirm Delete Modal -->
     <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
@@ -323,20 +331,6 @@
       </div>
     </div>
   </div>
-
-
-  <div id="gallery0" style="display: none;"></div>
-  <div id="gallery1" style="display: none;"></div>
-  <div id="gallery-swiper" style="display: none;"></div>
-  <div id="gallery2" style="display: none;"></div>
-  <div id="account-result" style="display: none;"></div>
-  <div id="edit-profile-image" style="display: none;"></div>
-  <div id="account-profile-header" style="display: none;"></div>
-  <div id="username-input" style="display: none;"></div>
-  <div id="edit-password-input" style="display: none;"></div>
-  <div id="profilepic-input" style="display: none;"></div>
-  <div id="bio-input" style="display: none;"></div>
-  <div id="account-bio" style="display: none;"></div>
 
   <!-- End of Confirm Delete Modal  -->
   <!-- jquery -->
