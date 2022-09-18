@@ -300,6 +300,27 @@
 
     <!-- End of Confirm Delete Modal  -->
 
+    <!-- Confirm Inquiry Sent Modal -->
+    <div class="modal fade" id="inquiryModal" tabindex="-1" aria-labelledby="inquiryModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="inquiry-modal-header">
+                    <h5 class="inquiry-modal-title" id="data-bs-target">QUERY SENT TO</h5>
+                    <div id="inquiry-owner"></div>
+                </div>
+                <div class="inquiry-modal-body">
+                    <h3 class="inquiry-title">Message title here...</h3>
+                    <p>Lorem ipsum dolor sit amet, <br>
+                        consectetur adipiscing elit, sed do eiusmod tempor incididunt<br>
+                        ut labore et dolore magna aliqua . . . </p>
+                    <i class="bi bi-check2-circle"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End of Confirm Inquiry Sent Modal  -->
+
     <!-- product Modal -->
     <div id="productModal" class="productModal">
         <div class="product-modal-container">
@@ -327,7 +348,7 @@
                             <button>
                                 <p>BACK</p>
                             </button><button>
-                                <p>SEND</p>
+                                <p data-bs-toggle="modal" data-bs-target="#inquiryModal">SEND</p>
                             </button>
                         </div>
                     </div>

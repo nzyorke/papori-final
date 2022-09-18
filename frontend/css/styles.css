@@ -2037,3 +2037,36 @@ header {
   max-height: 91px !important;
   transition: .2s ease;
 }
+
+.inquiry-modal-header {
+  text-align: center;
+  color: white;
+  height: 80px;
+  padding-top: 15px;
+  background-color: #7D876E;
+  font-family: "Sen", sans-serif;
+}
+
+.inquiry-modal-title {
+  font-size: 25px;
+  padding-bottom: 2px;
+}
+
+.inquiry-modal-body {
+  background: #7D876E;
+  text-align: center;
+  color: white;
+  font-family: "Sen", sans-serif;
+  border-top: 2px white;
+  height: 230px;
+  padding: 15px;
+}
+
+.inquiry-title {
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+.bi-check2-circle {
+  font-size: 60px;
+}

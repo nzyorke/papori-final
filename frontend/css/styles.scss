@@ -109,3 +109,37 @@ header {
     transition: .2s ease;
 
 }
+
+// INQUIRY MODAL
+.inquiry-modal-header {
+    text-align: center;
+    color: white;
+    height: 80px;
+    padding-top: 15px;
+    background-color: $green;
+    font-family: $sen;
+}
+
+.inquiry-modal-title {
+    font-size: 25px;
+    padding-bottom: 2px;
+}
+
+.inquiry-modal-body {
+    background: $green;
+    text-align: center;
+    color: white;
+    font-family: $sen;
+    border-top: 2px white;
+    height: 230px;
+    padding: 15px;
+}
+
+.inquiry-title {
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.bi-check2-circle {
+    font-size: 60px;
+}

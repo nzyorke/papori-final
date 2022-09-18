@@ -163,9 +163,8 @@ let renderProducts = (products) => {
             <i class="bi bi-pencil edit-button" data-bs-toggle="modal" data-bs-target="#editModal"></i>
             </div>
             <div class="product-image">
-                <img src="${item.img_url}" class="open-image" alt="${
-        item.name
-      }">
+                <img src="${item.img_url}" class="open-image" alt="${item.name
+        }">
             </div>
             <div class="product-description">
                 <h4>${item.name.toUpperCase()}</h4>
@@ -314,9 +313,8 @@ let renderLandingpageGallery = (products) => {
             <i class="bi bi-pencil edit-button" data-bs-toggle="modal" data-bs-target="#editModal"></i>
             </div>
             <div class="product-image">
-                <img src="${item.img_url}" class="open-image" alt="${
-        item.name
-      }">
+                <img src="${item.img_url}" class="open-image" alt="${item.name
+        }">
             </div>
             <div class="product-description">
                 <h4>${item.name.toUpperCase()}</h4>
@@ -731,9 +729,9 @@ fillEditUserInputs = (user, id) => {
   password.value = user.password;
   if (sessionStorage.bio == "undefined") {
     bio.value = "";
-} else {
-bio.value = user.userdescription;
-};
+  } else {
+    bio.value = user.userdescription;
+  };
   imageUrl.value = user.profile_img_url;
 
   //=================================
@@ -763,7 +761,7 @@ bio.value = user.userdescription;
         console.log(data);
         console.log("Success - user was updated");
         newUsername = username;
-        newBio =  bio;
+        newBio = bio;
         // newDescription = description;
         newImageUrl = imageUrl;
         sessionStorage.setItem("userName", newUsername);
@@ -839,8 +837,7 @@ let checkLogin = () => {
     navContent = `
         <div class="account-button" id="nav-img-acc">
       <span id="username">${sessionStorage.userName.toUpperCase()}</span>
-      <span id="dp" style="background-image: url('${
-        sessionStorage.profileImg
+      <span id="dp" style="background-image: url('${sessionStorage.profileImg
       }')"></span>
       </div>
       `;
@@ -890,17 +887,17 @@ let displayProfilePictures = () => {
       <img class="profile-image" src="${sessionStorage.profileImg}">
       <p id="username-account">${sessionStorage.userName.toUpperCase()}</p>
       `;
-      if (sessionStorage.bio == "undefined") {
-        accountBio.innerHTML =
-      `
+    if (sessionStorage.bio == "undefined") {
+      accountBio.innerHTML =
+        `
       <p id="bio-account">No bio yet!</p>
       `;
-  } else {
-    accountBio.innerHTML =
-    `
+    } else {
+      accountBio.innerHTML =
+        `
     <p id="bio-account">${sessionStorage.bio}</p>
     `;
-};
+    };
   }
 }
 
@@ -942,14 +939,17 @@ function accountExpand() {
 
 let renderProductModal = (projectData) => {
   let productOwner = document.getElementById("product-owner");
+  let inquryOwner = document.getElementById("inquiry-owner");
   let productName = document.getElementById("product-name");
   let productDescription = document.getElementById("modal-description");
   let productImage = document.getElementById("product-image");
   let productComments = document.getElementById("product-comments");
+  console.log(projectData.productowner);
   let currentId = projectData._id;
-  productOwner.innerHTML = `
-<h3>${projectData.productowner.toUpperCase()}</h3>
-`;
+
+  inquryOwner.innerHTML = `
+<p>${projectData.productowner.toUpperCase()}</p>
+`
 
   productName.innerHTML = `
 <h2>${projectData.name.toUpperCase()}</h2>
@@ -972,7 +972,9 @@ let renderProductModal = (projectData) => {
   productImage.innerHTML = `
 <img src="${projectData.img_url}" alt="${projectData.name}">
 `;
-
+  productOwner.innerHTML = `
+<h3>${projectData.productowner.toUpperCase()}</h3>
+`;
   // productComments.innerHTML = `
   // <div class="name-underline"></div>
   // <div class="comments-style">
