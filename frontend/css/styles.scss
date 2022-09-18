@@ -90,6 +90,7 @@ header {
     display: flex;
     width: 270px;
     justify-content: space-between;
+
     span {
         margin-left: 5px;
     }
@@ -164,4 +165,10 @@ header {
 
 .bi-check2-circle {
     font-size: 60px;
+}
+
+.comments-profile-image {
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
 }

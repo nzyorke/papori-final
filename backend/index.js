@@ -261,9 +261,12 @@ app.post("/loginUser", (req, res) => {
 
 app.post("/postComment", (req, res) => {
   const newComment = new Comment({
-    _id: new mongoose.Types.ObjectId(),
+    _id: new mongoose.Types.ObjectId,
     text: req.body.text,
     product_id: req.body.product_id,
+    commentedby: req.body.commentedby,
+    createdby: req.body.createdby,
+    profile_img_url: req.body.profile_img_url,
   });
   // save (or post) this comment to the MongoDB
   newComment.save().then((result) => {
@@ -278,5 +281,17 @@ app.post("/postComment", (req, res) => {
       .catch((error) => {
         res.send(error);
       });
+  });
+});
+
+app.get("/product/:id", (req, res) => {
+  const productId = req.params.id;
+  console.log(productId);
+  Product.findOne({ _id: productId }, (err, productResult) => {
+    if (productResult) {
+      res.send(productResult);
+    } else {
+      res.send("product not found");
+    }
   });
 });
