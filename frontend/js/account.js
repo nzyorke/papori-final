@@ -25,19 +25,19 @@ function navExpand() {
 
 // This function allows us to display our products from the MongoDB on our app
 let showAllProduct = () => {
-    $.ajax({
-      type: "GET",
-      url: "http://localhost:3400/allProduct",
-      // your success function contains a object which can be named anything
-      success: (products) => {
-        console.log(products);
-        renderProductsAccount(products);
-      },
-      error: (error) => {
-        console.log(error);
-      },
-    });
-  };
+  $.ajax({
+    type: "GET",
+    url: "http://localhost:3400/allProduct",
+    // your success function contains a object which can be named anything
+    success: (products) => {
+      console.log(products);
+      renderProductsAccount(products);
+    },
+    error: (error) => {
+      console.log(error);
+    },
+  });
+};
 
 
 // =================================
@@ -80,20 +80,20 @@ let addNewProducts = () => {
 };
 
 populateProductModal = (productId) => {
-    console.log(productId);
-    $.ajax({
-      url: `http://localhost:3400/product/${productId}`,
-      type: "GET",
-      success: (productData) => {
-        console.log("Product was found!");
-        console.log(productData);
-        renderProductModal(productData, productId);
-      },
-      error: () => {
-        console.log(error);
-      },
-    });
-  };
+  console.log(productId);
+  $.ajax({
+    url: `http://localhost:3400/product/${productId}`,
+    type: "GET",
+    success: (productData) => {
+      console.log("Product was found!");
+      console.log(productData);
+      renderProductModal(productData, productId);
+    },
+    error: () => {
+      console.log(error);
+    },
+  });
+};
 
 
 
@@ -111,6 +111,7 @@ let collectProductModals = () => {
       console.log(productId);
       populateProductModal(productId);
       productModal.classList.toggle("active");
+      putCommentsInModal(productId);
     };
   }
   closeModalBtn.onclick = () => {
@@ -135,17 +136,17 @@ let renderProductsAccount = (products) => {
   accountResult.innerHTML = "";
   products.forEach((item) => {
     //  RENDER COMMENTS
-    let renderComments = () => {
-      if (item.comments.length > 0) {
-        let allComments = "";
-        item.comments.forEach((comment) => {
-          allComments += `<li>${comment.text}</li>`;
-        });
-        return allComments;
-      } else {
-        return "<p>Be the first to place a comment!</p>";
-      }
-    };
+    // let renderComments = () => {
+    //   if (item.comments.length > 0) {
+    //     let allComments = "";
+    //     item.comments.forEach((comment) => {
+    //       allComments += `<li>${comment.text}</li>`;
+    //     });
+    //     return allComments;
+    //   } else {
+    //     return "<p>Be the first to place a comment!</p>";
+    //   }
+    // };
 
     // how to render comments: ${renderComments()}
 
@@ -196,29 +197,61 @@ showAllProduct();
 //      ADD COMMENT FUNCTION
 // =================================
 // This function will send the id to the onclick listener of the submit button
-let addComment = (productId) => {
-  const commentBtn = document.getElementById("submitComment");
-  // add a listener for the add comment button
+
+let renderComments = (product) => {
+  if (product.comments.length > 0) {
+    let allComments = "";
+    product.comments.forEach((comment) => {
+      allComments += `<li><img class="comments-profile-image" src="${comment.profile_img_url}">${comment.commentedby} ${comment.text}</li>`;
+    });
+    return allComments;
+  } else {
+    return "<p>Be the first to place a comment!</p>";
+  }
+};
+
+let putCommentsInModal = (productId) => {
+  $.ajax({
+    type: 'GET',
+    url: `http://localhost:3400/product/${productId}`,
+    success: (product) => {
+      // inner comments html
+      let productComments = document.getElementById("product-comments");
+      productComments.innerHTML = `
+      <ul>${renderComments(product)}</ul>
+      `
+    },
+    error: (error) => {
+      console.log(error);
+    }
+
+  });
+  let commentBtn = document.getElementById('post-comment');
   commentBtn.onclick = () => {
     console.log(productId);
     $.ajax({
       url: "http://localhost:3400/postComment",
       type: "POST",
       data: {
-        text: document.getElementById("productComment").value,
+        text: document.getElementById("comment-input").value,
         product_id: productId,
+        commentedby: sessionStorage.userName,
+        createdby: sessionStorage.userID,
+        profile_img_url: sessionStorage.profileImg,
       },
-      success: () => {
+      success: (commentedby, createdby, profile_img_url) => {
         console.log("Comment placed successfully");
         showAllProduct();
-        $("#commentModal").modal("hide");
+        console.log(commentedby, createdby, profile_img_url);
+        // $("#commentModal").modal("hide");
       },
       error: () => {
         console.log("error, can't post comment");
       },
     });
   };
-};
+
+}
 
 // =================================
 //COLLECT EDIT BUTTONS & EDIT FUNCTION
@@ -436,8 +469,7 @@ let checkLogin = () => {
     navContent = `
         <div class="account-button" id="nav-img-acc">
       <span id="username">${sessionStorage.userName.toUpperCase()}</span>
-      <span id="dp" style="background-image: url('${
-        sessionStorage.profileImg
+      <span id="dp" style="background-image: url('${sessionStorage.profileImg
       }')"></span>
       </div>
       `;
@@ -471,17 +503,17 @@ let displayProfilePictures = () => {
       <img class="profile-image" src="${sessionStorage.profileImg}">
       <p id="username-account">${sessionStorage.userName.toUpperCase()}</p>
       `;
-      if (sessionStorage.bio == "undefined") {
-        accountBio.innerHTML =
-      `
+    if (sessionStorage.bio == "undefined") {
+      accountBio.innerHTML =
+        `
       <p id="bio-account">No bio yet!</p>
       `;
-  } else {
-    accountBio.innerHTML =
-    `
+    } else {
+      accountBio.innerHTML =
+        `
     <p id="bio-account">${sessionStorage.bio}</p>
     `;
-};
+    };
   }
 }
 
@@ -526,7 +558,7 @@ let renderProductModal = (projectData) => {
   let productName = document.getElementById("product-name");
   let productDescription = document.getElementById("description-type");
   let productImage = document.getElementById("product-image");
-  let productComments = document.getElementById("product-comments");
+  // let productComments = document.getElementById("product-comments");
   let currentId = projectData._id;
   productOwner.innerHTML = `
 <h3>${projectData.productowner.toUpperCase()}</h3>
@@ -546,9 +578,9 @@ let renderProductModal = (projectData) => {
 <img src="${projectData.img_url}" alt="${projectData.name}">
 `;
 
-  productComments.innerHTML = `
-    <p>No comments yet!</p>
-  `;
+  // productComments.innerHTML = `
+  //   <p>No comments yet!</p>
+  // `;
 };
 
 // =================================
