@@ -66,9 +66,9 @@
         <div id="account-details">
             <div class="account-functions">
                 <a href="account.html">
-                  <p>ACCOUNT</p>
+                    <p>ACCOUNT</p>
                 </a>
-                </div>
+            </div>
             <div class="account-functions">
                 <p id="sign-out-button">LOGOUT</p>
             </div>
@@ -94,10 +94,15 @@
         <button id="go-button">Post New Product</button>
     </div>
 
-    <div class="edit-account-header">
-        <h1 class="edit-title">Edit Account</h1>
-        <a href="account.html"> <button class="back-button">BACK TO ACCOUNT</button> </a>
-    </div>
+    <header>
+        <div class="header-title">
+          <h3>Edit Account</h3>
+        </div>
+        <div class="filer">
+            <a href="account.html"> <button class="back-button">BACK TO ACCOUNT</button> </a>
+        </div>
+      </header>
+
 
     <div id="edit-profile-image">
         <div id="account-image"></div>
@@ -116,13 +121,11 @@
         <br>
         <input class="edit-input" id="username-input" name="username-input" type="text"> <br>
 
-        <!-- <label class="edit-label" for="email-input">Email: </label>
-        <br>
-        <input class="edit-input" id="email-input" name="email-input" type="text"> <br> -->
-
         <label class="edit-label" for="bio-input">Bio: </label>
         <br>
-        <input class="edit-description-input" id="bio-input" name="description-input" type="text"> <br>
+
+        <textarea rows="5" cols="44" class="edit-description-input" id="bio-input" name="description-input">
+         </textarea><br>
 
         <div class="button-container">
             <button id="edit-button1" data-bs-toggle="modal" data-bs-target="#updatePasswordModal">RESET

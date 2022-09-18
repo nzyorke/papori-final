@@ -122,6 +122,10 @@ label {
   overflow: hidden;
 }
 
+.display {
+  display: block !important;
+}
+
 .product-modal-container {
   height: 100%;
   background: #FDFBFC;
@@ -129,7 +133,7 @@ label {
 
 .product-modal-grid {
   display: grid;
-  grid-template-rows: 250px 0.5fr 3fr 1fr;
+  grid-template-rows: 250px 0.5fr 3fr 2fr;
   grid-template-columns: 1fr;
   gap: 10px;
   height: 100%;
@@ -156,6 +160,10 @@ label {
 .product-name {
   display: flex;
   justify-content: space-between;
+}
+
+.modal-description {
+  display: none;
 }
 
 .product-image {
@@ -263,20 +271,10 @@ label {
   height: 100%;
 }
 
-.inquire {
+#inquire {
   display: flex;
   justify-content: flex-end;
-  padding: 2% 2%;
-}
-.inquire button {
-  font-weight: 300;
-  letter-spacing: 0.1em;
-  width: 135px;
-  all: unset;
-  color: #FDFBFC;
-  background: #1C2536;
-  padding: 10px 20px 10px 20px;
-  display: flex;
+  padding: 0 2%;
 }
 
 .comments-style h4 {
@@ -289,10 +287,13 @@ label {
   font-size: 0.8em;
 }
 
-.product-comments {
+.product-comments-container {
   padding: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
-.product-comments h3 {
+.product-comments-container h3 {
   padding: 0 0 2% 0;
   font-weight: 300;
 }
@@ -319,6 +320,10 @@ label {
 }
 .comment-input button p {
   font-size: 0.8em;
+}
+
+.modal-message-container {
+  display: none;
 }
 
 .modal-message {
@@ -349,7 +354,14 @@ label {
 }
 
 .modal-message-large {
-  height: 60% !important;
+  all: unset;
+  border: solid 1px #1C2536;
+  height: 80% !important;
+  font-size: 17px;
+  padding-left: 5px;
+  padding-top: 10px;
+  color: white;
+  margin-bottom: 2%;
 }
 
 .modal-message-buttons {
@@ -362,7 +374,7 @@ label {
   all: unset;
   color: #FDFBFC;
   background: #1C2536;
-  padding: 10px 20px 10px 20px;
+  padding: 10px 15%;
   display: flex;
 }
 .modal-message-buttons button p {
@@ -462,6 +474,13 @@ label {
   margin-top: 15px;
 }
 
+.product-comments {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
 @media only screen and (min-width: 1024px) {
   .product-modal-grid {
     grid-template-rows: 1fr 2fr 2fr 2fr;
@@ -477,7 +496,7 @@ label {
   .modal-description {
     grid-row: 2/4;
   }
-  .product-comments {
+  .product-comments-container {
     grid-row: 4/5;
     grid-column: 1/3;
     padding: 2%;
@@ -490,6 +509,12 @@ label {
   }
   .padding-comments {
     padding: 1%;
+  }
+  .comment-input input {
+    width: 85%;
+  }
+  .comment-input button {
+    padding: 10px 4%;
   }
 }
 .gallery .swiper {
@@ -2376,6 +2401,8 @@ nav {
 
 .edit-description-input {
   height: 140px;
+  box-sizing: border-box;
+  padding-bottom: 95px;
 }
 
 .button-container {
@@ -2437,7 +2464,6 @@ nav {
 
 .account-header {
   height: 60px;
-  border-top: 2px solid #1C2536;
   border-bottom: 2px solid #1C2536;
   display: flex;
   flex-wrap: wrap;
@@ -2518,7 +2544,7 @@ nav {
 #bio-account {
   display: flex;
   justify-content: center;
-  padding: 5% 20%;
+  padding: 5% 10%;
   text-align: center;
   font-weight: 300;
   font-family: "Plus Jakarta Sans", sans-serif;
@@ -3225,6 +3251,25 @@ header {
   color: #FDFBFC;
   background: #1C2536;
   padding: 10px 20px 10px 20px;
+  display: flex;
+}
+
+.account-buttons {
+  margin-right: 5%;
+  position: relative;
+  display: flex;
+  width: 270px;
+  justify-content: space-between;
+}
+.account-buttons span {
+  margin-left: 5px;
+}
+.account-buttons button {
+  width: 135px;
+  all: unset;
+  color: #FDFBFC;
+  background: #1C2536;
+  padding: 10px 10px;
   display: flex;
 }
 
