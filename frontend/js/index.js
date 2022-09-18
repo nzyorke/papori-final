@@ -80,6 +80,7 @@ let collectProductModals = () => {
       console.log(productId);
       populateProductModal(productId);
       productModal.classList.toggle("active");
+      putCommentsInModal(productId);
     };
   }
   closeModalBtn.onclick = () => {
@@ -90,6 +91,7 @@ let collectProductModals = () => {
 openImage.onclick = () => {
   console.log("you clicked me");
 };
+
 
 // =================================
 //    RENDER PRODUCTS TO DISPLAY
@@ -106,17 +108,17 @@ let renderLandingpageGallery = (products) => {
     });
 
   trendingItems.forEach((item) => {
-    let renderComments = () => {
-      if (item.comments.length > 0) {
-        let allComments = "";
-        item.comments.forEach((comment) => {
-          allComments += `<li>${comment.text}</li>`;
-        });
-        return allComments;
-      } else {
-        return "<p>Be the first to place a comment!</p>";
-      }
-    };
+    // let renderComments = () => {
+    //   if (item.comments.length > 0) {
+    //     let allComments = "";
+    //     item.comments.forEach((comment) => {
+    //       allComments += `<li>${comment.text}</li>`;
+    //     });
+    //     return allComments;
+    //   } else {
+    //     return "<p>Be the first to place a comment!</p>";
+    //   }
+    // };
 
     if (item.createdby == sessionStorage.userID) {
       gallery0.innerHTML += `
@@ -256,56 +258,6 @@ let renderLandingpageGallery = (products) => {
     `;
     }
   });
-  // banner items
-  //   let startBannerItems = 13;
-  //   let endBannerItems = 14;
-  //   let bannerItems = products.slice(startBannerItems, endBannerItems).map((item, i) => {
-  //     return item;
-  //   });
-
-  //   bannerItems.forEach((item) => {
-  //     let renderComments = () => {
-  //       if (item.comments.length > 0) {
-  //         let allComments = "";
-  //         item.comments.forEach((comment) => {
-  //           allComments += `<li>${comment.text}</li>`;
-  //         });
-  //         return allComments;
-  //       } else {
-  //         return "<p>Be the first to place a comment!</p>";
-  //       }
-  //     };
-
-  //     if (item.createdby == sessionStorage.userID) {
-  //       gallery1.innerHTML += `
-  //     <div class="product-container" id="${item._id}">
-  //       <div class="product-item">
-
-  //           <div class="product-image">
-  //               <img src="${item.img_url}" alt="${item.name}">
-  //           </div>
-  //           <div class="product-logo">
-  //             <img src="../frontend/media/logo_papori_white.svg" alt="logo_papori_white">
-  //           </div>
-
-  //       </div>
-  //   </div>
-  //     `;
-  //     } else {
-  //       gallery1.innerHTML += `
-  //     <div class="product-container" id="${item._id}">
-  //     <div class="product-item">  
-  //         <div class="product-image">
-  //             <img src="${item.img_url}" alt="${item.name}">
-  //         </div>
-  //     </div>
-  //     <div class="product-logo">
-  //     <img src="../frontend/media/logo_papori_white.svg" alt="logo_papori_white">
-  //   </div>
-  // </div>
-  //     `;
-  //     }
-  //   });
 
   // top sellers
   let startTopSellers = 8;
@@ -317,17 +269,17 @@ let renderLandingpageGallery = (products) => {
     });
 
   topSellerItems.forEach((item) => {
-    let renderComments = () => {
-      if (item.comments.length > 0) {
-        let allComments = "";
-        item.comments.forEach((comment) => {
-          allComments += `<li>${comment.text}</li>`;
-        });
-        return allComments;
-      } else {
-        return "<p>Be the first to place a comment!</p>";
-      }
-    };
+    // let renderComments = () => {
+    //   if (item.comments.length > 0) {
+    //     let allComments = "";
+    //     item.comments.forEach((comment) => {
+    //       allComments += `<li>${comment.text}</li>`;
+    //     });
+    //     return allComments;
+    //   } else {
+    //     return "<p>Be the first to place a comment!</p>";
+    //   }
+    // };
 
     if (item.createdby == sessionStorage.userID) {
       gallery2.innerHTML += `
@@ -392,29 +344,61 @@ let renderLandingpageGallery = (products) => {
 //      ADD COMMENT FUNCTION
 // =================================
 // This function will send the id to the onclick listener of the submit button
-let addComment = (productId) => {
-  const commentBtn = document.getElementById("submitComment");
-  // add a listener for the add comment button
+
+let renderComments = (product) => {
+  if (product.comments.length > 0) {
+    let allComments = "";
+    product.comments.forEach((comment) => {
+      allComments += `<li><img class="comments-profile-image" src="${comment.profile_img_url}">${comment.commentedby} ${comment.text}</li>`;
+    });
+    return allComments;
+  } else {
+    return "<p>Be the first to place a comment!</p>";
+  }
+};
+
+let putCommentsInModal = (productId) => {
+  $.ajax({
+    type: 'GET',
+    url: `http://localhost:3400/product/${productId}`,
+    success: (product) => {
+      // inner comments html
+      let productComments = document.getElementById("product-comments");
+      productComments.innerHTML = `
+      <ul>${renderComments(product)}</ul>
+      `
+    },
+    error: (error) => {
+      console.log(error);
+    }
+
+  });
+  let commentBtn = document.getElementById('post-comment');
   commentBtn.onclick = () => {
     console.log(productId);
     $.ajax({
       url: "http://localhost:3400/postComment",
       type: "POST",
       data: {
-        text: document.getElementById("productComment").value,
+        text: document.getElementById("comment-input").value,
         product_id: productId,
+        commentedby: sessionStorage.userName,
+        createdby: sessionStorage.userID,
+        profile_img_url: sessionStorage.profileImg,
       },
-      success: () => {
+      success: (commentedby, createdby, profile_img_url) => {
         console.log("Comment placed successfully");
         showAllProduct();
-        $("#commentModal").modal("hide");
+        console.log(commentedby, createdby, profile_img_url);
+        // $("#commentModal").modal("hide");
       },
       error: () => {
         console.log("error, can't post comment");
       },
     });
   };
-};
+
+}
 
 // =================================
 //COLLECT EDIT BUTTONS & EDIT FUNCTION
@@ -681,7 +665,7 @@ let renderProductModal = (projectData) => {
   let productName = document.getElementById("product-name");
   let productDescription = document.getElementById("description-type");
   let productImage = document.getElementById("product-image");
-  let productComments = document.getElementById("product-comments");
+  // let productComments = document.getElementById("product-comments");
   let currentId = projectData._id;
   productOwner.innerHTML = `
 <h3>${projectData.productowner.toUpperCase()}</h3>
@@ -701,9 +685,9 @@ let renderProductModal = (projectData) => {
 <img src="${projectData.img_url}" alt="${projectData.name}">
 `;
 
-  productComments.innerHTML = `
-    <p>No comments yet!</p>
-  `;
+  //   productComments.innerHTML = `
+  //     <p>No comments yet!</p>
+  //   `;
 };
 
 // =================================
