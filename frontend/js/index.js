@@ -3,7 +3,8 @@
 // =================================
 const gallery0 = document.getElementById(`gallery0`);
 const gallerySwiper = document.getElementById(`gallery-swiper`);
-const gallery1 = document.getElementById(`gallery1`);
+const gallerySwiper2 = document.getElementById(`gallery-swiper2`);
+// const gallery1 = document.getElementById(`gallery1`);
 const gallery2 = document.getElementById(`gallery2`);
 
 // =================================
@@ -97,7 +98,7 @@ openImage.onclick = () => {
 //    RENDER PRODUCTS TO DISPLAY
 // =================================
 
- 
+
 
 let renderLandingpageGallery = (products) => {
   // trending items
@@ -131,9 +132,8 @@ let renderLandingpageGallery = (products) => {
             <i class="bi bi-pencil edit-button" data-bs-toggle="modal" data-bs-target="#editModal"></i>
             </div>
             <div class="product-image">
-                <img src="${item.img_url}" class="open-image" alt="${
-        item.name
-      }">
+                <img src="${item.img_url}" class="open-image" alt="${item.name
+        }">
             </div>
             <div class="product-description">
                 <h4>${item.name.toUpperCase()}</h4>
@@ -168,8 +168,8 @@ let renderLandingpageGallery = (products) => {
   });
 
   // new items
-  let swiperItemsStart = 10;
-  let swiperItemsEnd = 15;
+  let swiperItemsStart = 1;
+  let swiperItemsEnd = 10;
   let swiperItems = products
     .slice(swiperItemsStart, swiperItemsEnd)
     .map((item, i) => {
@@ -203,55 +203,114 @@ let renderLandingpageGallery = (products) => {
     `;
     }
   });
-  // new items
-  let startNewItems = 5;
-  let endNewItems = 6;
-  let newItems = products.slice(startNewItems, endNewItems).map((item, i) => {
-    return item;
-  });
 
-  newItems.forEach((item) => {
-    let renderComments = () => {
-      if (item.comments.length > 0) {
-        let allComments = "";
-        item.comments.forEach((comment) => {
-          allComments += `<li>${comment.text}</li>`;
-        });
-        return allComments;
-      } else {
-        return "<p>Be the first to place a comment!</p>";
-      }
-    };
+  let swiperItems2Start = 10;
+  let swiperItems2End = 17;
+  let swiperItems2 = products
+    .slice(swiperItems2Start, swiperItems2End)
+    .map((item, i) => {
+      return item;
+    });
 
+  swiperItems2.forEach((item) => {
     if (item.createdby == sessionStorage.userID) {
-      gallery1.innerHTML += `
-    <div class="product-container" id="${item._id}">
-      <div class="product-item">
-          
-          <div class="product-image">
-              <img src="${item.img_url}" alt="${item.name}">
-          </div>
-          <div class="product-logo">
-            <img src="../frontend/media/logo_papori_white.svg" alt="logo_papori_white">
-          </div>
-      </div>
-  </div>
+      gallerySwiper2.innerHTML += `
+      <div class="swiper-slide">
+            <div class="product-container" id="${item._id}">
+                <div class="product-item">
+                    <div class="product-buttons">
+                        <i class="bi bi-trash trash-button" id="delete" data-bs-toggle="modal"
+                            data-bs-target="#deleteModal"></i>
+                        <i class="bi bi-pencil edit-button" data-bs-toggle="modal" data-bs-target="#editModal"></i>
+                    </div>
+                    <div class="product-image">
+                        <img src="${item.img_url}" class="open-image" alt="${item.name
+        }">
+                    </div>
+                    <div class="product-description">
+                        <h4>${item.name.toUpperCase()}</h4>
+                        <p>BY ${item.productowner.toUpperCase()}</p>
+                        <div id="favourite">
+                            <h3>$${item.price}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     `;
     } else {
-      gallery1.innerHTML += `
-    <div class="product-container" id="${item._id}">
-    <div class="product-item">  
-        <div class="product-image">
-            <img src="${item.img_url}" alt="${item.name}">
+      gallerySwiper2.innerHTML += `
+      <div class="swiper-slide">
+        <div class="product-container" id="${item._id}">
+            <div class="product-item">
+                <div class="product-buttons">
+                </div>
+                <div class="product-image">
+                    <img src="${item.img_url}" class="open-image" alt="${item.name}">
+                </div>
+                <div class="product-description">
+                    <h4>${item.name.toUpperCase()}</h4>
+                    <p>BY ${item.productowner.toUpperCase()}</p>
+                    <div id="favourite">
+                        <h3>$${item.price}</h3>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="product-logo">
-      <img src="../frontend/media/logo_papori_white.svg" alt="logo_papori_white">
-    </div>
-</div>
     `;
     }
   });
+  // banner items
+  //   let startBannerItems = 13;
+  //   let endBannerItems = 14;
+  //   let bannerItems = products.slice(startBannerItems, endBannerItems).map((item, i) => {
+  //     return item;
+  //   });
+
+  //   bannerItems.forEach((item) => {
+  //     let renderComments = () => {
+  //       if (item.comments.length > 0) {
+  //         let allComments = "";
+  //         item.comments.forEach((comment) => {
+  //           allComments += `<li>${comment.text}</li>`;
+  //         });
+  //         return allComments;
+  //       } else {
+  //         return "<p>Be the first to place a comment!</p>";
+  //       }
+  //     };
+
+  //     if (item.createdby == sessionStorage.userID) {
+  //       gallery1.innerHTML += `
+  //     <div class="product-container" id="${item._id}">
+  //       <div class="product-item">
+
+  //           <div class="product-image">
+  //               <img src="${item.img_url}" alt="${item.name}">
+  //           </div>
+  //           <div class="product-logo">
+  //             <img src="../frontend/media/logo_papori_white.svg" alt="logo_papori_white">
+  //           </div>
+
+  //       </div>
+  //   </div>
+  //     `;
+  //     } else {
+  //       gallery1.innerHTML += `
+  //     <div class="product-container" id="${item._id}">
+  //     <div class="product-item">  
+  //         <div class="product-image">
+  //             <img src="${item.img_url}" alt="${item.name}">
+  //         </div>
+  //     </div>
+  //     <div class="product-logo">
+  //     <img src="../frontend/media/logo_papori_white.svg" alt="logo_papori_white">
+  //   </div>
+  // </div>
+  //     `;
+  //     }
+  //   });
 
   // top sellers
   let startTopSellers = 8;
@@ -569,8 +628,7 @@ let checkLogin = () => {
     navContent = `
         <div class="account-button" id="nav-img-acc">
       <span id="username">${sessionStorage.userName.toUpperCase()}</span>
-      <span id="dp" style="background-image: url('${
-        sessionStorage.profileImg
+      <span id="dp" style="background-image: url('${sessionStorage.profileImg
       }')"></span>
       </div>
       `;
