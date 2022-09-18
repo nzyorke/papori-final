@@ -14,15 +14,14 @@
     <!-- bootstraps -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- swiper cdn  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 
     <link rel="stylesheet" href="css/styles.css">
-    <title>Edit Account</title>
+    <title>Summative</title>
 </head>
 
 <body>
-
-    <div id="filter" style="display: none;"></div>
-
     <nav>
         <div class="nav-wrapper">
             <div id="nav-bar" class="nav-grid">
@@ -74,67 +73,54 @@
             </div>
         </div>
     </nav>
+    <!--  -->
+    <div class="whatis">
+        <h6>what is</h6>
+        <h1>Papori</h1>
+        <div class="line"></div>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+            laborum.</p>
+        <img src="../frontend/media/Star 3.svg" alt="logo_papori">
 
-    <div class="nav-padding"></div>
-
-    <div id="filter" style="display: none;"></div>
-
-
-
-
-
-
-
-    <!-- Add Product Form  -->
-    <div id="add-product-div" style="display: none;"></div>
-
-
-
-    <div id="add-product-button" style="display: none;">
-        <button id="go-button">Post New Product</button>
     </div>
-
-    <header>
-        <div class="header-title">
-          <h3>Edit Account</h3>
+    <!--  -->
+    <div class="whoweare">
+        <div class="header">
+            <h6>who we are</h6>
         </div>
-        <div class="filer">
-            <a href="account.html"> <button class="back-button">BACK TO ACCOUNT</button> </a>
+        <div class="content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                commodo consequat.</p>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum.</p>
+            <p>Et pharetra pharetra massa massa ultricies mi quis hendrerit. Dis parturient montes nascetur ridiculus
+                mus
+                mauris. Auctor eu augue ut lectus arcu.</p>
         </div>
-      </header>
-
-
-    <div id="edit-profile-image">
-        <div id="account-image"></div>
     </div>
-
-    <div id="account-profile-header" style="display: none;"></div>
-
-
-    <!-- FORM  -->
-    <form id="edit-account-form" action="javascript:void(0);">
-        <label class="edit-label" for="profilepic-input">Profile Picture URL: </label>
-        <br>
-        <input class="edit-input" id="profilepic-input" name="profilepic-input" type="text"> <br>
-
-        <label class="edit-label" for="username-input">Username: </label>
-        <br>
-        <input class="edit-input" id="username-input" name="username-input" type="text"> <br>
-
-        <label class="edit-label" for="bio-input">Bio: </label>
-        <br>
-
-        <textarea rows="5" cols="44" class="edit-description-input" id="bio-input" name="description-input">
-         </textarea><br>
-
-        <div class="button-container">
-            <button id="edit-button1" data-bs-toggle="modal" data-bs-target="#updatePasswordModal">RESET
-                PASSWORD</button> <br>
-            <button id="edit-button2">UPDATE ACCOUNT</button>
+    <!--  -->
+    <div class="theteam">
+        <div class="header">
+            <h6>The Team</h6>
         </div>
-    </form>
-
-
+        <div class="team1">
+            <div class="team1-a">
+                <h6>Team 1</h6>
+                <img src="#" alt="#">
+            </div>
+            <div class="team1-b">
+                <p>Et pharetra pharetra massa massa ultricies mi quis hendrerit. Dis parturient montes nascetur
+                    ridiculus mus mauris. Auctor eu augue ut lectus arcu. Duis tristique sollicitudin nibh sit amet
+                    commodo nulla facilisi nullam. Varius duis at consectetur lorem donec massa. Risus in hendrerit
+                    gravida rutrum quisque non tellus orci ac.</p>
+            </div>
+        </div>
+    </div>
+    <!--  -->
     <footer>
         <div class="footer-top">
 
@@ -150,10 +136,10 @@
                 </div>
 
             </div>
-            <div class="footer-top-header wrapper1" id="footer-top-header">
+            <div class="footer-top-header " id="footer-top-header">
                 <p>Papori</p>
             </div>
-            <div class="footer-top-info1 wrapper1" id="footer-top-info1">
+            <div class="footer-top-info1 wrapper1 right" id="footer-top-info1 ">
                 <div class="title">
                     <p>Info</p>
                 </div>
@@ -193,51 +179,25 @@
                 <a href="#">Built by BMJ</a>
             </div>
         </div>
+
+
     </footer>
-
-    <!-- Change Password Modal -->
-    <div class="modal fade" id="updatePasswordModal" tabindex="-1" aria-labelledby="updatePasswordModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="edit-password-modal-content">
-                <div class="update-password-modal-header">
-                    <h5 class="modal-title" id="updatePasswordModalLabel">UPDATE PASSWORD</h5>
-                </div>
-                <div class="update-password-modal-body">
-
-                    <label class="edit-password-label-old" for="edit-password-input-old">Old password: </label>
-                    <br>
-                    <input class="edit-password-input-old" id="edit-password-input-old" name="edit-password-input-old"
-                        type="password"> <br>
-
-                    <label class="edit-password-label" for="edit-password-input">New password: </label>
-                    <br>
-                    <input class="edit-password-input" id="edit-password-input" name="edit-password-input"
-                        type="password"> <br>
-
-
-                    <button type="button" class="btn btn-secondary delete-modal-cancel-button"
-                        data-bs-dismiss="modal">CANCEL</button>
-                    <button id="submitDelete" name="submitDeleteButton" type="submit"
-                        class="btn btn-primary delete-button" data-bs-dismiss="modal">CONFIRM</button>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- End of Change Password Modal  -->
 
     <!-- jquery -->
     <script src="https://kit.fontawesome.com/ab86417da5.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
+    <!-- swiper js  -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
 
-    <script src="js/editaccount.js"></script>
+    <!-- <script src="js/landingpage.js"></script> -->
+    <script src="js/about.js"></script>
 </body>
 
 </html>

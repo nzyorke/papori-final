@@ -4,6 +4,7 @@
 @import '../css/modules/swiper.scss';
 @import '../css/modules/nav.scss';
 @import '../css/modules/index.scss';
+@import '../css/modules/about.scss';
 @import '../css/modules/landingpage.scss';
 @import '../css/modules/shop.scss';
 @import '../css/modules/account.scss';
@@ -78,6 +79,27 @@ header {
         color: $white;
         background: $blue;
         padding: 10px 20px 10px 20px;
+        display: flex;
+    }
+}
+
+
+.account-buttons {
+    margin-right: 5%;
+    position: relative;
+    display: flex;
+    width: 270px;
+    justify-content: space-between;
+    span {
+        margin-left: 5px;
+    }
+
+    button {
+        width: 135px;
+        all: unset;
+        color: $white;
+        background: $blue;
+        padding: 10px 10px;
         display: flex;
     }
 }
