@@ -757,6 +757,7 @@ listingsBtn.onclick = function () {
   favouriteUnderline.classList.toggle("display");
 };
 
+
 favouritesBtn.onclick = function () {
   accountList.classList.toggle("display");
   favouriteList.classList.toggle("display");
