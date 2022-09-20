@@ -18,6 +18,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="media/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="media/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="media/favicon.ico">
+  <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="css/styles.css" />
   <title>Shop</title>
 </head>
@@ -189,12 +190,20 @@
             <input onclick="select()" class="edit-modal-input" type="text" id="productDescription"
               name="productDescription">
             <br></br>
-
+            <label for="imgUrl">PRODUCT IMAGE</label>
+            <br>
+            <input onclick="select()" class="edit-modal-input" type="text" id="imgUrl" name="imgUrl">
+            <br></br>
             <label for="imgUrl">PRODUCT IMAGE</label>
             <br>
             <input onclick="select()" class="edit-modal-input" type="text" id="imgUrl" name="imgUrl">
             <br></br>
 
+          </div>
+          <div class="edit-modal-buttons">
+            <button type="button" class="btn btn-secondary edit-modal-button1" data-bs-dismiss="modal">CANCEL</button>
+            <button id="updateProduct" name="projectButton" type="submit" class="btn btn-primary edit-modal-button2"
+              data-bs-dismiss="modal">CONFIRM</button>
           </div>
           <div class="edit-modal-buttons">
             <button type="button" class="btn btn-secondary edit-modal-button1" data-bs-dismiss="modal">CANCEL</button>
@@ -252,8 +261,6 @@
     </div>
   </div>
   <!-- End of Post Delete Modal  -->
-
-
   <!-- product Modal -->
   <div id="productModal" class="productModal">
     <div class="product-modal-container">

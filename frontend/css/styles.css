@@ -1481,7 +1481,283 @@ nav {
   font-size: 18px;
   font-family: "Plus Jakarta Sans", sans-serif;
 }
+.theteam .team .team2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top: solid #1C2536 4px;
+  margin-top: 20px;
+}
+.theteam .team .team2 .team2-a {
+  width: 100%;
+  padding: 20px 0;
+}
+.theteam .team .team2 .team2-a .headername {
+  width: 100%;
+  align-items: left;
+}
+.theteam .team .team2 .team2-a .headername h6 {
+  color: white;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: #1C2536;
+}
+.theteam .team .team2 .team2-b img {
+  width: 100%;
+  height: 400px;
+}
+.theteam .team .team2 .team2-b p {
+  color: #1C2536;
+  font-weight: 400;
+  font-size: 18px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+.theteam .team .team3 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top: solid #1C2536 4px;
+  margin-top: 20px;
+}
+.theteam .team .team3 .team3-a {
+  width: 100%;
+  padding: 20px 0;
+}
+.theteam .team .team3 .team3-a .headername {
+  width: 100%;
+  align-items: left;
+}
+.theteam .team .team3 .team3-a .headername h6 {
+  color: white;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: #1C2536;
+}
+.theteam .team .team3 .team3-b img {
+  width: 100%;
+  height: 400px;
+}
+.theteam .team .team3 .team3-b p {
+  color: #1C2536;
+  font-weight: 400;
+  font-size: 18px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
 
+@media only screen and (min-width: 768px) {
+  .whatis h6 {
+    font-size: 40px;
+    font-family: "Sen", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    text-align: right;
+  }
+  .whatis h1 {
+    font-family: "mirra";
+    font-size: 280px;
+  }
+  .whatis .line {
+    height: 2px;
+    width: 100%;
+    background-color: #FDFBFC;
+    margin-bottom: 70px;
+    position: absolute;
+    bottom: 32%;
+  }
+  .whatis p {
+    margin-top: 35px;
+    text-align: center;
+    font-size: 30px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    letter-spacing: 1px;
+    line-height: 32px;
+  }
+  .whatis .star {
+    position: absolute;
+    bottom: 40px;
+    left: 44%;
+  }
+  .whoweare {
+    height: auto;
+    width: 100vw;
+    background-color: #7D876E;
+    color: #FDFBFC;
+    padding: 20px;
+  }
+  .whoweare .header h6 {
+    font-size: 35px;
+    font-family: "Sen", sans-serif;
+    letter-spacing: 2px;
+    border-bottom: solid #FDFBFC 2px;
+    line-height: 55px;
+    text-transform: uppercase;
+  }
+  .whoweare .content {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .whoweare .content .contentitem {
+    padding: 0 10px;
+  }
+  .whoweare .content .contentitem p {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 18px;
+    line-height: 30px;
+  }
+  .whoweare .content .contentitem:nth-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  .whoweare .content .contentitem:nth-child(2) {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+  .whoweare .content .contentitem:nth-child(3) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  .theteam {
+    height: auto;
+    width: 100vw;
+    padding: 20px;
+  }
+  .theteam .header {
+    border-bottom: solid 2px #1C2536;
+  }
+  .theteam .header h6 {
+    font-size: 30px;
+    font-family: "Sen", sans-serif;
+    letter-spacing: 2px;
+    border-bottom: solid #1C2536 2px;
+    line-height: 55px;
+    text-transform: uppercase;
+    color: #1C2536;
+  }
+  .theteam .team {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+  }
+  .theteam .team .team1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .theteam .team .team1 .team1-a {
+    width: 100%;
+    padding: 20px 0;
+  }
+  .theteam .team .team1 .team1-a .headername {
+    width: 100%;
+    align-items: left;
+  }
+  .theteam .team .team1 .team1-a .headername h6 {
+    color: white;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #1C2536;
+  }
+  .theteam .team .team1 .team1-b img {
+    width: 100%;
+    height: 400px;
+  }
+  .theteam .team .team1 .team1-b p {
+    color: #1C2536;
+    font-weight: 400;
+    font-size: 18px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+  .theteam .team .team2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top: solid #1C2536 4px;
+    margin-top: 20px;
+  }
+  .theteam .team .team2 .team2-a {
+    width: 100%;
+    padding: 20px 0;
+  }
+  .theteam .team .team2 .team2-a .headername {
+    width: 100%;
+    align-items: left;
+  }
+  .theteam .team .team2 .team2-a .headername h6 {
+    color: white;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #1C2536;
+  }
+  .theteam .team .team2 .team2-b img {
+    width: 100%;
+    height: 400px;
+  }
+  .theteam .team .team2 .team2-b p {
+    color: #1C2536;
+    font-weight: 400;
+    font-size: 18px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+  .theteam .team .team3 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top: solid #1C2536 4px;
+    margin-top: 20px;
+  }
+  .theteam .team .team3 .team3-a {
+    width: 100%;
+    padding: 20px 0;
+  }
+  .theteam .team .team3 .team3-a .headername {
+    width: 100%;
+    align-items: left;
+  }
+  .theteam .team .team3 .team3-a .headername h6 {
+    color: white;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #1C2536;
+  }
+  .theteam .team .team3 .team3-b img {
+    width: 100%;
+    height: 400px;
+  }
+  .theteam .team .team3 .team3-b p {
+    color: #1C2536;
+    font-weight: 400;
+    font-size: 18px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+}
 .landingpage {
   position: relative;
   width: 100%;
@@ -3847,6 +4123,12 @@ header {
   transition: .3s ease-in-out;
   font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;
 }
+
+.comments-profile-image {
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+}/*# sourceMappingURL=styles.css.map */
 
 .no-favourite {
   width: 200%;

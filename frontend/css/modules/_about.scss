@@ -164,6 +164,352 @@
 
         }
 
+        .team2 {
+            width: 100%;
+            @include flex-column;
+            align-items: center;
+            justify-content: center;
+            border-top: solid $blue 4px;
+            margin-top: 20px;
+
+            .team2-a {
+                width: 100%;
+                padding: 20px 0;
+
+                .headername {
+                    width: 100%;
+                    align-items: left;
+
+                    h6 {
+                        color: white;
+                        font-family: $jakarta;
+                        font-weight: 600;
+                        font-size: 20px;
+                        letter-spacing: 2px;
+                        color: $blue;
+                    }
+                }
+            }
+
+            .team2-b {
+                img {
+                    width: 100%;
+                    height: 400px;
+                }
+
+                p {
+                    color: $blue;
+                    font-weight: 400;
+                    font-size: 18px;
+                    font-family: $jakarta;
+                }
+            }
+
+        }
+
+        .team3 {
+            width: 100%;
+            @include flex-column;
+            align-items: center;
+            justify-content: center;
+            border-top: solid $blue 4px;
+            margin-top: 20px;
+
+            .team3-a {
+                width: 100%;
+                padding: 20px 0;
+
+                .headername {
+                    width: 100%;
+                    align-items: left;
+
+                    h6 {
+                        color: white;
+                        font-family: $jakarta;
+                        font-weight: 600;
+                        font-size: 20px;
+                        letter-spacing: 2px;
+                        color: $blue;
+                    }
+                }
+            }
+
+            .team3-b {
+                img {
+                    width: 100%;
+                    height: 400px;
+                }
+
+                p {
+                    color: $blue;
+                    font-weight: 400;
+                    font-size: 18px;
+                    font-family: $jakarta;
+                }
+            }
+
+        }
     }
 
 }
+
+@media only screen and (min-width: 768px) {
+    .whatis {
+
+        h6 {
+            font-size: 40px;
+            font-family: $sen;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            text-align: right;
+
+        }
+
+        h1 {
+            font-family: $mirra;
+            font-size: 280px;
+
+        }
+
+        .line {
+            height: 2px;
+            width: 100%;
+            background-color: $white;
+            margin-bottom: 70px;
+            position: absolute;
+            bottom: 32%;
+
+        }
+
+        p {
+            margin-top: 35px;
+            text-align: center;
+            font-size: 30px;
+            font-family: $jakarta;
+            letter-spacing: 1px;
+            line-height: 32px;
+        }
+
+        .star {
+            position: absolute;
+            bottom: 40px;
+            left: 44%;
+        }
+    }
+
+    .whoweare {
+        height: auto;
+        width: 100vw;
+        background-color: $green;
+        color: $white;
+        padding: 20px;
+
+
+        .header {
+
+            h6 {
+                font-size: 35px;
+                font-family: $sen;
+                letter-spacing: 2px;
+                border-bottom: solid $white 2px;
+                line-height: 55px;
+                text-transform: uppercase;
+            }
+        }
+
+        .content {
+            width: 100%;
+            height: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+
+            .contentitem {
+                padding: 0 10px;
+
+                p {
+                    font-family: $jakarta;
+                    font-size: 18px;
+                    line-height: 30px;
+                }
+            }
+
+            .contentitem:nth-child(1) {
+                grid-column-start: 1;
+                grid-column-end: 2;
+            }
+
+            .contentitem:nth-child(2) {
+                grid-column-start: 2;
+                grid-column-end: 3;
+            }
+
+            .contentitem:nth-child(3) {
+                grid-column-start: 1;
+                grid-column-end: 3;
+                grid-row-start: 2;
+                grid-row-end: 3;
+            }
+        }
+    }
+
+    .theteam {
+        height: auto;
+        width: 100vw;
+        padding: 20px;
+
+        .header {
+            border-bottom: solid 2px $blue;
+
+            h6 {
+                font-size: 30px;
+                font-family: $sen;
+                letter-spacing: 2px;
+                border-bottom: solid $blue 2px;
+                line-height: 55px;
+                text-transform: uppercase;
+                color: $blue;
+            }
+        }
+
+        .team {
+            width: 100%;
+            @include flex-column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 0;
+
+            .team1 {
+                width: 100%;
+                @include flex-column;
+                align-items: center;
+                justify-content: center;
+
+                .team1-a {
+                    width: 100%;
+                    padding: 20px 0;
+
+                    .headername {
+                        width: 100%;
+                        align-items: left;
+
+                        h6 {
+                            color: white;
+                            font-family: $jakarta;
+                            font-weight: 600;
+                            font-size: 20px;
+                            letter-spacing: 2px;
+                            color: $blue;
+                        }
+                    }
+                }
+
+                .team1-b {
+                    img {
+                        width: 100%;
+                        height: 400px;
+                    }
+
+                    p {
+                        color: $blue;
+                        font-weight: 400;
+                        font-size: 18px;
+                        font-family: $jakarta;
+                    }
+                }
+
+            }
+
+            .team2 {
+                width: 100%;
+                @include flex-column;
+                align-items: center;
+                justify-content: center;
+                border-top: solid $blue 4px;
+                margin-top: 20px;
+
+                .team2-a {
+                    width: 100%;
+                    padding: 20px 0;
+
+                    .headername {
+                        width: 100%;
+                        align-items: left;
+
+                        h6 {
+                            color: white;
+                            font-family: $jakarta;
+                            font-weight: 600;
+                            font-size: 20px;
+                            letter-spacing: 2px;
+                            color: $blue;
+                        }
+                    }
+                }
+
+                .team2-b {
+                    img {
+                        width: 100%;
+                        height: 400px;
+                    }
+
+                    p {
+                        color: $blue;
+                        font-weight: 400;
+                        font-size: 18px;
+                        font-family: $jakarta;
+                    }
+                }
+
+            }
+
+            .team3 {
+                width: 100%;
+                @include flex-column;
+                align-items: center;
+                justify-content: center;
+                border-top: solid $blue 4px;
+                margin-top: 20px;
+
+                .team3-a {
+                    width: 100%;
+                    padding: 20px 0;
+
+                    .headername {
+                        width: 100%;
+                        align-items: left;
+
+                        h6 {
+                            color: white;
+                            font-family: $jakarta;
+                            font-weight: 600;
+                            font-size: 20px;
+                            letter-spacing: 2px;
+                            color: $blue;
+                        }
+                    }
+                }
+
+                .team3-b {
+                    img {
+                        width: 100%;
+                        height: 400px;
+                    }
+
+                    p {
+                        color: $blue;
+                        font-weight: 400;
+                        font-size: 18px;
+                        font-family: $jakarta;
+                    }
+                }
+
+            }
+        }
+
+    }
+}
+
+@media only screen and (min-width: 1024px) {}
+
+@media only screen and (min-width: 1440px) {}
