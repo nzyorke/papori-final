@@ -13,13 +13,47 @@ const gallery2 = document.getElementById(`gallery2`);
 
 const navBar = document.getElementById("nav-bar");
 const navSearch = document.getElementById("nav-search");
+const searchIcon = document.getElementById(`search-icon`);
+let searchBarInput = document.querySelector(`#search-bar-input`);
+let searchButtonInput = document.getElementById(`search-button-input`);
 
 navSearch.onclick = function () {
   navExpand();
+
 };
 
 function navExpand() {
   navBar.classList.toggle("nav-expand");
+}
+
+// search function --
+searchButtonInput.onclick = () => {
+  searchItem();
+}
+
+const searchItem = () => {
+  let searchString = searchBarInput.value;
+
+  if (searchString == ``) {
+    console.log(`nothing searched searchItem`);
+  } else {
+    console.log(searchString + " searchItem");
+    runSearch(searchString);
+  }
+}
+
+let runSearch = (products, string) => {
+
+  console.log(string + " runsearch");
+
+  // let lowercaseSearchString = searchString.toLowerCase();
+  // let lowercasePortfolioGenre = products.name.toLowerCase();
+  // let match = lowercasePortfolioGenre.includes(lowercaseSearchString)
+
+  // if (match == true) {
+  //   console.log(`searched matched`);
+  // }
+
 }
 
 // =================================
@@ -34,7 +68,8 @@ let showAllProduct = () => {
     // your success function contains a object which can be named anything
     success: (products) => {
       console.log(products);
-      renderLandingpageGallery(products);
+      [renderLandingpageGallery](products);
+      runSearchs(products);
     },
     error: (error) => {
       console.log(error);
@@ -47,7 +82,9 @@ let showAllProduct = () => {
 // =================================
 
 populateProductModal = (productId) => {
+
   console.log(productId);
+
   $.ajax({
     url: `http://localhost:3400/product/${productId}`,
     type: "GET",
@@ -60,6 +97,7 @@ populateProductModal = (productId) => {
       console.log(error);
     },
   });
+
 };
 
 // =================================
@@ -374,6 +412,7 @@ let putCommentsInModal = (productId) => {
 
   });
   let commentBtn = document.getElementById('post-comment');
+
   commentBtn.onclick = () => {
     console.log(productId);
     $.ajax({
@@ -398,7 +437,7 @@ let putCommentsInModal = (productId) => {
     });
   };
 
-}
+};
 
 // =================================
 //COLLECT EDIT BUTTONS & EDIT FUNCTION

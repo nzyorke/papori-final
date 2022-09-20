@@ -1,4 +1,3 @@
-
 const goBtn = document.getElementById("addProduct");
 const accountResult = document.getElementById("account-result");
 

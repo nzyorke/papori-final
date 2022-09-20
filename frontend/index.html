@@ -43,9 +43,7 @@
                         <span id="search-icon" class="material-symbols-outlined"> search </span>
                     </div>
                     <div id="user-details" class="account-button">
-                        <!-- <span id="account-symbol" class="material-symbols-outlined"> account_circle </span>
-                <button id="account-button">ACCOUNT</button>
-              </div> -->
+
                     </div>
                 </div>
                 <div class="search-row">
@@ -53,7 +51,7 @@
                         <h2>Search our community for local buisnesses or products.</h2>
                     </div>
                     <div class="search-bar">
-                        <input id="search-bar-input" type="search" name="search-bar" placeholder="Search Pāpori..."
+                        <input id="search-bar-input" type="text" name="search-bar-input" placeholder="Search Pāpori..."
                             value=""><i id="search-button-input" class="bi bi-search pointer"></i>
                     </div>
                 </div>
@@ -97,10 +95,8 @@
         </div>
     </div>
 
-
-
     <!-- ================ -->
-    <!-- gallery -->
+    <!--     gallery -->
     <!-- ================ -->
     <div class="gallery-cont">
         <!-- <div class="gallery green">
@@ -164,10 +160,8 @@
 
     </div>
 
-
-
     <!-- ================ -->
-    <!-- gallery end -->
+    <!--     gallery end -->
     <!-- ================ -->
 
     <footer>
@@ -327,7 +321,7 @@
     <!-- Confirm Inquiry Sent Modal -->
     <div class="modal fade" id="inquiryModal" tabindex="-1" aria-labelledby="inquiryModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
+            <div class="modal-content" id="modal-content">
                 <div class="inquiry-modal-header">
                     <h5 class="inquiry-modal-title" id="data-bs-target">QUERY SENT TO</h5>
                     <div id="inquiry-owner"></div>
@@ -337,7 +331,7 @@
                     <p>Lorem ipsum dolor sit amet, <br>
                         consectetur adipiscing elit, sed do eiusmod tempor incididunt<br>
                         ut labore et dolore magna aliqua . . . </p>
-                    <i class="bi bi-check2-circle"></i>
+                    <i class="bi bi-check2-circle" id="inquire-close"></i>
                 </div>
             </div>
         </div>
@@ -405,6 +399,7 @@
 
     <!-- jquery -->
     <script src="https://kit.fontawesome.com/ab86417da5.js" crossorigin="anonymous"></script>
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <!-- end of product modal -->
@@ -416,7 +411,6 @@
 
     <!-- swiper js  -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
