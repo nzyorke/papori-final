@@ -109,18 +109,6 @@ let renderLandingpageGallery = (products) => {
     });
 
   trendingItems.forEach((item) => {
-    // let renderComments = () => {
-    //   if (item.comments.length > 0) {
-    //     let allComments = "";
-    //     item.comments.forEach((comment) => {
-    //       allComments += `<li>${comment.text}</li>`;
-    //     });
-    //     return allComments;
-    //   } else {
-    //     return "<p>Be the first to place a comment!</p>";
-    //   }
-    // };
-
     if (item.createdby == sessionStorage.userID) {
       gallery0.innerHTML += `
     <div class="product-container" id="${item._id}">
@@ -425,7 +413,6 @@ let putCommentsInModal = (productId) => {
         showAllProduct();
         putCommentsInModal(productId);
         console.log(commentedby, createdby, profile_img_url);
-        // $("#commentModal").modal("hide");
       },
       error: () => {
         console.log("error, can't post comment");
@@ -767,9 +754,9 @@ let renderProductModal = (projectData) => {
 <img src="${projectData.img_url}" alt="${projectData.name}">
 `;
 
-  //   productComments.innerHTML = `
-  //     <p>No comments yet!</p>
-  //   `;
+  //   productOwner.innerHTML = `
+  // <h3>${projectData.productowner.toUpperCase()}</h3>
+  // `;
 };
 
 // =================================

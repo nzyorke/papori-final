@@ -52,6 +52,8 @@ let showAllProduct = () => {
   });
 };
 
+
+
 // =================================
 //  GET PRODUCT COLLECTION FROM AJAX
 // =================================
@@ -596,9 +598,10 @@ let renderProductModal = (projectData) => {
 <img src="${projectData.img_url}" alt="${projectData.name}">
 `;
 
-  //   productComments.innerHTML = `
-  //     <p>No comments yet!</p>
-  //   `;
+  productOwner.innerHTML = `
+<h3>${projectData.productowner.toUpperCase()}</h3>
+`;
+
 };
 
 // =================================
@@ -621,9 +624,11 @@ const modalDescription = document.getElementById("modal-description");
 const modalMessage = document.getElementById("modal-message");
 const inquireBtn = document.getElementById("inquire-button");
 const backBtn = document.getElementById("back-button");
+
 const sendBtn = document.getElementById("send-button");
 const titleInput = document.getElementById("inquire-title-input");
 const messageInput = document.getElementById("inquire-title-message");
+
 
 inquireBtn.onclick = function () {
   modalDescription.classList.toggle("display");
@@ -635,6 +640,7 @@ backBtn.onclick = function () {
   modalDescription.classList.toggle("display");
   modalMessage.classList.toggle("display");
 };
+
 
 sendBtn.onclick = function () {
   titleInput.value = "";

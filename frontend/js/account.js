@@ -758,9 +758,26 @@ listingsBtn.onclick = function () {
   favouriteUnderline.classList.toggle("display");
 };
 
+const modalDescription = document.getElementById("modal-description");
+const modalMessage = document.getElementById("modal-message");
+const inquireBtn = document.getElementById("inquire-button");
+const backBtn = document.getElementById("back-button");
+
+inquireBtn.onclick = function () {
+  modalDescription.classList.toggle("display");
+  modalMessage.classList.toggle("display");
+  console.log("you clicked this button");
+};
+
+backBtn.onclick = function () {
+  modalDescription.classList.toggle("display");
+  modalMessage.classList.toggle("display");
+};
+
 favouritesBtn.onclick = function () {
   accountList.classList.toggle("display");
   favouriteList.classList.toggle("display");
   listUnderline.classList.toggle("display");
   favouriteUnderline.classList.toggle("display");
 };
+

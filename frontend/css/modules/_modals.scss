@@ -114,8 +114,8 @@ label {
     overflow: scroll;
 }
 
-.display{
-    display: block!important;
+.display {
+    display: block !important;
 }
 
 // button:hover {
@@ -331,6 +331,7 @@ label {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+
     h3 {
         padding: 0 0 2% 0;
         font-weight: 300;
@@ -526,7 +527,7 @@ label {
     margin-top: 15px;
 }
 
-.product-comments{
+.product-comments {
     display: flex;
     height: 85px;
     justify-content: center;
@@ -571,6 +572,47 @@ display: flex;
 }
 
 
+// INQUIRY MODAL
+.inquiry-modal-header {
+    text-align: center;
+    color: white;
+    height: 80px;
+    padding-top: 15px;
+    background-color: $green;
+    font-family: $sen;
+}
+
+.inquiry-modal-title {
+    font-size: 35px;
+    padding-top: 20px;
+}
+
+.inquiry-modal-body {
+    background: $green;
+    text-align: center;
+    color: white;
+    font-family: $sen;
+    border-top: 2px white;
+    height: 100px;
+    padding: 15px;
+}
+
+.inquiry-title {
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.bi-check2-circle {
+    font-size: 60px;
+}
+
+.comments-profile-image {
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+}
+
+
 
 
 @media only screen and (min-width: 1024px) {
@@ -612,13 +654,16 @@ display: flex;
         padding: 1%;
     }
 
+    .comment-input {
+        input {
+            width: 85%;
     .comment-input{
         input{
             width: 80%;
             height: 100%;
-
         }
-        button{
+
+        button {
             padding: 10px 4%;
         }
     }
