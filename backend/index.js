@@ -18,6 +18,7 @@ console.log(config);
 const Product = require("./models/product.js");
 const User = require("./models/user.js");
 const Comment = require("./models/comment.js");
+const Favourite = require("./models/favourite.js");
 
 // start our dependencies
 app.use(bodyParser.json());
@@ -293,5 +294,31 @@ app.get("/product/:id", (req, res) => {
     } else {
       res.send("product not found");
     }
+  });
+});
+
+// =================================
+//        ADD FAVOURITE METHOD
+// =================================
+
+app.post("/postFavourite", (req, res) => {
+  const newFavourite = new Favourite({
+    _id: new mongoose.Types.ObjectId,
+    product_id: req.body.product_id,
+    user_id: req.body.user_id,
+  });
+  // save (or post) this comment to the MongoDB
+  newFavourite.save().then((result) => {
+    User.findByIdAndUpdate(
+      // first parameter is the id of the coffee you want to find
+      newFavourite.user_id,
+      { $push: { favourites: newFavourite } }
+    )
+      .then((result) => {
+        res.send(newFavourite);
+      })
+      .catch((error) => {
+        res.send(error);
+      });
   });
 });

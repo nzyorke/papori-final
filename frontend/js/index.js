@@ -92,12 +92,13 @@ openImage.onclick = () => {
   console.log("you clicked me");
 };
 
-
 // =================================
 //    RENDER PRODUCTS TO DISPLAY
 // =================================
 
 let renderLandingpageGallery = (products) => {
+  gallery0.innerHTML = "";
+  gallery2.innerHTML = "";
   // trending items
   let startTrendingItems;
   let endTrendingItems = 4;
@@ -124,13 +125,18 @@ let renderLandingpageGallery = (products) => {
       gallery0.innerHTML += `
     <div class="product-container" id="${item._id}">
         <div class="product-item">
-            <div class="product-buttons">
-            <i class="bi bi-trash trash-button" id="delete" data-bs-toggle="modal" data-bs-target="#deleteModal"></i>
-            <i class="bi bi-pencil edit-button" data-bs-toggle="modal" data-bs-target="#editModal"></i>
-            </div>
+        <div class="product-buttons">
+        <span class="material-symbols-outlined" id="delete" data-bs-toggle="modal" data-bs-target="#deleteModal">
+disabled_by_default
+</span> 
+<span class="material-symbols-outlined edit-button" data-bs-toggle="modal" data-bs-target="#editModal"">
+edit_square
+</span>
+        </div>
             <div class="product-image">
-                <img src="${item.img_url}" class="open-image" alt="${item.name
-        }">
+                <img src="${item.img_url}" class="open-image" alt="${
+        item.name
+      }">
             </div>
             <div class="product-description">
                 <h4>${item.name.toUpperCase()}</h4>
@@ -146,7 +152,11 @@ let renderLandingpageGallery = (products) => {
       gallery0.innerHTML += `
       <div class="product-container" id="${item._id}">
       <div class="product-item">
-          <div class="product-buttons">
+          <div class="favourite-button">
+          <span class="material-symbols-outlined favourites-button">
+          favorite
+          </span>
+          
           </div>
           <div class="product-image">
               <img src="${item.img_url}" class="open-image" alt="${item.name}">
@@ -215,14 +225,18 @@ let renderLandingpageGallery = (products) => {
       <div class="swiper-slide">
             <div class="product-container" id="${item._id}">
                 <div class="product-item">
-                    <div class="product-buttons">
-                        <i class="bi bi-trash trash-button" id="delete" data-bs-toggle="modal"
-                            data-bs-target="#deleteModal"></i>
-                        <i class="bi bi-pencil edit-button" data-bs-toggle="modal" data-bs-target="#editModal"></i>
-                    </div>
+                <div class="product-buttons">
+                <span class="material-symbols-outlined" id="delete" data-bs-toggle="modal" data-bs-target="#deleteModal">
+    disabled_by_default
+    </span> 
+    <span class="material-symbols-outlined edit-button" data-bs-toggle="modal" data-bs-target="#editModal"">
+    edit_square
+    </span>
+                </div>
                     <div class="product-image">
-                        <img src="${item.img_url}" class="open-image" alt="${item.name
-        }">
+                        <img src="${item.img_url}" class="open-image" alt="${
+        item.name
+      }">
                     </div>
                     <div class="product-description">
                         <h4>${item.name.toUpperCase()}</h4>
@@ -240,10 +254,16 @@ let renderLandingpageGallery = (products) => {
       <div class="swiper-slide">
         <div class="product-container" id="${item._id}">
             <div class="product-item">
-                <div class="product-buttons">
-                </div>
+            <div class="favourite-button">
+            <span class="material-symbols-outlined favourites-button">
+            favorite
+            </span>
+            
+            </div>
                 <div class="product-image">
-                    <img src="${item.img_url}" class="open-image" alt="${item.name}">
+                    <img src="${item.img_url}" class="open-image" alt="${
+        item.name
+      }">
                 </div>
                 <div class="product-description">
                     <h4>${item.name.toUpperCase()}</h4>
@@ -285,10 +305,14 @@ let renderLandingpageGallery = (products) => {
       gallery2.innerHTML += `
     <div class="product-container" id="${item._id}">
       <div class="product-item">
-          <div class="product-buttons">
-          <i class="bi bi-trash trash-button" id="delete" data-bs-toggle="modal" data-bs-target="#deleteModal"></i>
-          <i class="bi bi-pencil edit-button" data-bs-toggle="modal" data-bs-target="#editModal"></i>
-          </div>
+      <div class="product-buttons">
+      <span class="material-symbols-outlined" id="delete" data-bs-toggle="modal" data-bs-target="#deleteModal">
+disabled_by_default
+</span> 
+<span class="material-symbols-outlined edit-button" data-bs-toggle="modal" data-bs-target="#editModal"">
+edit_square
+</span>
+      </div>
           <div class="product-image">
               <img src="${item.img_url}" alt="${item.name}">
           </div>
@@ -306,7 +330,10 @@ let renderLandingpageGallery = (products) => {
       gallery2.innerHTML += `
     <div class="product-container" id="${item._id}">
     <div class="product-item">
-        <div class="product-buttons">
+    <div class="favourite-button" id="">
+    <span class="material-symbols-outlined favourites-button">
+    favorite
+    </span>
         </div>
         <div class="product-image">
             <img src="${item.img_url}" alt="${item.name}">
@@ -333,6 +360,8 @@ let renderLandingpageGallery = (products) => {
 
   collectProductModals();
 
+  collectFavouriteButtons();
+
   let deleteBtn = document.getElementById("submitDelete");
   deleteBtn.onclick = () => {
     console.log(productId);
@@ -349,31 +378,34 @@ let renderComments = (product) => {
   if (product.comments.length > 0) {
     let allComments = "";
     product.comments.forEach((comment) => {
-      allComments += `<li><img class="comments-profile-image" src="${comment.profile_img_url}">${comment.commentedby} ${comment.text}</li>`;
+      allComments += `
+      <li><div class="user-comment-info"><img class="comments-profile-image" src="${comment.profile_img_url}"><h4>${comment.commentedby}</h4></div>
+      <div class="user-comment"><p>${comment.text}</p></div>
+      <div class="name-underline"></div>
+      </li>`;
     });
     return allComments;
   } else {
-    return "<p>Be the first to place a comment!</p>";
+    return `<div class="no-comment"><p>Be the first to comment!</p></div>`;
   }
 };
 
 let putCommentsInModal = (productId) => {
   $.ajax({
-    type: 'GET',
+    type: "GET",
     url: `http://localhost:3400/product/${productId}`,
     success: (product) => {
       // inner comments html
       let productComments = document.getElementById("product-comments");
       productComments.innerHTML = `
       <ul>${renderComments(product)}</ul>
-      `
+      `;
     },
     error: (error) => {
       console.log(error);
-    }
-
+    },
   });
-  let commentBtn = document.getElementById('post-comment');
+  let commentBtn = document.getElementById("post-comment");
   commentBtn.onclick = () => {
     console.log(productId);
     $.ajax({
@@ -387,8 +419,11 @@ let putCommentsInModal = (productId) => {
         profile_img_url: sessionStorage.profileImg,
       },
       success: (commentedby, createdby, profile_img_url) => {
+        let commentInput = document.getElementById("comment-input");
+        commentInput.value = "";
         console.log("Comment placed successfully");
         showAllProduct();
+        putCommentsInModal(productId);
         console.log(commentedby, createdby, profile_img_url);
         // $("#commentModal").modal("hide");
       },
@@ -397,8 +432,7 @@ let putCommentsInModal = (productId) => {
       },
     });
   };
-
-}
+};
 
 // =================================
 //COLLECT EDIT BUTTONS & EDIT FUNCTION
@@ -468,6 +502,53 @@ let collectEditButtons = () => {
       let currentId = editButtonsArray[i].parentNode.parentNode.parentNode.id;
       //edit products based on the id
       populateEditModal(currentId);
+    };
+  }
+};
+
+// =================================
+//    FAVOURITE BUTTON FUNCTION
+// =================================
+
+sendFavouriteId = (productId) => {
+  let userId = sessionStorage.userID;
+  $.ajax({
+    url: "http://localhost:3400/postFavourite",
+    type: "POST",
+    data: {
+      user_id: userId,
+      product_id: productId,
+    },
+    success: (product_id) => {
+      console.log("you have sent the favourited item");
+      // $("#commentModal").modal("hide");
+    },
+    error: () => {
+      console.log("error, can't post comment");
+    },
+  });
+};
+
+//this function will handle all our edits and add a click listener
+//if we click on an edit button it will get the id from the parent node (the div around around our prodcuts)
+let collectFavouriteButtons = () => {
+  // this will return an Array, but it's a slightly different one
+  // it returns HTML "nodes" instead
+  // Well have to use a regular loop over these
+  let favouriteButtonsArray =
+    document.getElementsByClassName("favourites-button");
+  //this will loop over every edit button
+  for (let i = 0; i < favouriteButtonsArray.length; i++) {
+    favouriteButtonsArray[i].onclick = () => {
+      console.log(favouriteButtonsArray[i].id);
+      console.log("favourite button clicked");
+      favouriteButtonsArray[i].classList.toggle("active-fill");
+
+      let currentId =
+        favouriteButtonsArray[i].parentNode.parentNode.parentNode.id;
+      console.log(currentId);
+      // edit products based on the id
+      sendFavouriteId(currentId);
     };
   }
 };
@@ -606,14 +687,15 @@ let checkLogin = () => {
     navContent = `
         <div class="account-button" id="nav-img-acc">
       <span id="username">${sessionStorage.userName.toUpperCase()}</span>
-      <span id="dp" style="background-image: url('${sessionStorage.profileImg
+      <span id="dp" style="background-image: url('${
+        sessionStorage.profileImg
       }')"></span>
       </div>
       `;
   } else {
     navContent = `<div id="nav-btn-acc">
-        <a id="account-symbol" href="signup.html"><span class="material-symbols-outlined"> account_circle </span></a>
-        <button id="account-button">ACCOUNT</button>
+        <a id="account-symbol" href="login.html"><span class="material-symbols-outlined"> account_circle </span></a>
+        <a href="login.html"><button id="account-button">ACCOUNT</button></a>
         </div>
         <div id="nav-img-acc" style="display: none;"></div>
       `;
@@ -629,7 +711,7 @@ const signoutBtn = document.getElementById("sign-out-button");
 let logOut = () => {
   console.log("log out");
   sessionStorage.clear();
-  window.location.reload();
+  window.location.replace("index.html");
 };
 
 if (sessionStorage.userID) {
@@ -710,6 +792,9 @@ const modalDescription = document.getElementById("modal-description");
 const modalMessage = document.getElementById("modal-message");
 const inquireBtn = document.getElementById("inquire-button");
 const backBtn = document.getElementById("back-button");
+const sendBtn = document.getElementById("send-button");
+const titleInput = document.getElementById("inquire-title-input");
+const messageInput = document.getElementById("inquire-title-message");
 
 inquireBtn.onclick = function () {
   modalDescription.classList.toggle("display");
@@ -718,6 +803,13 @@ inquireBtn.onclick = function () {
 };
 
 backBtn.onclick = function () {
+  modalDescription.classList.toggle("display");
+  modalMessage.classList.toggle("display");
+};
+
+sendBtn.onclick = function () {
+  titleInput.value = "";
+  messageInput.value = "";
   modalDescription.classList.toggle("display");
   modalMessage.classList.toggle("display");
 };
