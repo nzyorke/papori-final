@@ -14,24 +14,27 @@
   <!-- bootstraps -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+    <!-- Favicon image -->
+    <link rel="apple-touch-icon" sizes="180x180" href="media/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="media/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="media/favicon.ico">
+<link rel="manifest" href="/site.webmanifest">
 
   <link rel="stylesheet" href="css/styles.css" />
   <title>Shop</title>
 </head>
-
 <body>
   <nav>
     <div class="nav-wrapper">
       <div id="nav-bar" class="nav-grid">
         <div class="nav-options">
           <ul>
-            <li>SHOP</li>
-            <li>ABOUT</li>
-            <li>CONTACT</li>
+           <a href="shop.html"><li>SHOP</li></a>
+           <a href="about.html"><li>ABOUT</li></a>
           </ul>
         </div>
         <div class="nav-logo">
-          <img src="../frontend/media/nav-logo.svg" alt="nav logo">
+         <a href="index.html"><img src="../frontend/media/nav-logo.svg" alt="nav logo"></a> 
         </div>
         <div class="nav-tools">
           <div id="nav-search" class="search-button">
@@ -39,9 +42,6 @@
             <span id="search-icon" class="material-symbols-outlined"> search </span>
           </div>
           <div id="user-details" class="account-button">
-            <!-- <span id="account-symbol" class="material-symbols-outlined"> account_circle </span>
-                <button id="account-button">ACCOUNT</button>
-              </div> -->
           </div>
         </div>
         <div class="search-row">
@@ -73,14 +73,6 @@
 
   <div class="nav-padding"></div>
 
-  <!-- Add Product Form  -->
-  <div id="add-product-div" style="display: none;"></div>
-
-
-
-  <div style="display: none;" id="add-product-button">
-    <button style="display: none;" id="go-button">Post New Product</button>
-  </div>
 
   <header>
     <div class="header-title">
@@ -167,48 +159,49 @@
 
   </footer>
 
-  <!-- Edit Modal -->
-  <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <h5 class="modal-title" id="exampleModalLabel">Edit Listing</h5></strong>
-          <div id="image-preview"></div>
-          <div id="projectForm">
+     <!-- Edit Modal -->
+     <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <h5 class="modal-title" id="exampleModalLabel">Edit Listing</h5></strong>
+                  <div id="image-preview"></div>
+                  <div id="projectForm">
 
-            <label for="productName">TITLE</label>
-            <br>
-            <input class="edit-modal-input" type="text" id="productName" name="productName">
-            <br></br>
+                      <label for="productName">TITLE</label>
+                      <br>
+                      <input onclick="select()" class="edit-modal-input" type="text" id="productName" name="productName">
+                      <br></br>
 
-            <label for="productPrice">PRICE</label>
-            <br>
-            <input class="edit-modal-input" type="text" id="productPrice" name="productPrice">
-            <br></br>
+                      <label for="productPrice">PRICE</label>
+                      <br>
+                      <input onclick="select()" class="edit-modal-input" type="text" id="productPrice" name="productPrice">
+                      <br></br>
 
-            <label for="productDescription">DESCRIPTION</label>
-            <br>
-            <input class="edit-modal-input" type="text" id="productDescription" name="productDescription">
-            <br></br>
+                      <label for="productDescription">DESCRIPTION</label>
+                      <br>
+                      <input onclick="select()" class="edit-modal-input" type="text" id="productDescription" name="productDescription">
+                      <br></br>
 
-            <label for="imgUrl">PRODUCT IMAGE</label>
-            <br>
-            <input class="edit-modal-input" type="text" id="imgUrl" name="imgUrl">
-            <br></br>
+                      <label for="imgUrl">PRODUCT IMAGE</label>
+                      <br>
+                      <input onclick="select()" class="edit-modal-input" type="text" id="imgUrl" name="imgUrl">
+                      <br></br>
+
+                  </div>
+                  <div class="edit-modal-buttons">
+                      <button type="button" class="btn btn-secondary edit-modal-button1"
+                          data-bs-dismiss="modal">CANCEL</button>
+                      <button id="updateProduct" name="projectButton" type="submit"
+                          class="btn btn-primary edit-modal-button2" data-bs-dismiss="modal">CONFIRM</button>
+                  </div>
+              </div>
 
           </div>
-          <div class="edit-modal-buttons">
-            <button type="button" class="btn btn-secondary edit-modal-button1" data-bs-dismiss="modal">CANCEL</button>
-            <button id="updateProduct" name="projectButton" type="submit" class="btn btn-primary edit-modal-button2"
-              data-bs-dismiss="modal">CONFIRM</button>
-          </div>
-        </div>
-
       </div>
-    </div>
   </div>
 
   <!-- End of edit Modal  -->
@@ -257,61 +250,82 @@
   </div>
   <!-- End of Post Delete Modal  -->
 
-  <!-- product Modal -->
-  <div id="productModal" class="productModal">
-    <div class="product-modal-container">
-      <div class="product-modal-grid">
-        <i id="close-modal" class="fa-solid fa-x"></i>
-        <div id="product-image" class="product-image">
-        </div>
-        <div class="product-title">
-          <div id="product-name" class="product-name"></div>
-          <div id="product-owner" class="product-owner">
-          </div>
-        </div>
-        <div id="modal-description" class="modal-description display">
-          <div class="name-underline"></div>
-          <div class="description-flex">
-            <div id="description-type" class="description-type">
-
+      <!-- Confirm Inquiry Sent Modal -->
+      <div class="modal fade" id="inquiryModal" tabindex="-1" aria-labelledby="inquiryModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="inquiry-modal-header">
+                    <h5 class="inquiry-modal-title" id="data-bs-target">QUERY SENT TO</h5>
+                    <div id="inquiry-owner"></div>
+                </div>
+                <div class="inquiry-modal-body">
+                    <h3 class="inquiry-title">Message title here...</h3>
+                    <p>Lorem ipsum dolor sit amet, <br>
+                        consectetur adipiscing elit, sed do eiusmod tempor incididunt<br>
+                        ut labore et dolore magna aliqua . . . </p>
+                    <i class="bi bi-check2-circle"></i>
+                </div>
             </div>
-            <div id="inquire" class="modal-message-buttons">
-              <button id="inquire-button">
-                <p>INQUIRE</p>
-              </button>
-            </div>
-          </div>
         </div>
-        <div id="modal-message" class="modal-message-container">
-          <div class="name-underline"></div>
-          <div class="modal-message">
-            <h3>INQUIRE</h3>
-            <div class="modal-message-inputs">
-              <input placeholder="Write title here . . ." type="text">
-              <textarea rows="3" placeholder="Write message here . . ." cols="25" class="modal-message-large"
-                name="messageinput"></textarea>
-            </div>
-            <div class="modal-message-buttons">
-              <button id="back-button">
-                <p>BACK</p>
-              </button><button>
-                <p data-bs-toggle="modal" data-bs-target="#inquiryModal">SEND</p>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="product-comments-container" id="product-comments-container">
-          <h3>COMMENTS</h3>
-          <div class="comment-input">
-            <input id="comment-input" type="text"> <button id="post-comment">
-              <p>POST
-              <p>
-            </button>
-          </div>
-          <div class="product-comments" id="product-comments"></div>
-        </div>
-      </div>
     </div>
+
+    <!-- End of Confirm Inquiry Sent Modal  -->
+
+    <!-- product Modal -->
+    <div id="productModal" class="productModal">
+      <div class="product-modal-container">
+          <div class="product-modal-grid">
+              <i id="close-modal" class="fa-solid fa-x"></i>
+              <div id="product-image" class="product-image">
+              </div>
+              <div class="product-title">
+                  <div id="product-name" class="product-name"></div>
+                  <div id="product-owner" class="product-owner">
+                  </div>
+              </div>
+              <div id="modal-description" class="modal-description display">
+                  <div class="name-underline"></div>
+                  <div class="description-flex">
+                      <div id="description-type" class="description-type">
+
+                      </div>
+                      <div id="inquire" class="modal-message-buttons">
+                          <button id="inquire-button">
+                              <p>INQUIRE</p>
+                          </button>
+                      </div>
+                  </div>
+              </div>
+              <div id="modal-message" class="modal-message-container">
+                  <div class="name-underline"></div>
+                  <div class="modal-message">
+                      <h3>INQUIRE</h3>
+                      <div class="modal-message-inputs">
+                          <input id="inquire-title-input" placeholder="Write title here . . ." type="text">
+                          <textarea id="inquire-title-message" rows="3" placeholder="Write message here . . ." cols="25"
+                              class="modal-message-large" name="messageinput"></textarea>
+                      </div>
+                      <div class="modal-message-buttons">
+                          <button id="back-button">
+                              <p>BACK</p>
+                          </button><button data-bs-toggle="modal" data-bs-target="#inquiryModal" id="send-button">
+                              <p>SEND</p>
+                          </button>
+                      </div>
+                  </div>
+              </div>
+              <div class="product-comments-container" id="product-comments-container">
+                  <h3>COMMENTS</h3>
+                  <div class="comment-input">
+                      <input id="comment-input" type="text"> <button id="post-comment">
+                          <p>POST
+                          <p>
+                      </button>
+                  </div>
+                  <div class="product-comments" id="product-comments"></div>
+              </div>
+          </div>
+      </div>
   </div>
   <!-- end of product modal -->
 

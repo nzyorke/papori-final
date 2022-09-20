@@ -51,7 +51,7 @@ fillEditUserInputs = (user, id) => {
   let imageUrl = document.getElementById("profilepic-input");
 
   username.value = user.username;
-  password.value = user.password;
+  // password.value = user.password;
   if (sessionStorage.bio == "undefined") {
     bio.value = "";
 } else {
@@ -122,13 +122,10 @@ let checkLogin = () => {
       }')"></span>
       </div>
       `;
-    //   <a id="sign-out-button" href="#">Sign Out</a>
-   
   } else {
-   
     navContent = `<div id="nav-btn-acc">
-        <a id="account-symbol" href="signup.html"><span class="material-symbols-outlined"> account_circle </span></a>
-        <button id="account-button">ACCOUNT</button>
+        <a id="account-symbol" href="login.html"><span class="material-symbols-outlined"> account_circle </span></a>
+        <a href="login.html"><button id="account-button">ACCOUNT</button></a>
         </div>
         <div id="nav-img-acc" style="display: none;"></div>
       `;
@@ -160,7 +157,7 @@ const signoutBtn = document.getElementById("sign-out-button");
 let logOut = () => {
   console.log("log out");
   sessionStorage.clear();
-  window.location.reload();
+  window.location.replace("index.html");
 };
 
 if (sessionStorage.userID) {
@@ -168,6 +165,7 @@ if (sessionStorage.userID) {
     logOut();
   };
 }
+
 
 // const accountBtn = document.getElementById('nav-btn-acc');
 const accountImg = document.getElementById("nav-img-acc");
