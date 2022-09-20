@@ -68,8 +68,8 @@ let showAllProduct = () => {
     // your success function contains a object which can be named anything
     success: (products) => {
       console.log(products);
-      [renderLandingpageGallery](products);
-      runSearchs(products);
+      renderLandingpageGallery(products);
+      // runSearchs(products);
     },
     error: (error) => {
       console.log(error);
@@ -160,9 +160,8 @@ edit_square
 </span>
         </div>
             <div class="product-image">
-                <img src="${item.img_url}" class="open-image" alt="${
-        item.name
-      }">
+                <img src="${item.img_url}" class="open-image" alt="${item.name
+        }">
             </div>
             <div class="product-description">
                 <h4>${item.name.toUpperCase()}</h4>
@@ -260,9 +259,8 @@ edit_square
     </span>
                 </div>
                     <div class="product-image">
-                        <img src="${item.img_url}" class="open-image" alt="${
-        item.name
-      }">
+                        <img src="${item.img_url}" class="open-image" alt="${item.name
+        }">
                     </div>
                     <div class="product-description">
                         <h4>${item.name.toUpperCase()}</h4>
@@ -287,9 +285,8 @@ edit_square
             
             </div>
                 <div class="product-image">
-                    <img src="${item.img_url}" class="open-image" alt="${
-        item.name
-      }">
+                    <img src="${item.img_url}" class="open-image" alt="${item.name
+        }">
                 </div>
                 <div class="product-description">
                     <h4>${item.name.toUpperCase()}</h4>
@@ -715,8 +712,7 @@ let checkLogin = () => {
     navContent = `
         <div class="account-button" id="nav-img-acc">
       <span id="username">${sessionStorage.userName.toUpperCase()}</span>
-      <span id="dp" style="background-image: url('${
-        sessionStorage.profileImg
+      <span id="dp" style="background-image: url('${sessionStorage.profileImg
       }')"></span>
       </div>
       `;
