@@ -16,7 +16,10 @@
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <!-- swiper cdn  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
-
+    <!-- Favicon image -->
+    <link rel="apple-touch-icon" sizes="180x180" href="media/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="media/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="media/favicon.ico">
     <link rel="stylesheet" href="css/styles.css">
     <title>Summative</title>
 </head>
@@ -24,49 +27,53 @@
 <body>
     <nav>
         <div class="nav-wrapper">
-          <div id="nav-bar" class="nav-grid">
-            <div class="nav-options">
-              <ul>
-               <a href="shop.html"><li>SHOP</li></a>
-               <a href="about.html"><li>ABOUT</li></a>
-              </ul>
+            <div id="nav-bar" class="nav-grid">
+                <div class="nav-options">
+                    <ul>
+                        <a href="shop.html">
+                            <li>SHOP</li>
+                        </a>
+                        <a href="about.html">
+                            <li>ABOUT</li>
+                        </a>
+                    </ul>
+                </div>
+                <div class="nav-logo">
+                    <a href="index.html"><img src="../frontend/media/nav-logo.svg" alt="nav logo"></a>
+                </div>
+                <div class="nav-tools">
+                    <div id="nav-search" class="search-button">
+                        <p id="search-type">SEARCH</p>
+                        <span id="search-icon" class="material-symbols-outlined"> search </span>
+                    </div>
+                    <div id="user-details" class="account-button">
+                    </div>
+                </div>
+                <div class="search-row">
+                    <div class="search-message">
+                        <h2>Search our community for local buisnesses or products.</h2>
+                    </div>
+                    <div class="search-bar">
+                        <input id="search-bar-input" type="search" name="search-bar" placeholder="Search Pāpori..."
+                            value=""><i id="search-button-input" class="bi bi-search pointer"></i>
+                    </div>
+                </div>
+                <div id="search-notifications"></div>
             </div>
-            <div class="nav-logo">
-             <a href="index.html"><img src="../frontend/media/nav-logo.svg" alt="nav logo"></a> 
-            </div>
-            <div class="nav-tools">
-              <div id="nav-search" class="search-button">
-                <p id="search-type">SEARCH</p>
-                <span id="search-icon" class="material-symbols-outlined"> search </span>
-              </div>
-              <div id="user-details" class="account-button">
-              </div>
-            </div>
-            <div class="search-row">
-              <div class="search-message">
-                <h2>Search our community for local buisnesses or products.</h2>
-              </div>
-              <div class="search-bar">
-                <input id="search-bar-input" type="search" name="search-bar" placeholder="Search Pāpori..." value=""><i
-                  id="search-button-input" class="bi bi-search pointer"></i>
-              </div>
-            </div>
-            <div id="search-notifications"></div>
-          </div>
         </div>
         </div>
         </div>
         <div id="account-details">
-          <div class="account-functions">
-            <a href="account.html">
-              <p>ACCOUNT</p>
-            </a>
-          </div>
-          <div class="account-functions">
-            <p id="sign-out-button">LOGOUT</p>
-          </div>
+            <div class="account-functions">
+                <a href="account.html">
+                    <p>ACCOUNT</p>
+                </a>
+            </div>
+            <div class="account-functions">
+                <p id="sign-out-button">LOGOUT</p>
+            </div>
         </div>
-      </nav>
+    </nav>
 
     <div class="landingpage">
         <div class="star1">
@@ -116,7 +123,7 @@
                 <div class="swiper-button-prev swiper-button"></div>
                 <!-- <div class="swiper-pagination"></div> -->
                 <div class="gallery-button">
-          <button><a href="shop.html">browse more</a></button>
+                    <button><a href="shop.html">browse more</a></button>
                 </div>
             </div>
         </div>
@@ -240,17 +247,20 @@
 
                         <label for="productName">TITLE</label>
                         <br>
-                        <input onclick="select()" class="edit-modal-input" type="text" id="productName" name="productName">
+                        <input onclick="select()" class="edit-modal-input" type="text" id="productName"
+                            name="productName">
                         <br></br>
 
                         <label for="productPrice">PRICE</label>
                         <br>
-                        <input onclick="select()" class="edit-modal-input" type="text" id="productPrice" name="productPrice">
+                        <input onclick="select()" class="edit-modal-input" type="text" id="productPrice"
+                            name="productPrice">
                         <br></br>
 
                         <label for="productDescription">DESCRIPTION</label>
                         <br>
-                        <input onclick="select()" class="edit-modal-input" type="text" id="productDescription" name="productDescription">
+                        <input onclick="select()" class="edit-modal-input" type="text" id="productDescription"
+                            name="productDescription">
                         <br></br>
 
                         <label for="imgUrl">PRODUCT IMAGE</label>
@@ -365,8 +375,8 @@
                         <h3>INQUIRE</h3>
                         <div class="modal-message-inputs">
                             <input id="inquire-title-input" placeholder="Write title here . . ." type="text">
-                            <textarea id="inquire-title-message" rows="3" placeholder="Write message here . . ." cols="25"
-                                class="modal-message-large" name="messageinput"></textarea>
+                            <textarea id="inquire-title-message" rows="3" placeholder="Write message here . . ."
+                                cols="25" class="modal-message-large" name="messageinput"></textarea>
                         </div>
                         <div class="modal-message-buttons">
                             <button id="back-button">

@@ -54,9 +54,9 @@ fillEditUserInputs = (user, id) => {
   // password.value = user.password;
   if (sessionStorage.bio == "undefined") {
     bio.value = "";
-} else {
-bio.value = user.userdescription;
-};
+  } else {
+    bio.value = user.userdescription;
+  };
   imageUrl.value = user.profile_img_url;
 
   //=================================
@@ -86,8 +86,7 @@ bio.value = user.userdescription;
         console.log(data);
         console.log("Success - user was updated");
         newUsername = username;
-        newBio =  bio;
-        // newDescription = description;
+        newBio = bio;
         newImageUrl = imageUrl;
         sessionStorage.setItem("userName", newUsername);
         sessionStorage.setItem("profileImg", newImageUrl);
@@ -112,13 +111,10 @@ let checkLogin = () => {
   const userDetails = document.getElementById("user-details");
   let navContent;
   if (sessionStorage.userID) {
-    // console.log("You're logged in")
-    // console.log(sessionStorage.userName)
     navContent = `
         <div class="account-button" id="nav-img-acc">
       <span id="username">${sessionStorage.userName.toUpperCase()}</span>
-      <span id="dp" style="background-image: url('${
-        sessionStorage.profileImg
+      <span id="dp" style="background-image: url('${sessionStorage.profileImg
       }')"></span>
       </div>
       `;
@@ -204,3 +200,28 @@ for (let i = 0; i < footerTopInfo1.length; i++) {
 }
 
 
+const passwordModal = document.getElementById('updatePasswordModal')
+const openpasswordModalBtn = document.getElementById('edit-button1')
+const closepasswordModalBtn1 = document.getElementById('submitDelete')
+const closepasswordModalBtn2 = document.getElementById('cancelPasswordModal')
+
+
+openpasswordModalBtn.onclick = () => {
+  openPasswordModal();
+}
+
+closepasswordModalBtn1.onclick = () => {
+  closePasswordModal();
+}
+
+closepasswordModalBtn2.onclick = () => {
+  closePasswordModal();
+}
+
+function openPasswordModal() {
+  passwordModal.classList.toggle("active");
+}
+
+function closePasswordModal() {
+  passwordModal.classList.toggle("active");
+}
