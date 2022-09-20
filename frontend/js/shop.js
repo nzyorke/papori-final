@@ -52,45 +52,7 @@ let showAllProduct = () => {
   });
 };
 
-// =================================
-//        ADD NEW PRODUCTS
-// =================================
-const addNewProductDiv = document.getElementById("add-product-div");
 
-let addNewProducts = () => {
-  goBtn.onclick = () => {
-    const nameInput = document.getElementById("name-input");
-    const priceInput = document.getElementById("price-input");
-    const descriptionInput = document.getElementById("description-input");
-    const imageURLInput = document.getElementById("image-url-input");
-
-    $.ajax({
-      url: "http://localhost:3400/addProduct",
-      // use the post type to create data somewhere
-      // requesting to POST our data
-      type: "POST",
-      // we can send objects through to the backend, using the data argument
-      data: {
-        // the first property (i.e. the one on the left) called name has to be spelt exactly as the schema
-        name: nameInput.value,
-        price: priceInput.value,
-        description: descriptionInput.value,
-        img_url: imageURLInput.value,
-        createdby: sessionStorage.userID,
-        productowner: sessionStorage.userName,
-      },
-      success: () => {
-        console.log("A new product was added.");
-        showAllProduct();
-        console.log(sessionStorage.userName);
-        console.log(sessionStorage.userID);
-      },
-      error: () => {
-        console.log("Error: cannot reach the backend");
-      },
-    });
-  };
-};
 
 // =================================
 //  GET PRODUCT COLLECTION FROM AJAX
@@ -115,7 +77,6 @@ populateProductModal = (productId) => {
 // =================================
 //     PRODUCT MODAL FUNCTIONS
 // =================================
-
 
 const openImage = document.getElementsByClassName("open-image");
 const closeModalBtn = document.getElementById("close-modal");
@@ -153,19 +114,23 @@ let renderProducts = (products) => {
   console.log("the render products function is working");
   result.innerHTML = "";
   products.forEach((item) => {
-
     if (item.createdby == sessionStorage.userID) {
       result.innerHTML += `
 
         <div class="product-container" id="${item._id}">
         <div class="product-item">
             <div class="product-buttons">
-            <i class="bi bi-trash trash-button" id="delete" data-bs-toggle="modal" data-bs-target="#deleteModal"></i>
-            <i class="bi bi-pencil edit-button" data-bs-toggle="modal" data-bs-target="#editModal"></i>
+            <span class="material-symbols-outlined" id="delete" data-bs-toggle="modal" data-bs-target="#deleteModal">
+disabled_by_default
+</span> 
+<span class="material-symbols-outlined edit-button" data-bs-toggle="modal" data-bs-target="#editModal"">
+edit_square
+</span>
             </div>
             <div class="product-image">
-                <img src="${item.img_url}" class="open-image" alt="${item.name
-        }">
+                <img src="${item.img_url}" class="open-image" alt="${
+        item.name
+      }">
             </div>
             <div class="product-description">
                 <h4>${item.name.toUpperCase()}</h4>
@@ -182,7 +147,10 @@ let renderProducts = (products) => {
       result.innerHTML += `
       <div class="product-container" id="${item._id}">
       <div class="product-item">
-          <div class="product-buttons">
+      <div class="favourite-button" id="favourite-button">
+      <span class="material-symbols-outlined favourites-button">
+      favorite
+      </span>
           </div>
           <div class="product-image">
               <img src="${item.img_url}" class="open-image" alt="${item.name}">
@@ -209,6 +177,8 @@ let renderProducts = (products) => {
 
   collectProductModals();
 
+  collectFavouriteButtons();
+
   let deleteBtn = document.getElementById("submitDelete");
   deleteBtn.onclick = () => {
     console.log(productId);
@@ -226,31 +196,34 @@ let renderComments = (product) => {
   if (product.comments.length > 0) {
     let allComments = "";
     product.comments.forEach((comment) => {
-      allComments += `<li><img class="comments-profile-image" src="${comment.profile_img_url}">${comment.commentedby} ${comment.text}</li>`;
+      allComments += `
+      <li><div class="user-comment-info"><img class="comments-profile-image" src="${comment.profile_img_url}"><h4>${comment.commentedby}</h4></div>
+      <div class="user-comment"><p>${comment.text}</p></div>
+      <div class="name-underline"></div>
+      </li>`;
     });
     return allComments;
   } else {
-    return "<p>Be the first to place a comment!</p>";
+    return `<div class="no-comment"><p>Be the first to comment!</p></div>`;
   }
 };
 
 let putCommentsInModal = (productId) => {
   $.ajax({
-    type: 'GET',
+    type: "GET",
     url: `http://localhost:3400/product/${productId}`,
     success: (product) => {
       // inner comments html
       let productComments = document.getElementById("product-comments");
       productComments.innerHTML = `
       <ul>${renderComments(product)}</ul>
-      `
+      `;
     },
     error: (error) => {
       console.log(error);
-    }
-
+    },
   });
-  let commentBtn = document.getElementById('post-comment');
+  let commentBtn = document.getElementById("post-comment");
   commentBtn.onclick = () => {
     console.log(productId);
     $.ajax({
@@ -264,8 +237,11 @@ let putCommentsInModal = (productId) => {
         profile_img_url: sessionStorage.profileImg,
       },
       success: (commentedby, createdby, profile_img_url) => {
+        let commentInput = document.getElementById("comment-input");
+        commentInput.value = "";
         console.log("Comment placed successfully");
         showAllProduct();
+        putCommentsInModal(productId);
         console.log(commentedby, createdby, profile_img_url);
         // $("#commentModal").modal("hide");
       },
@@ -274,8 +250,7 @@ let putCommentsInModal = (productId) => {
       },
     });
   };
-
-}
+};
 
 // =================================
 //COLLECT EDIT BUTTONS & EDIT FUNCTION
@@ -356,6 +331,54 @@ let collectEditButtons = () => {
     };
   }
 };
+
+// =================================
+//    FAVOURITE BUTTON FUNCTION
+// =================================
+
+sendFavouriteId = (productId) => {
+  let userId = sessionStorage.userID;
+  $.ajax({
+    url: "http://localhost:3400/postFavourite",
+    type: "POST",
+    data: {
+      user_id: userId,
+      product_id: productId,
+    },
+    success: (product_id) => {
+      console.log("you have sent the favourited item");
+      // $("#commentModal").modal("hide");
+    },
+    error: () => {
+      console.log("error, can't post comment");
+    },
+  });
+};
+
+//this function will handle all our edits and add a click listener
+//if we click on an edit button it will get the id from the parent node (the div around around our prodcuts)
+let collectFavouriteButtons = () => {
+  // this will return an Array, but it's a slightly different one
+  // it returns HTML "nodes" instead
+  // Well have to use a regular loop over these
+  let favouriteButtonsArray =
+    document.getElementsByClassName("favourites-button");
+  //this will loop over every edit button
+  for (let i = 0; i < favouriteButtonsArray.length; i++) {
+    favouriteButtonsArray[i].onclick = () => {
+      console.log(favouriteButtonsArray[i].id);
+      console.log("favourite button clicked");
+      favouriteButtonsArray[i].classList.toggle("active-fill");
+
+      let currentId =
+        favouriteButtonsArray[i].parentNode.parentNode.parentNode.id;
+      console.log(currentId);
+      // edit products based on the id
+      sendFavouriteId(currentId);
+    };
+  }
+};
+
 
 // =================================
 //       POPULATE EDIT MODAL
@@ -441,7 +464,6 @@ let deleteProduct = (productId) => {
   });
 };
 
-
 // this function will handle all our deletes
 let collectDeleteButtons = () => {
   // this will return an Array, but it's a slightly different one
@@ -493,34 +515,18 @@ let checkLogin = () => {
   if (sessionStorage.userID) {
     // console.log("You're logged in")
     // console.log(sessionStorage.userName)
-    addNewProducts();
     navContent = `
         <div class="account-button" id="nav-img-acc">
       <span id="username">${sessionStorage.userName.toUpperCase()}</span>
-      <span id="dp" style="background-image: url('${sessionStorage.profileImg
+      <span id="dp" style="background-image: url('${
+        sessionStorage.profileImg
       }')"></span>
       </div>
       `;
-    //   <a id="sign-out-button" href="#">Sign Out</a>
-    addNewProductDiv.innerHTML = `
-      <form id="add-project-form" action="javascript:void(0)">
-      <label for="name-input">Product Name: </label>
-      <input id="name-input" name="name-input" type="text">
-      <label for="price-input">Product Price: </label>
-      <input id="price-input" name="price-input" type="text">
-      <label for="description-input">Product Description: </label>
-      <input id="description-input" name="description-input" type="text">
-      <label for="image-url-input">Product Image URL:</label>
-      <input id="image-url-input" name="image-url-input" type="text">
-  </form>
-      `;
   } else {
-    postProductBtnDiv.innerHTML = `
-        <a href="login.html"><button id="go-button">Post New Product</button></a>
-        `;
     navContent = `<div id="nav-btn-acc">
-        <a id="account-symbol" href="signup.html"><span class="material-symbols-outlined"> account_circle </span></a>
-        <button id="account-button">ACCOUNT</button>
+        <a id="account-symbol" href="login.html"><span class="material-symbols-outlined"> account_circle </span></a>
+        <a href="login.html"><button id="account-button">ACCOUNT</button></a>
         </div>
         <div id="nav-img-acc" style="display: none;"></div>
       `;
@@ -530,6 +536,20 @@ let checkLogin = () => {
 };
 
 checkLogin();
+
+const signoutBtn = document.getElementById("sign-out-button");
+
+let logOut = () => {
+  console.log("log out");
+  sessionStorage.clear();
+  window.location.replace("index.html");
+};
+
+if (sessionStorage.userID) {
+  signoutBtn.onclick = () => {
+    logOut();
+  };
+}
 
 // =================================
 //        ACCOUNT FUNCTIONS
@@ -578,31 +598,53 @@ let renderProductModal = (projectData) => {
 <img src="${projectData.img_url}" alt="${projectData.name}">
 `;
 
-  //   productComments.innerHTML = `
-  //     <p>No comments yet!</p>
-  //   `;
+  productOwner.innerHTML = `
+<h3>${projectData.productowner.toUpperCase()}</h3>
+`;
+
 };
 
 // =================================
 //        FOOTER FUNCTIONS
 // =================================
 
-
 let footerTopInfo1 = document.getElementsByClassName(`footer-top-info1`);
 
-
-
 for (let i = 0; i < footerTopInfo1.length; i++) {
-
   const element = footerTopInfo1[i];
 
   element.addEventListener("click", function () {
-
     this.classList.toggle("active");
 
     console.log("clicked");
-
   });
-
 }
 
+const modalDescription = document.getElementById("modal-description");
+const modalMessage = document.getElementById("modal-message");
+const inquireBtn = document.getElementById("inquire-button");
+const backBtn = document.getElementById("back-button");
+
+const sendBtn = document.getElementById("send-button");
+const titleInput = document.getElementById("inquire-title-input");
+const messageInput = document.getElementById("inquire-title-message");
+
+
+inquireBtn.onclick = function () {
+  modalDescription.classList.toggle("display");
+  modalMessage.classList.toggle("display");
+  console.log("you clicked this button");
+};
+
+backBtn.onclick = function () {
+  modalDescription.classList.toggle("display");
+  modalMessage.classList.toggle("display");
+};
+
+
+sendBtn.onclick = function () {
+  titleInput.value = "";
+  messageInput.value = "";
+  modalDescription.classList.toggle("display");
+  modalMessage.classList.toggle("display");
+};

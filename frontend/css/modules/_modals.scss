@@ -56,6 +56,7 @@ label {
     font-weight: 400;
     border-color: none;
     border: solid 1px black;
+
 }
 
 .modal-body {
@@ -110,11 +111,11 @@ label {
     transition: all .3s ease;
     cursor: pointer;
     line-height: 1.2;
-    overflow: hidden;
+    overflow: scroll;
 }
 
-.display{
-    display: block!important;
+.display {
+    display: block !important;
 }
 
 // button:hover {
@@ -330,6 +331,7 @@ label {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+
     h3 {
         padding: 0 0 2% 0;
         font-weight: 300;
@@ -345,7 +347,10 @@ label {
         all: unset;
         border: 1px solid $blue;
         width: 70%;
-        height: 30px;
+        height: 100%;
+        font-size: .7em;
+    padding-left: 2%;
+
     }
 
     button {
@@ -403,7 +408,6 @@ label {
     font-size: 17px;
     padding-left: 5px;
     padding-top: 10px;
-    color: white;
     margin-bottom: 2%;
 }
 
@@ -523,11 +527,89 @@ label {
     margin-top: 15px;
 }
 
-.product-comments{
+.product-comments {
     display: flex;
-    height: 100%;
+    height: 85px;
     justify-content: center;
     align-items: center;
+
+    ul{
+        all: unset;
+        width: 100%;
+      height: 100%;
+    }
+    li{
+        padding: 10px 0;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+}
+
+.user-comment-info {
+display: flex;
+    img{
+        margin-right: 10px;
+    }
+}
+
+.user-comment{
+    p{
+        font-size: .8em;
+    }
+}
+
+.no-comment{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.line-padding{
+    margin-bottom: 10px;
+}
+
+
+// INQUIRY MODAL
+.inquiry-modal-header {
+    text-align: center;
+    color: white;
+    height: 80px;
+    padding-top: 15px;
+    background-color: $green;
+    font-family: $sen;
+}
+
+.inquiry-modal-title {
+    font-size: 35px;
+    padding-top: 20px;
+}
+
+.inquiry-modal-body {
+    background: $green;
+    text-align: center;
+    color: white;
+    font-family: $sen;
+    border-top: 2px white;
+    height: 100px;
+    padding: 15px;
+}
+
+.inquiry-title {
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.bi-check2-circle {
+    font-size: 60px;
+}
+
+.comments-profile-image {
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
 }
 
 
@@ -572,12 +654,16 @@ label {
         padding: 1%;
     }
 
+    .comment-input {
+        input {
+            width: 85%;
     .comment-input{
         input{
-            width: 85%;
-
+            width: 80%;
+            height: 100%;
         }
-        button{
+
+        button {
             padding: 10px 4%;
         }
     }
