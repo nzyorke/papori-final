@@ -26,7 +26,7 @@ nav{
     max-height: 40px;
     overflow: hidden;
     display: grid;
-    grid-template-columns: 5fr 1fr 2fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 40px 160px;
     grid-template-areas: "nav-options nav-logo nav-tools";
     transition: .4s;
@@ -51,8 +51,11 @@ nav{
     }
 }
 
-.nav-logo{
-visibility: hidden;
+.nav-logo a{
+visibility: visible;
+display: flex;
+justify-content: center;
+height: 100%;
 }
 
 .nav-tools{
@@ -268,7 +271,7 @@ z-index: 99;
 @media only screen and (min-width: 768px) {
 
     .nav-grid{
-        grid-template-columns: 3fr 1fr 2fr;
+        grid-template-columns: 1fr 2fr 1fr;
     }
 
 // .nav-options{
@@ -299,7 +302,7 @@ z-index: 99;
 @media only screen and (min-width: 1024px) {
 
     .nav-grid{
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 3fr 1fr;
     }
     
     .nav-logo{

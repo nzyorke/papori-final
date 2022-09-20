@@ -24,55 +24,49 @@
 <body>
     <nav>
         <div class="nav-wrapper">
-            <div id="nav-bar" class="nav-grid">
-                <div class="nav-options">
-                    <ul>
-                        <a href="../frontend/shop.html">
-                            <li>SHOP</li>
-                        </a>
-                        <li>ABOUT</li>
-                        <li>CONTACT</li>
-                    </ul>
-                </div>
-                <div class="nav-logo">
-                    <img src="../frontend/media/nav-logo.svg" alt="nav logo">
-                </div>
-                <div class="nav-tools">
-                    <div id="nav-search" class="search-button">
-                        <p id="search-type">SEARCH</p>
-                        <span id="search-icon" class="material-symbols-outlined"> search </span>
-                    </div>
-                    <div id="user-details" class="account-button">
-                        <!-- <span id="account-symbol" class="material-symbols-outlined"> account_circle </span>
-                <button id="account-button">ACCOUNT</button>
-              </div> -->
-                    </div>
-                </div>
-                <div class="search-row">
-                    <div class="search-message">
-                        <h2>Search our community for local buisnesses or products.</h2>
-                    </div>
-                    <div class="search-bar">
-                        <input id="search-bar-input" type="search" name="search-bar" placeholder="Search Pāpori..."
-                            value=""><i id="search-button-input" class="bi bi-search pointer"></i>
-                    </div>
-                </div>
-                <div id="search-notifications"></div>
+          <div id="nav-bar" class="nav-grid">
+            <div class="nav-options">
+              <ul>
+               <a href="shop.html"><li>SHOP</li></a>
+               <a href="about.html"><li>ABOUT</li></a>
+              </ul>
             </div>
+            <div class="nav-logo">
+             <a href="index.html"><img src="../frontend/media/nav-logo.svg" alt="nav logo"></a> 
+            </div>
+            <div class="nav-tools">
+              <div id="nav-search" class="search-button">
+                <p id="search-type">SEARCH</p>
+                <span id="search-icon" class="material-symbols-outlined"> search </span>
+              </div>
+              <div id="user-details" class="account-button">
+              </div>
+            </div>
+            <div class="search-row">
+              <div class="search-message">
+                <h2>Search our community for local buisnesses or products.</h2>
+              </div>
+              <div class="search-bar">
+                <input id="search-bar-input" type="search" name="search-bar" placeholder="Search Pāpori..." value=""><i
+                  id="search-button-input" class="bi bi-search pointer"></i>
+              </div>
+            </div>
+            <div id="search-notifications"></div>
+          </div>
         </div>
         </div>
         </div>
         <div id="account-details">
-            <div class="account-functions">
-                <a href="account.html">
-                    <p>ACCOUNT</p>
-                </a>
-            </div>
-            <div class="account-functions">
-                <p id="sign-out-button">LOGOUT</p>
-            </div>
+          <div class="account-functions">
+            <a href="account.html">
+              <p>ACCOUNT</p>
+            </a>
+          </div>
+          <div class="account-functions">
+            <p id="sign-out-button">LOGOUT</p>
+          </div>
         </div>
-    </nav>
+      </nav>
 
     <div class="landingpage">
         <div class="star1">
@@ -122,7 +116,7 @@
                 <div class="swiper-button-prev swiper-button"></div>
                 <!-- <div class="swiper-pagination"></div> -->
                 <div class="gallery-button">
-                    <button>browse more</button>
+          <button><a href="shop.html">browse more</a></button>
                 </div>
             </div>
         </div>
@@ -132,7 +126,7 @@
             <h6>trending now</h6>
             <div id="gallery0"></div>
             <div class="gallery-button">
-                <button>browse more</button>
+                <button><a href="shop.html">browse more</a></button>
             </div>
         </div>
 
@@ -157,7 +151,7 @@
             <h6>Our Top Sellers</h6>
             <div id="gallery2"></div>
             <div class="gallery-button">
-                <button>browse more</button>
+                <button><a href="shop.html">browse more</a></button>
             </div>
         </div>
 
@@ -246,22 +240,22 @@
 
                         <label for="productName">TITLE</label>
                         <br>
-                        <input class="edit-modal-input" type="text" id="productName" name="productName">
+                        <input onclick="select()" class="edit-modal-input" type="text" id="productName" name="productName">
                         <br></br>
 
                         <label for="productPrice">PRICE</label>
                         <br>
-                        <input class="edit-modal-input" type="text" id="productPrice" name="productPrice">
+                        <input onclick="select()" class="edit-modal-input" type="text" id="productPrice" name="productPrice">
                         <br></br>
 
                         <label for="productDescription">DESCRIPTION</label>
                         <br>
-                        <input class="edit-modal-input" type="text" id="productDescription" name="productDescription">
+                        <input onclick="select()" class="edit-modal-input" type="text" id="productDescription" name="productDescription">
                         <br></br>
 
                         <label for="imgUrl">PRODUCT IMAGE</label>
                         <br>
-                        <input class="edit-modal-input" type="text" id="imgUrl" name="imgUrl">
+                        <input onclick="select()" class="edit-modal-input" type="text" id="imgUrl" name="imgUrl">
                         <br></br>
 
                     </div>
@@ -375,20 +369,21 @@
                     <div class="modal-message">
                         <h3>INQUIRE</h3>
                         <div class="modal-message-inputs">
-                            <input placeholder="Write title here . . ." type="text">
-                            <textarea rows="3" placeholder="Write message here . . ." cols="25"
+                            <input id="inquire-title-input" placeholder="Write title here . . ." type="text">
+                            <textarea id="inquire-title-message" rows="3" placeholder="Write message here . . ." cols="25"
                                 class="modal-message-large" name="messageinput"></textarea>
                         </div>
                         <div class="modal-message-buttons">
                             <button id="back-button">
                                 <p>BACK</p>
-                            </button><button>
-                                <p data-bs-toggle="modal" data-bs-target="#inquiryModal">SEND</p>
+                            </button><button data-bs-toggle="modal" data-bs-target="#inquiryModal" id="send-button">
+                                <p>SEND</p>
                             </button>
                         </div>
                     </div>
                 </div>
                 <div class="product-comments-container" id="product-comments-container">
+                    <div class="name-underline line-padding"></div>
                     <h3>COMMENTS</h3>
                     <div class="comment-input">
                         <input id="comment-input" type="text"> <button id="post-comment">
