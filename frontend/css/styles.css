@@ -494,6 +494,45 @@ label {
   align-items: center;
 }
 
+.inquiry-modal-header {
+  text-align: center;
+  color: white;
+  height: 80px;
+  padding-top: 15px;
+  background-color: #7D876E;
+  font-family: "Sen", sans-serif;
+}
+
+.inquiry-modal-title {
+  font-size: 35px;
+  padding-top: 20px;
+}
+
+.inquiry-modal-body {
+  background: #7D876E;
+  text-align: center;
+  color: white;
+  font-family: "Sen", sans-serif;
+  border-top: 2px white;
+  height: 100px;
+  padding: 15px;
+}
+
+.inquiry-title {
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+.bi-check2-circle {
+  font-size: 60px;
+}
+
+.comments-profile-image {
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+}
+
 @media only screen and (min-width: 1024px) {
   .product-modal-grid {
     grid-template-rows: 1fr 2fr 2fr 2fr;
@@ -1268,6 +1307,7 @@ nav {
   letter-spacing: 1px;
   line-height: 25px;
 }
+
 .whatis .star {
   position: absolute;
   bottom: 40px;
@@ -1281,6 +1321,7 @@ nav {
   color: #FDFBFC;
   padding: 20px;
 }
+
 .whoweare .header h6 {
   font-size: 30px;
   font-family: "Sen", sans-serif;
@@ -1289,6 +1330,7 @@ nav {
   line-height: 55px;
   text-transform: uppercase;
 }
+
 .whoweare .content {
   width: 100%;
   height: 90%;
@@ -1297,10 +1339,12 @@ nav {
   align-items: center;
   justify-content: flex-start;
 }
+
 .whoweare .content .contentitem {
   padding-top: 20px;
   padding-bottom: 40px;
 }
+
 .whoweare .content .contentitem p {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 18px;
@@ -1312,9 +1356,11 @@ nav {
   width: 100vw;
   padding: 20px;
 }
+
 .theteam .header {
   border-bottom: solid 2px #1C2536;
 }
+
 .theteam .header h6 {
   font-size: 30px;
   font-family: "Sen", sans-serif;
@@ -1324,6 +1370,7 @@ nav {
   text-transform: uppercase;
   color: #1C2536;
 }
+
 .theteam .team {
   width: 100%;
   display: flex;
@@ -1332,6 +1379,7 @@ nav {
   justify-content: center;
   padding: 20px 0;
 }
+
 .theteam .team .team1 {
   width: 100%;
   display: flex;
@@ -1339,14 +1387,17 @@ nav {
   align-items: center;
   justify-content: center;
 }
+
 .theteam .team .team1 .team1-a {
   width: 100%;
   padding: 20px 0;
 }
+
 .theteam .team .team1 .team1-a .headername {
   width: 100%;
   align-items: left;
 }
+
 .theteam .team .team1 .team1-a .headername h6 {
   color: white;
   font-family: "Plus Jakarta Sans", sans-serif;
@@ -1355,10 +1406,12 @@ nav {
   letter-spacing: 2px;
   color: #1C2536;
 }
+
 .theteam .team .team1 .team1-b img {
   width: 100%;
   height: 400px;
 }
+
 .theteam .team .team1 .team1-b p {
   color: #1C2536;
   font-weight: 400;
@@ -3557,44 +3610,5 @@ header {
 
 .filter-expand {
   max-height: 91px !important;
-  transition: 0.2s ease;
-}
-
-.inquiry-modal-header {
-  text-align: center;
-  color: white;
-  height: 80px;
-  padding-top: 15px;
-  background-color: #7D876E;
-  font-family: "Sen", sans-serif;
-}
-
-.inquiry-modal-title {
-  font-size: 25px;
-  padding-bottom: 2px;
-}
-
-.inquiry-modal-body {
-  background: #7D876E;
-  text-align: center;
-  color: white;
-  font-family: "Sen", sans-serif;
-  border-top: 2px white;
-  height: 230px;
-  padding: 15px;
-}
-
-.inquiry-title {
-  font-size: 20px;
-  padding-bottom: 10px;
-}
-
-.bi-check2-circle {
-  font-size: 60px;
-}
-
-.comments-profile-image {
-  width: 30px;
-  height: 30px;
-  border-radius: 100px;
+  transition: .2s ease;
 }

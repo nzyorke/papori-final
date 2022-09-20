@@ -135,21 +135,6 @@ let renderProductsAccount = (products) => {
   console.log("the render products function is working");
   accountResult.innerHTML = "";
   products.forEach((item) => {
-    //  RENDER COMMENTS
-    // let renderComments = () => {
-    //   if (item.comments.length > 0) {
-    //     let allComments = "";
-    //     item.comments.forEach((comment) => {
-    //       allComments += `<li>${comment.text}</li>`;
-    //     });
-    //     return allComments;
-    //   } else {
-    //     return "<p>Be the first to place a comment!</p>";
-    //   }
-    // };
-
-    // how to render comments: ${renderComments()}
-
     if (item.createdby == sessionStorage.userID) {
       accountResult.innerHTML += `
   
@@ -607,3 +592,18 @@ for (let i = 0; i < footerTopInfo1.length; i++) {
 }
 
 
+const modalDescription = document.getElementById("modal-description");
+const modalMessage = document.getElementById("modal-message");
+const inquireBtn = document.getElementById("inquire-button");
+const backBtn = document.getElementById("back-button");
+
+inquireBtn.onclick = function () {
+  modalDescription.classList.toggle("display");
+  modalMessage.classList.toggle("display");
+  console.log("you clicked this button");
+};
+
+backBtn.onclick = function () {
+  modalDescription.classList.toggle("display");
+  modalMessage.classList.toggle("display");
+};

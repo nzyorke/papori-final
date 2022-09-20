@@ -52,6 +52,8 @@ let showAllProduct = () => {
   });
 };
 
+
+
 // =================================
 //        ADD NEW PRODUCTS
 // =================================
@@ -578,9 +580,10 @@ let renderProductModal = (projectData) => {
 <img src="${projectData.img_url}" alt="${projectData.name}">
 `;
 
-  //   productComments.innerHTML = `
-  //     <p>No comments yet!</p>
-  //   `;
+  productOwner.innerHTML = `
+<h3>${projectData.productowner.toUpperCase()}</h3>
+`;
+
 };
 
 // =================================
@@ -605,4 +608,20 @@ for (let i = 0; i < footerTopInfo1.length; i++) {
   });
 
 }
+
+const modalDescription = document.getElementById("modal-description");
+const modalMessage = document.getElementById("modal-message");
+const inquireBtn = document.getElementById("inquire-button");
+const backBtn = document.getElementById("back-button");
+
+inquireBtn.onclick = function () {
+  modalDescription.classList.toggle("display");
+  modalMessage.classList.toggle("display");
+  console.log("you clicked this button");
+};
+
+backBtn.onclick = function () {
+  modalDescription.classList.toggle("display");
+  modalMessage.classList.toggle("display");
+};
 
