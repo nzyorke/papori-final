@@ -201,12 +201,12 @@ let renderFavourites = (products) => {
     let favouritesArray = user.favourites;
     if (favouritesArray.length > 0) {
       let allFavourites = "";
-    for (let i = 0; i < favouritesArray.length; i++) {
-  console.log(user.favourites[i].product_id);
-    products.forEach((item) => {
-      if (item._id == user.favourites[i].product_id) {
+      for (let i = 0; i < favouritesArray.length; i++) {
+        console.log(user.favourites[i].product_id);
+        products.forEach((item) => {
+          if (item._id == user.favourites[i].product_id) {
 
-        allFavourites += `
+            allFavourites += `
     
         <div class="product-container" id="${item._id}">
         <div class="product-item">
@@ -216,9 +216,8 @@ let renderFavourites = (products) => {
         </span>
             </div>
             <div class="product-image">
-                <img src="${item.img_url}" class="open-image" alt="${
-          item.name
-        }">
+                <img src="${item.img_url}" class="open-image" alt="${item.name
+              }">
             </div>
             <div class="product-description">
             <h4>${item.name.toUpperCase()}</h4>
@@ -230,31 +229,32 @@ let renderFavourites = (products) => {
     </div>
   </div>
      `;
-      }  
-    }) }return allFavourites;
-  } else {
-    return `<div class="no-favourite"><p>No favourites yet!</p></div>`;
+          }
+        })
+      } return allFavourites;
+    } else {
+      return `<div class="no-favourite"><p>No favourites yet!</p></div>`;
+    }
   }
-  }
- ;
+    ;
 
-    // running collect edit buttons function
-    collectEditButtons();
-    // running collect delete buttons function
-    collectDeleteButtons();
-    // running add comment buttons function
-    collectCommentButtons();
+  // running collect edit buttons function
+  collectEditButtons();
+  // running collect delete buttons function
+  collectDeleteButtons();
+  // running add comment buttons function
+  collectCommentButtons();
 
-    collectProductModals();
+  collectProductModals();
 
-    collectFavouriteButtons();
+  collectFavouriteButtons();
 
-    let deleteBtn = document.getElementById("submitDelete");
-    deleteBtn.onclick = () => {
-      console.log(productId);
-      populateDeleteModal(productId);
-    };
+  let deleteBtn = document.getElementById("submitDelete");
+  deleteBtn.onclick = () => {
+    console.log(productId);
+    populateDeleteModal(productId);
   };
+};
 
 
 showAllProduct();
@@ -584,8 +584,7 @@ let checkLogin = () => {
     navContent = `
         <div class="account-button" id="nav-img-acc">
       <span id="username">${sessionStorage.userName.toUpperCase()}</span>
-      <span id="dp" style="background-image: url('${
-        sessionStorage.profileImg
+      <span id="dp" style="background-image: url('${sessionStorage.profileImg
       }')"></span>
       </div>
       `;
@@ -756,22 +755,6 @@ listingsBtn.onclick = function () {
   favouriteList.classList.toggle("display");
   listUnderline.classList.toggle("display");
   favouriteUnderline.classList.toggle("display");
-};
-
-const modalDescription = document.getElementById("modal-description");
-const modalMessage = document.getElementById("modal-message");
-const inquireBtn = document.getElementById("inquire-button");
-const backBtn = document.getElementById("back-button");
-
-inquireBtn.onclick = function () {
-  modalDescription.classList.toggle("display");
-  modalMessage.classList.toggle("display");
-  console.log("you clicked this button");
-};
-
-backBtn.onclick = function () {
-  modalDescription.classList.toggle("display");
-  modalMessage.classList.toggle("display");
 };
 
 favouritesBtn.onclick = function () {
