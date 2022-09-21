@@ -14,8 +14,6 @@ const gallery2 = document.getElementById(`gallery2`);
 const navBar = document.getElementById("nav-bar");
 const navSearch = document.getElementById("nav-search");
 const searchIcon = document.getElementById(`search-icon`);
-let searchBarInput = document.querySelector(`#search-bar-input`);
-let searchButtonInput = document.getElementById(`search-button-input`);
 
 navSearch.onclick = function () {
   navExpand();
@@ -25,6 +23,7 @@ navSearch.onclick = function () {
 function navExpand() {
   navBar.classList.toggle("nav-expand");
 }
+
 
 // search function --
 searchButtonInput.onclick = () => {
