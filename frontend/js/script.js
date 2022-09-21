@@ -1,13 +1,6 @@
 const result = document.getElementById("result");
 const accountResult = document.getElementById("account-result");
 const goBtn = document.getElementById("go-button");
-
-// declare all our inputs
-// const nameInput = document.getElementById("name-input");
-// const priceInput = document.getElementById("price-input");
-// const descriptionInput = document.getElementById("description-input");
-// const imageURLInput = document.getElementById("image-url-input");
-
 const gallery0 = document.getElementById(`gallery0`);
 const gallerySwiper = document.getElementById(`gallery-swiper`);
 const gallery1 = document.getElementById(`gallery1`);
@@ -151,8 +144,6 @@ let renderProducts = (products) => {
       }
     };
 
-    // how to render comments: ${renderComments()}
-
     if (item.createdby == sessionStorage.userID) {
       result.innerHTML += `
 
@@ -237,8 +228,6 @@ let renderProductsAccount = (products) => {
         return "<p>Be the first to place a comment!</p>";
       }
     };
-
-    // how to render comments: ${renderComments()}
 
     if (item.createdby == sessionStorage.userID) {
       accountResult.innerHTML += `
@@ -975,13 +964,6 @@ let renderProductModal = (projectData) => {
   productOwner.innerHTML = `
 <h3>${projectData.productowner.toUpperCase()}</h3>
 `;
-  // productComments.innerHTML = `
-  // <div class="name-underline"></div>
-  // <div class="comments-style">
-  //   <h4>COMMENTS</H4>
-  //   <p>No comments yet!</p>
-  //   </div>
-  // `;
 };
 
 

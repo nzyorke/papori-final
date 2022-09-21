@@ -266,6 +266,13 @@ label {
     padding-bottom: 10px;
 }
 
+.delete-modal-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding-top: 10px;
+}
+
 .delete-modal-cancel-button,
 .delete-button {
     background-color: $blue;
