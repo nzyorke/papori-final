@@ -266,6 +266,13 @@ label {
     padding-bottom: 10px;
 }
 
+.delete-modal-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding-top: 10px;
+}
+
 .delete-modal-cancel-button,
 .delete-button {
     background-color: $blue;
@@ -278,12 +285,31 @@ label {
     border: none;
 }
 
-.delete-modal-cancel-button {
-    margin-left: 65px;
+.password-button-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
 }
 
-.delete-button {
-    margin-left: 20px;
+
+#updatePasswordModal {
+    z-index: 99;
+    position: absolute;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 0px;
+    display: flex;
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    visibility: hidden;
+    border: none;
+}
+
+#updatePasswordModal.active {
+    opacity: 1;
+    visibility: visible;
+    border: none;
 }
 
 .modal-description {
@@ -670,6 +696,7 @@ label {
                     padding: 10px 4%;
                 }
             }
+
         }
     }
 }

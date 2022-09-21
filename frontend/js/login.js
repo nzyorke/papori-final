@@ -26,7 +26,7 @@ loginBtn.onclick = () => {
                 sessionStorage.setItem('bio', user.userdescription);
 
                 // redirect automatically
-                document.location.href = 'index.html';
+                document.location.href = 'account.html';
             }
         },
         error: () => {
@@ -34,3 +34,4 @@ loginBtn.onclick = () => {
         }
     })
 }
+

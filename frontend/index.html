@@ -17,6 +17,11 @@
     <!-- swiper cdn  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 
+      <!-- Favicon image -->
+  <link rel="apple-touch-icon" sizes="180x180" href="media/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="media/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="media/favicon.ico">
+
     <link rel="stylesheet" href="css/styles.css">
     <title>Summative</title>
 </head>
@@ -51,13 +56,13 @@
                         <h2>Search our community for local buisnesses or products.</h2>
                     </div>
                     <div class="search-bar">
-                        <input id="search-bar-input" type="search" name="search-bar" placeholder="Search Pāpori..."
-                            value=""><i id="search-button-input" class="bi bi-search pointer"></i>
+                            <input id="search-bar-input" type="text" name="search-bar-input"
+                            placeholder="Search Pāpori..." value=""><i id="search-button-input"
+                            class="bi bi-search pointer"></i>
                     </div>
                 </div>
                 <div id="search-notifications"></div>
             </div>
-            <div id="notifications"></div>
         </div>
 
         <div id="account-details">
@@ -309,16 +314,16 @@
                 </div>
                 <div class="delete-modal-body">
                     <p class="confirm-delete-text">Are you sure you want to delete <br> this listing?</p>
-                    <button type="button" class="btn btn-secondary delete-modal-cancel-button"
-                        data-bs-dismiss="modal">CANCEL</button>
-                    <button id="submitDelete" name="submitDeleteButton" type="submit"
-                        class="btn btn-primary delete-button" data-bs-dismiss="modal">CONFIRM</button>
-
+                    <div class="delete-modal-buttons">
+                        <button type="button" class="btn btn-secondary delete-modal-cancel-button"
+                            data-bs-dismiss="modal">CANCEL</button>
+                        <button id="submitDelete" name="submitDeleteButton" type="submit"
+                            class="btn btn-primary delete-button" data-bs-dismiss="modal">CONFIRM</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
     <!-- End of Confirm Delete Modal  -->
 
     <!-- Confirm Inquiry Sent Modal -->
