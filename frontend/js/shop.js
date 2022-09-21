@@ -52,8 +52,6 @@ let showAllProduct = () => {
   });
 };
 
-
-
 // =================================
 //  GET PRODUCT COLLECTION FROM AJAX
 // =================================
@@ -120,7 +118,7 @@ let renderProducts = (products) => {
         <div class="product-container" id="${item._id}">
         <div class="product-item">
             <div class="product-buttons">
-            <span class="material-symbols-outlined" id="delete" data-bs-toggle="modal" data-bs-target="#deleteModal">
+            <span class="material-symbols-outlined trash-button" id="delete" data-bs-toggle="modal" data-bs-target="#deleteModal">
 disabled_by_default
 </span> 
 <span class="material-symbols-outlined edit-button" data-bs-toggle="modal" data-bs-target="#editModal"">
@@ -148,10 +146,10 @@ edit_square
       <div class="product-container" id="${item._id}">
       <div class="product-item">
       <div class="favourite-button" id="favourite-button">
-      <span class="material-symbols-outlined favourites-button">
-      favorite
-      </span>
-          </div>
+<span class="material-symbols-outlined favourites-button">
+favorite
+</span>
+      </div>
           <div class="product-image">
               <img src="${item.img_url}" class="open-image" alt="${item.name}">
           </div>
@@ -179,6 +177,8 @@ edit_square
 
   collectFavouriteButtons();
 
+  renderFavourites(products);
+
   let deleteBtn = document.getElementById("submitDelete");
   deleteBtn.onclick = () => {
     console.log(productId);
@@ -186,6 +186,77 @@ edit_square
     console.log("you've clicked delete button");
   };
 };
+
+// =================================
+//    RENDER FAVOURITE BUTTON
+// =================================
+
+let renderFavourites = (products) => {
+  console.log(products);
+  let userId = sessionStorage.userID;
+  $.ajax({
+    type: "GET",
+    url: `http://localhost:3400/user/${userId}`,
+    success: (user) => {
+      checkFavourites(user);
+    },
+    error: (error) => {
+      console.log(error);
+    },
+  });
+};
+
+let checkFavourites = (user) => {
+  let renderBtns = document.getElementsByClassName("favourite-button");
+  if (renderBtns.length > 0) {
+    let favouritesArray = user.favourites;
+    if (favouritesArray.length > 0) {
+      for (let i = 0; i < renderBtns.length; i++) {
+        // console.log(renderBtns[i].parentNode.parentNode.id);
+        let currentProductId = renderBtns[i].parentNode.parentNode.id;
+        for (let index = 0; index < favouritesArray.length; index++) {
+          let currentFavouriteId = favouritesArray[index].product_id;
+
+          if (currentProductId == currentFavouriteId) {
+            console.log("There weas a match");
+            renderBtns[i].innerHTML = `
+                      <span class="material-symbols-outlined favourites-button active-fill">
+                  favorite
+                  </span>
+            `;
+          }
+        }
+      }
+    }
+  }
+};
+// let displayFavourites = (user, products) => {
+//   // console.log("the render products function is working");
+//   let favouritesArray = user.favourites;
+//   if (favouritesArray.length > 0) {
+//     console.log(favouritesArray);
+//     let allFavourites = "";
+//     for (let i = 0; i < favouritesArray.length; i++) {
+//       console.log(user.favourites[i].product_id);
+//       products.forEach((item) => {
+//         if (item._id == user.favourites[i].product_id) {
+//           console.log("The id is a match");
+
+//           allFavourites += `
+//           <span class="material-symbols-outlined favourites-button active-fill">
+//       favorite
+//       </span>
+//    `;
+//         }
+//       });
+//     }
+//     return allFavourites;
+//   } else {
+//     return `<span class="material-symbols-outlined favourites-button">
+//     favorite
+//     </span>`;
+//   }
+// };
 
 // let deleteBtn = document.getElementById("submitDeleteBtn");
 // deleteBtn.onclick = () => {
@@ -364,6 +435,7 @@ let collectFavouriteButtons = () => {
   let favouriteButtonsArray =
     document.getElementsByClassName("favourites-button");
   //this will loop over every edit button
+  console.log(favouriteButtonsArray);
   for (let i = 0; i < favouriteButtonsArray.length; i++) {
     favouriteButtonsArray[i].onclick = () => {
       console.log(favouriteButtonsArray[i].id);
@@ -378,7 +450,6 @@ let collectFavouriteButtons = () => {
     };
   }
 };
-
 
 // =================================
 //       POPULATE EDIT MODAL
@@ -601,7 +672,6 @@ let renderProductModal = (projectData) => {
   productOwner.innerHTML = `
 <h3>${projectData.productowner.toUpperCase()}</h3>
 `;
-
 };
 
 // =================================
@@ -629,7 +699,6 @@ const sendBtn = document.getElementById("send-button");
 const titleInput = document.getElementById("inquire-title-input");
 const messageInput = document.getElementById("inquire-title-message");
 
-
 inquireBtn.onclick = function () {
   modalDescription.classList.toggle("display");
   modalMessage.classList.toggle("display");
@@ -640,7 +709,6 @@ backBtn.onclick = function () {
   modalDescription.classList.toggle("display");
   modalMessage.classList.toggle("display");
 };
-
 
 sendBtn.onclick = function () {
   titleInput.value = "";
