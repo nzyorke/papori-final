@@ -32,6 +32,31 @@ function filterExpand() {
   filterOptions.classList.toggle("filter-expand");
 }
 
+let searchBarInput = document.querySelector(`#search-bar-input`);
+let searchBarInputBtn = document.getElementById(`search-button-input`);
+
+// search function --
+searchBarInputBtn.onclick = () => {
+  searchItem();
+}
+
+const searchItem = () => {
+
+  let searchString = searchBarInput.value;
+
+  $.ajax({
+    type: "GET",
+    url: `http://localhost:3400/allProduct/`,
+    // your success function contains a object which can be named anything
+    success: (products) => {
+      console.log(products);
+    },
+    error: (error) => {
+      console.log(error);
+    },
+  });
+}
+
 // =================================
 //        DISPLAY PRODUCTS
 // =================================
@@ -45,6 +70,7 @@ let showAllProduct = () => {
     success: (products) => {
       console.log(products);
       renderProducts(products);
+      searchItem(products);
     },
     error: (error) => {
       console.log(error);
@@ -110,6 +136,7 @@ openImage.onclick = () => {
 
 // This function renders our products
 let renderProducts = (products) => {
+  console.log(products);
   let productId = products.id;
   console.log("the render products function is working");
   result.innerHTML = "";
@@ -128,9 +155,8 @@ edit_square
 </span>
             </div>
             <div class="product-image">
-                <img src="${item.img_url}" class="open-image" alt="${
-        item.name
-      }">
+                <img src="${item.img_url}" class="open-image" alt="${item.name
+        }">
             </div>
             <div class="product-description">
                 <h4>${item.name.toUpperCase()}</h4>
@@ -518,8 +544,7 @@ let checkLogin = () => {
     navContent = `
         <div class="account-button" id="nav-img-acc">
       <span id="username">${sessionStorage.userName.toUpperCase()}</span>
-      <span id="dp" style="background-image: url('${
-        sessionStorage.profileImg
+      <span id="dp" style="background-image: url('${sessionStorage.profileImg
       }')"></span>
       </div>
       `;
