@@ -135,7 +135,7 @@ let renderProductsAccount = (products) => {
       <div class="product-container" id="${item._id}">
       <div class="product-item">
       <div class="product-buttons">
-      <span class="material-symbols-outlined" id="delete" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      <span class="material-symbols-outlined trash-button" id="delete" data-bs-toggle="modal" data-bs-target="#deleteModal">
 disabled_by_default
 </span> 
 <span class="material-symbols-outlined edit-button" data-bs-toggle="modal" data-bs-target="#editModal"">
@@ -210,7 +210,7 @@ let renderFavourites = (products) => {
     
         <div class="product-container" id="${item._id}">
         <div class="product-item">
-        <div class="favourite-button" id="">
+        <div class="favourite-button" id="favourite-button">
         <span class="material-symbols-outlined favourites-button active-fill">
         favorite
         </span>

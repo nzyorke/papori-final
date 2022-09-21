@@ -308,7 +308,7 @@ edit_square
     <div class="product-container" id="${item._id}">
       <div class="product-item">
       <div class="product-buttons">
-      <span class="material-symbols-outlined" id="delete" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      <span class="material-symbols-outlined trash-button" id="delete" data-bs-toggle="modal" data-bs-target="#deleteModal">
 disabled_by_default
 </span> 
 <span class="material-symbols-outlined edit-button" data-bs-toggle="modal" data-bs-target="#editModal"">
@@ -364,11 +364,57 @@ edit_square
 
   collectFavouriteButtons();
 
+  renderFavourites(products);
+
   let deleteBtn = document.getElementById("submitDelete");
   deleteBtn.onclick = () => {
     console.log(productId);
     populateDeleteModal(productId);
   };
+};
+
+// =================================
+//    RENDER FAVOURITE BUTTON
+// =================================
+
+let renderFavourites = (products) => {
+  console.log(products);
+  let userId = sessionStorage.userID;
+  $.ajax({
+    type: "GET",
+    url: `http://localhost:3400/user/${userId}`,
+    success: (user) => {
+      checkFavourites(user);
+    },
+    error: (error) => {
+      console.log(error);
+    },
+  });
+};
+
+let checkFavourites = (user) => {
+  let renderBtns = document.getElementsByClassName("favourite-button");
+  if (renderBtns.length > 0) {
+    let favouritesArray = user.favourites;
+    if (favouritesArray.length > 0) {
+      for (let i = 0; i < renderBtns.length; i++) {
+        // console.log(renderBtns[i].parentNode.parentNode.id);
+        let currentProductId = renderBtns[i].parentNode.parentNode.id;
+        for (let index = 0; index < favouritesArray.length; index++) {
+          let currentFavouriteId = favouritesArray[index].product_id;
+
+          if (currentProductId == currentFavouriteId) {
+            console.log("There weas a match");
+            renderBtns[i].innerHTML = `
+                      <span class="material-symbols-outlined favourites-button active-fill">
+                  favorite
+                  </span>
+            `;
+          }
+        }
+      }
+    }
+  }
 };
 
 // =================================
