@@ -293,6 +293,10 @@
         column-count: 4;
     }
 
+    #favourite-result {
+        column-count: 4;
+    }
+
     #edit-account-form {
         width: 85%;
         margin: 0 auto;
@@ -307,6 +311,10 @@
 
 @media only screen and (min-width: 1440px) {
     #account-result {
+        column-count: 4;
+    }
+
+    #favourite-result {
         column-count: 4;
     }
 }

@@ -607,7 +607,6 @@ let displayProfilePictures = () => {
   let accountProfileHeader = document.getElementById("account-profile-header");
   let accountBio = document.getElementById("account-bio");
 
-  // let userDescription = document.getElementById("profile-description-input").value;
   if (sessionStorage.userID) {
     addNewProducts();
 

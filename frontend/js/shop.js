@@ -120,7 +120,7 @@ let renderProducts = (products) => {
         <div class="product-container" id="${item._id}">
         <div class="product-item">
             <div class="product-buttons">
-            <span class="material-symbols-outlined" id="delete" data-bs-toggle="modal" data-bs-target="#deleteModal">
+            <span class="material-symbols-outlined trash-button" id="delete" data-bs-toggle="modal" data-bs-target="#deleteModal">
 disabled_by_default
 </span> 
 <span class="material-symbols-outlined edit-button" data-bs-toggle="modal" data-bs-target="#editModal"">
@@ -128,9 +128,8 @@ edit_square
 </span>
             </div>
             <div class="product-image">
-                <img src="${item.img_url}" class="open-image" alt="${
-        item.name
-      }">
+                <img src="${item.img_url}" class="open-image" alt="${item.name
+        }">
             </div>
             <div class="product-description">
                 <h4>${item.name.toUpperCase()}</h4>
@@ -168,6 +167,7 @@ edit_square
     }
   });
 
+
   // running collect edit buttons function
   collectEditButtons();
   // running collect delete buttons function
@@ -187,10 +187,12 @@ edit_square
   };
 };
 
-// let deleteBtn = document.getElementById("submitDeleteBtn");
-// deleteBtn.onclick = () => {
-//   console.log("You've clicked delete button");
-// }
+// let deleteBtn = document.getElementById("submitDelete");
+// deleteBtn.onclick = (productId) => {
+//   console.log(productId);
+//   populateDeleteModal(productId);
+//   console.log("you've clicked delete button");
+// };
 
 let renderComments = (product) => {
   if (product.comments.length > 0) {
@@ -518,8 +520,7 @@ let checkLogin = () => {
     navContent = `
         <div class="account-button" id="nav-img-acc">
       <span id="username">${sessionStorage.userName.toUpperCase()}</span>
-      <span id="dp" style="background-image: url('${
-        sessionStorage.profileImg
+      <span id="dp" style="background-image: url('${sessionStorage.profileImg
       }')"></span>
       </div>
       `;

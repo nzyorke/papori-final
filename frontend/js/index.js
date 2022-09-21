@@ -43,16 +43,7 @@ const searchItem = () => {
 }
 
 let runSearch = (products, string) => {
-
   console.log(string + " runsearch");
-
-  // let lowercaseSearchString = searchString.toLowerCase();
-  // let lowercasePortfolioGenre = products.name.toLowerCase();
-  // let match = lowercasePortfolioGenre.includes(lowercaseSearchString)
-
-  // if (match == true) {
-  //   console.log(`searched matched`);
-  // }
 
 }
 
@@ -312,18 +303,6 @@ edit_square
     });
 
   topSellerItems.forEach((item) => {
-    // let renderComments = () => {
-    //   if (item.comments.length > 0) {
-    //     let allComments = "";
-    //     item.comments.forEach((comment) => {
-    //       allComments += `<li>${comment.text}</li>`;
-    //     });
-    //     return allComments;
-    //   } else {
-    //     return "<p>Be the first to place a comment!</p>";
-    //   }
-    // };
-
     if (item.createdby == sessionStorage.userID) {
       gallery2.innerHTML += `
     <div class="product-container" id="${item._id}">
@@ -707,8 +686,6 @@ let checkLogin = () => {
   const userDetails = document.getElementById("user-details");
   let navContent;
   if (sessionStorage.userID) {
-    // console.log("You're logged in")
-    // console.log(sessionStorage.userName)
     navContent = `
         <div class="account-button" id="nav-img-acc">
       <span id="username">${sessionStorage.userName.toUpperCase()}</span>
@@ -791,9 +768,6 @@ let renderProductModal = (projectData) => {
 <img src="${projectData.img_url}" alt="${projectData.name}">
 `;
 
-  //   productOwner.innerHTML = `
-  // <h3>${projectData.productowner.toUpperCase()}</h3>
-  // `;
 };
 
 // =================================
