@@ -607,7 +607,6 @@ let displayProfilePictures = () => {
   let accountProfileHeader = document.getElementById("account-profile-header");
   let accountBio = document.getElementById("account-bio");
 
-  // let userDescription = document.getElementById("profile-description-input").value;
   if (sessionStorage.userID) {
     addNewProducts();
 
@@ -756,6 +755,7 @@ listingsBtn.onclick = function () {
   listUnderline.classList.toggle("display");
   favouriteUnderline.classList.toggle("display");
 };
+
 
 favouritesBtn.onclick = function () {
   accountList.classList.toggle("display");

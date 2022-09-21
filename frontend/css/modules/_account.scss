@@ -100,6 +100,7 @@
     height: 350px;
     padding: 10px;
     border: 1px solid $blue;
+    margin-top: 200px;
 }
 
 .edit-password-input,
@@ -131,6 +132,7 @@
     justify-content: space-between;
     height: 100%;
 }
+
 
 
 // ACCOUNT PAGE 
@@ -210,10 +212,10 @@
     display: none;
 }
 
-#favourite-result{
+#favourite-result {
     column-count: 2;
-    padding: 20px; 
-    display: none;  
+    padding: 20px;
+    display: none;
 }
 
 #bio-account {
@@ -226,24 +228,93 @@
     font-size: 1.4em;
 }
 
-.list-title{
+.list-title {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 130px;
 }
 
-.favourite-list{
+.favourite-list {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 130px;
 }
 
-.list-underline{
+.list-underline {
     width: 90%;
     height: 3px;
     background: $white;
     margin-bottom: 20px;
     display: none;
+}
+
+
+@media only screen and (min-width: 768px) {
+    #account-result {
+        column-count: 3 !important;
+    }
+
+    #edit-profile-image {
+        margin-bottom: 30px;
+    }
+
+    .profile-image {
+        height: 200px;
+        width: 200px;
+    }
+
+    #edit-account-form {
+        width: 90%;
+        margin: 0 auto;
+        height: 620px;
+        padding-left: 20px;
+    }
+
+    #updatePasswordModal {
+        height: 101vh;
+        width: 101vw;
+        top: 195px;
+    }
+
+    .edit-password-modal-content {
+        width: 70%;
+        height: 350px;
+        padding: 10px;
+        border: 1px solid #1C2536;
+        margin-top: 200px;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    #account-result {
+        column-count: 4;
+    }
+
+    #favourite-result {
+        column-count: 4;
+    }
+
+    #edit-account-form {
+        width: 85%;
+        margin: 0 auto;
+        height: 700px;
+        padding-left: 10px;
+    }
+
+    .update-password-modal-body {
+        padding: 15px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    #account-result {
+        column-count: 4;
+    }
+
+    #favourite-result {
+        column-count: 4;
+    }
 }

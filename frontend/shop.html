@@ -19,6 +19,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="media/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="media/favicon.ico">
 
+
   <link rel="stylesheet" href="css/styles.css" />
   <title>Shop</title>
 </head>
@@ -190,7 +191,10 @@
             <input onclick="select()" class="edit-modal-input" type="text" id="productDescription"
               name="productDescription">
             <br></br>
-
+            <label for="imgUrl">PRODUCT IMAGE</label>
+            <br>
+            <input onclick="select()" class="edit-modal-input" type="text" id="imgUrl" name="imgUrl">
+            <br></br>
             <label for="imgUrl">PRODUCT IMAGE</label>
             <br>
             <input onclick="select()" class="edit-modal-input" type="text" id="imgUrl" name="imgUrl">
@@ -244,16 +248,17 @@
         </div>
         <div class="delete-modal-body">
           <p class="confirm-delete-text">Are you sure you want to delete <br> this listing?</p>
-          <button type="button" class="btn btn-secondary delete-modal-cancel-button"
-            data-bs-dismiss="modal">CANCEL</button>
-          <button id="submitDelete" name="submitDeleteButton" type="submit" class="btn btn-primary delete-button"
-            data-bs-dismiss="modal">CONFIRM</button>
+          <div class="delete-modal-buttons">
+            <button type="button" class="btn btn-secondary delete-modal-cancel-button"
+              data-bs-dismiss="modal">CANCEL</button>
+            <button id="submitDelete" name="submitDeleteButton" type="submit" class="btn btn-primary delete-button"
+              data-bs-dismiss="modal">CONFIRM</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
   <!-- End of Post Delete Modal  -->
-
   <!-- product Modal -->
   <div id="productModal" class="productModal">
     <div class="product-modal-container">

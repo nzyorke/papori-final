@@ -126,9 +126,8 @@ edit_square
 </span>
             </div>
             <div class="product-image">
-                <img src="${item.img_url}" class="open-image" alt="${
-        item.name
-      }">
+                <img src="${item.img_url}" class="open-image" alt="${item.name
+        }">
             </div>
             <div class="product-description">
                 <h4>${item.name.toUpperCase()}</h4>
@@ -166,6 +165,7 @@ favorite
     }
   });
 
+
   // running collect edit buttons function
   collectEditButtons();
   // running collect delete buttons function
@@ -186,6 +186,7 @@ favorite
     console.log("you've clicked delete button");
   };
 };
+
 
 // =================================
 //    RENDER FAVOURITE BUTTON
@@ -230,38 +231,7 @@ let checkFavourites = (user) => {
     }
   }
 };
-// let displayFavourites = (user, products) => {
-//   // console.log("the render products function is working");
-//   let favouritesArray = user.favourites;
-//   if (favouritesArray.length > 0) {
-//     console.log(favouritesArray);
-//     let allFavourites = "";
-//     for (let i = 0; i < favouritesArray.length; i++) {
-//       console.log(user.favourites[i].product_id);
-//       products.forEach((item) => {
-//         if (item._id == user.favourites[i].product_id) {
-//           console.log("The id is a match");
 
-//           allFavourites += `
-//           <span class="material-symbols-outlined favourites-button active-fill">
-//       favorite
-//       </span>
-//    `;
-//         }
-//       });
-//     }
-//     return allFavourites;
-//   } else {
-//     return `<span class="material-symbols-outlined favourites-button">
-//     favorite
-//     </span>`;
-//   }
-// };
-
-// let deleteBtn = document.getElementById("submitDeleteBtn");
-// deleteBtn.onclick = () => {
-//   console.log("You've clicked delete button");
-// }
 
 let renderComments = (product) => {
   if (product.comments.length > 0) {
@@ -589,8 +559,7 @@ let checkLogin = () => {
     navContent = `
         <div class="account-button" id="nav-img-acc">
       <span id="username">${sessionStorage.userName.toUpperCase()}</span>
-      <span id="dp" style="background-image: url('${
-        sessionStorage.profileImg
+      <span id="dp" style="background-image: url('${sessionStorage.profileImg
       }')"></span>
       </div>
       `;

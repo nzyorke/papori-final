@@ -172,23 +172,20 @@ header {
     border-radius: 100px;
 }
 
-// #favourites-button{
-//     fill: 1;
-// }
+
 
 .favourites-button {
     transition: .3s ease-in-out;
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
 }
 
-.favourite-button{
-}
+.favourite-button {}
 
-.favourite-button-empty{
+.favourite-button-empty {
     position: absolute;
     top: 2px;
     z-index: 10;
@@ -197,11 +194,11 @@ header {
 .favourites-button.active-fill {
     color: $red;
     transition: .3s ease-in-out;
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
 }
 
 .no-favourite {

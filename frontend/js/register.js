@@ -55,7 +55,7 @@ signupBtn.onclick = function () {
                             sessionStorage.setItem('bio', user.userdescription);
 
                             // redirect automatically
-                            document.location.href = 'index.html';
+                            document.location.href = 'account.html';
 
                         } // end of ifs
                     }, //end of success
