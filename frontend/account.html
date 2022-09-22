@@ -80,6 +80,7 @@
 
     <div class="nav-padding"></div>
 
+
     <div>
 
         <!-- edit account header here  -->
@@ -109,6 +110,8 @@
                 <div id="favourite-underline" class="list-underline"></div>
             </div>
         </div>
+
+
 
 
         <!-- display user account listings here  -->
@@ -178,6 +181,7 @@
                 </div>
             </div>
         </footer>
+
 
         <!-- Change Password Modal -->
         <div class="modal fade" id="updatePasswordModal" tabindex="-1" aria-labelledby="updatePasswordModalLabel"
@@ -268,6 +272,44 @@
                 </div>
             </div>
         </div>
+    </div>
+    <!-- end of product modal -->
+
+    <!-- Edit Modal -->
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Listing</h5></strong>
+                    <div id="image-preview"></div>
+                    <div id="projectForm">
+
+                        <label for="productName">TITLE</label>
+                        <br>
+                        <input onclick="select()" class="edit-modal-input" type="text" id="productName"
+                            name="productName">
+                        <br></br>
+
+                        <label for="productPrice">PRICE</label>
+                        <br>
+                        <input onclick="select()" class="edit-modal-input" type="text" id="productPrice"
+                            name="productPrice">
+                        <br></br>
+
+                        <label for="productDescription">DESCRIPTION</label>
+                        <br>
+                        <input onclick="select()" class="edit-modal-input" type="text" id="productDescription"
+                            name="productDescription">
+                        <br></br>
+
+                        <label for="imgUrl">PRODUCT IMAGE</label>
+                        <br>
+                        <input onclick="select()" class="edit-modal-input" type="text" id="imgUrl" name="imgUrl">
+                        <br></br>
+                        
         <!-- end of product modal -->
 
         <!-- Edit Modal -->
@@ -370,26 +412,27 @@
         </div>
         <!-- End of  Add Product Modal  -->
 
-        <!-- Confirm Inquiry Sent Modal -->
-        <div class="modal fade" id="inquiryModal" tabindex="-1" aria-labelledby="inquiryModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="inquiry-modal-header">
-                        <h5 class="inquiry-modal-title" id="data-bs-target">QUERY SENT TO</h5>
-                        <div id="inquiry-owner"></div>
-                    </div>
-                    <div class="inquiry-modal-body">
-                        <h3 class="inquiry-title">Message title here...</h3>
-                        <p>Lorem ipsum dolor sit amet, <br>
-                            consectetur adipiscing elit, sed do eiusmod tempor incididunt<br>
-                            ut labore et dolore magna aliqua . . . </p>
-                        <i class="bi bi-check2-circle"></i>
-                    </div>
+    <!-- Confirm Inquiry Sent Modal -->
+    <div class="modal fade" id="inquiryModal" tabindex="-1" aria-labelledby="inquiryModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="inquiry-modal-header">
+                    <h5 class="inquiry-modal-title" id="data-bs-target">QUERY SENT TO</h5>
+                    <div id="inquiry-owner"></div>
+                </div>
+                <div class="inquiry-modal-body">
+                    <h3 class="inquiry-title">Message title here...</h3>
+                    <p>Lorem ipsum dolor sit amet, <br>
+                        consectetur adipiscing elit, sed do eiusmod tempor incididunt<br>
+                        ut labore et dolore magna aliqua . . . </p>
+                    <i class="bi bi-check2-circle"></i>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- End of Confirm Inquiry Sent Modal  -->
+    <!-- End of Confirm Inquiry Sent Modal  -->
+
 
 
         <!-- Post Comment Modal -->

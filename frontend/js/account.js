@@ -181,6 +181,8 @@ edit_square
 // This function renders our products
 let renderFavourites = (products) => {
   let userId = sessionStorage.userID;
+  let productId = products.id;
+
   $.ajax({
     type: "GET",
     url: `http://localhost:3400/user/${userId}`,
@@ -250,10 +252,12 @@ let renderFavourites = (products) => {
   collectFavouriteButtons();
 
   let deleteBtn = document.getElementById("submitDelete");
+
   deleteBtn.onclick = () => {
     console.log(productId);
     populateDeleteModal(productId);
   };
+
 };
 
 
