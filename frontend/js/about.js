@@ -1,3 +1,4 @@
+
 const navBar = document.getElementById("nav-bar");
 const navSearch = document.getElementById("nav-search");
 const footerTopInfo1 = document.getElementsByClassName(`footer-top-info1`);
@@ -80,3 +81,4 @@ for (let i = 0; i < footerTopInfo1.length; i++) {
     });
 
 }
+

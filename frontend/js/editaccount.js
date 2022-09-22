@@ -1,4 +1,3 @@
-
 // =================================
 //        NAV BAR FUNCTIONS
 // =================================
@@ -26,7 +25,6 @@ function filterExpand() {
   filterOptions.classList.toggle("filter-expand");
 }
 
-
 populateAccountEditPage = () => {
   userId = sessionStorage.userID;
   $.ajax({
@@ -43,7 +41,6 @@ populateAccountEditPage = () => {
   });
 };
 
-
 fillEditUserInputs = (user, id) => {
   let username = document.getElementById("username-input");
   let password = document.getElementById("edit-password-input");
@@ -56,7 +53,7 @@ fillEditUserInputs = (user, id) => {
     bio.value = "";
   } else {
     bio.value = user.userdescription;
-  };
+  }
   imageUrl.value = user.profile_img_url;
 
   //=================================
@@ -95,6 +92,7 @@ fillEditUserInputs = (user, id) => {
         <img class="profile-image" src="${sessionStorage.profileImg}">
         `;
         console.log(newBio);
+        document.location.href = "account.html";
       },
       error: () => {
         console.log("Error not updated");
@@ -103,9 +101,7 @@ fillEditUserInputs = (user, id) => {
   });
 };
 
-
 populateAccountEditPage();
-
 
 let checkLogin = () => {
   const userDetails = document.getElementById("user-details");
@@ -114,7 +110,8 @@ let checkLogin = () => {
     navContent = `
         <div class="account-button" id="nav-img-acc">
       <span id="username">${sessionStorage.userName.toUpperCase()}</span>
-      <span id="dp" style="background-image: url('${sessionStorage.profileImg
+      <span id="dp" style="background-image: url('${
+        sessionStorage.profileImg
       }')"></span>
       </div>
       `;
@@ -142,7 +139,7 @@ let displayProfilePictures = () => {
       <img class="profile-image" src="${sessionStorage.profileImg}">
       `;
   }
-}
+};
 
 displayProfilePictures();
 
@@ -162,7 +159,6 @@ if (sessionStorage.userID) {
   };
 }
 
-
 // const accountBtn = document.getElementById('nav-btn-acc');
 const accountImg = document.getElementById("nav-img-acc");
 const accountDetails = document.getElementById("account-details");
@@ -173,50 +169,40 @@ accountImg.onclick = function () {
 
 function accountExpand() {
   accountDetails.classList.toggle("account-expand");
-
 }
 
 // =================================
 //        FOOTER FUNCTIONS
 // =================================
 
-
 let footerTopInfo1 = document.getElementsByClassName(`footer-top-info1`);
 
-
-
 for (let i = 0; i < footerTopInfo1.length; i++) {
-
   const element = footerTopInfo1[i];
 
   element.addEventListener("click", function () {
-
     this.classList.toggle("active");
 
     console.log("clicked");
-
   });
-
 }
 
-
-const passwordModal = document.getElementById('updatePasswordModal')
-const openpasswordModalBtn = document.getElementById('edit-button1')
-const closepasswordModalBtn1 = document.getElementById('submitDelete')
-const closepasswordModalBtn2 = document.getElementById('cancelPasswordModal')
-
+const passwordModal = document.getElementById("updatePasswordModal");
+const openpasswordModalBtn = document.getElementById("edit-button1");
+const closepasswordModalBtn1 = document.getElementById("submitDelete");
+const closepasswordModalBtn2 = document.getElementById("cancelPasswordModal");
 
 openpasswordModalBtn.onclick = () => {
   openPasswordModal();
-}
+};
 
 closepasswordModalBtn1.onclick = () => {
   closePasswordModal();
-}
+};
 
 closepasswordModalBtn2.onclick = () => {
   closePasswordModal();
-}
+};
 
 function openPasswordModal() {
   passwordModal.classList.toggle("active");
